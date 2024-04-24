@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.ChatBot">
+   <children>
+      <HBox prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: blue;">
+         <children>
+            <Label text="ChatBot" />
+         </children>
+      </HBox>
+      <ScrollPane fx:id="scrollpane" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="300.0">
+         <content>
+            <VBox fx:id="graphic" prefHeight="420.0" prefWidth="280.0">
+               <children>
+                  <Label prefHeight="51.0" prefWidth="280.0" style="-fx-background-color: rgb(195,195,195); -fx-background-radius: 20;" text="  Hello I am a chatbot. Ask me anything by typing below. Type 'Quit' to end the program" textAlignment="JUSTIFY" wrapText="true" />
+               </children></VBox>
+         </content>
+      </ScrollPane>
+      <TextArea fx:id="chatBox" prefHeight="20.0" prefWidth="290.0" promptText="Send a message">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="WAIT" />
+         </cursor>
+         <effect>
+            <Blend mode="GREEN" />
+         </effect>
+      </TextArea>
+   </children>
+</VBox>
