@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="300" prefWidth="400" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.AfficherCommentaire">
+
+    <!-- Other UI elements can go here -->
+
+    <ListView fx:id="commentListView">
+        <!-- ListView configuration -->
+    </ListView>
+
+    <!-- The container where you want to add the comment list view -->
+    <VBox fx:id="container">
+        <!-- Other UI elements can go here -->
+    </VBox>
+
+    <!-- Other UI elements can go here -->
+
+</VBox>
