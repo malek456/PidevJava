@@ -12,12 +12,13 @@ import java.util.Set;
 
 public class ServiceVol implements IService<Vol> {
 
+    private Vol currentVol;
+
     Connection cnx = DataSource.getInstance().getCnx();
     @Override
     public void ajouter(Vol vol) throws SQLException {
-
         String req = "INSERT INTO `vol`(`aeroport_depart`, `aeroport_arrive`,`date_depart`,`date_arrive`,`prix`,`code`,`nombre_personnes`,`image`) VALUES (?,?,?,?,?,?,?,?)";
-        PreparedStatement ps = cnx.prepareStatement(req);
+        PreparedStatement ps = cnx.prepareStatement(req, Statement.RETURN_GENERATED_KEYS);
         ps.setString(1,vol.getAeroport_depart());
         ps.setString(2,vol.getGetAeroport_arrive());
         ps.setDate(3,vol.getDate_depart());
@@ -28,8 +29,16 @@ public class ServiceVol implements IService<Vol> {
         ps.setString(8,vol.getImage());
 
         ps.executeUpdate();
-        System.out.println("Vol added !");
+
+        ResultSet rs = ps.getGeneratedKeys();
+        if (rs.next()) {
+            int id = rs.getInt(1);
+            vol.setId(id);  // assuming you have a setId method in your Vol class
+        }
+
+        System.out.println("Vol added with ID: " + vol.getId());
     }
+
 
 
 
@@ -100,6 +109,14 @@ public class ServiceVol implements IService<Vol> {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public void setCurrentVol(Vol vol) {
+        this.currentVol = vol;
+    }
+
+    public Vol getCurrentVol() {
+        return this.currentVol;
     }
 }
 

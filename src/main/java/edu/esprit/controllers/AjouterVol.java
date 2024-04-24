@@ -11,9 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -30,6 +28,7 @@ import java.util.Set;
 
 import static java.lang.String.valueOf;
 import static java.sql.Date.valueOf;
+import java.time.LocalDate;
 
 
 public class AjouterVol {
@@ -41,10 +40,10 @@ public class AjouterVol {
     private TextField tfAeroportArrive;
 
     @FXML
-    private TextField tfDateDepart;
+    private DatePicker tfDateDepart;
 
     @FXML
-    private TextField tfDateArrive;
+    private DatePicker tfDateArrive;
 
     @FXML
     private TextField tfPrix;
@@ -57,6 +56,30 @@ public class AjouterVol {
 
     @FXML
     private TextField tfImage;
+
+    @FXML
+    private Label errorLabelAereportD;
+
+    @FXML
+    private Label errorLabelAereportA;
+
+    @FXML
+    private Label errorLabelDateD;
+
+    @FXML
+    private Label errorLabelDateA;
+
+    @FXML
+    private Label errorLabelPrix;
+
+    @FXML
+    private Label errorLabelCode;
+
+    @FXML
+    private Label errorLabelNbPersonne;
+
+    @FXML
+    private Label errorLabelImage;
 
 
     @FXML
@@ -74,8 +97,10 @@ public class AjouterVol {
 
     @FXML
     private void initialize() throws IOException {
+
         // Call method to populate TableView when the scene is loaded
         populateScrollPane();
+
 
 
     }
@@ -123,18 +148,104 @@ public class AjouterVol {
         System.out.println("Populating form with Vol: " + vol);
         tfAeroportDepart.setText(vol.getAeroport_depart());
         tfAeroportArrive.setText(vol.getGetAeroport_arrive());
-        tfDateDepart.setText(vol.getDate_depart().toString());
-        tfDateArrive.setText(vol.getGetDate_arrive().toString());
+        tfDateDepart.setValue(vol.getDate_depart().toLocalDate());
+        tfDateArrive.setValue(vol.getGetDate_arrive().toLocalDate());
         tfPrix.setText(valueOf(vol.getPrix()));
         tfCode.setText(valueOf(vol.getCode()));
         tfNombrePersonne.setText(valueOf(vol.getNombre_personnes()));
         tfImage.setText(vol.getImage());
     }
 
+
+    public boolean checkErrors() {
+        boolean isValid = true;
+
+        String aeroportDepart = tfAeroportDepart.getText();
+        String aeroportArrive = tfAeroportArrive.getText();
+        LocalDate dateDepart = tfDateDepart.getValue();
+        LocalDate dateArrive = tfDateArrive.getValue();
+        String prix = tfPrix.getText();
+        String code = tfCode.getText();
+        String nombrePersonne = tfNombrePersonne.getText();
+        String image = tfImage.getText();
+
+        // Validate if aeroportDepart and aeroportArrive are non-empty strings
+        String stringPattern = "^[a-zA-Z]*$";
+        if (aeroportDepart == null || aeroportDepart.trim().isEmpty() || !aeroportDepart.matches(stringPattern)) {
+            errorLabelAereportD.setText("Aeroport Depart must be a non-empty string .");
+            isValid = false;
+        } else {
+            errorLabelAereportD.setText("");
+        }
+
+        if (aeroportArrive == null || aeroportArrive.trim().isEmpty() || !aeroportArrive.matches(stringPattern)) {
+            errorLabelAereportA.setText("Aeroport Arrive must be a non-empty string .");
+            isValid = false;
+        } else {
+            errorLabelAereportA.setText("");
+        }
+
+        // Validate if dateDepart is before dateArrive
+        if (dateDepart == null || dateArrive == null || !dateDepart.isBefore(dateArrive)) {
+            errorLabelDateD.setText("Date Depart must be before Date Arrive.");
+            isValid = false;
+        } else {
+            errorLabelDateD.setText("");
+        }
+
+        if (dateArrive == null || dateArrive == null || !dateDepart.isAfter(dateArrive)) {
+            errorLabelDateA.setText("Date Depart must be after Date Depart.");
+            isValid = false;
+        } else {
+            errorLabelDateA.setText("");
+        }
+
+        // Validate if prix is a float
+        try {
+            Float.parseFloat(prix);
+        } catch (NumberFormatException e) {
+            errorLabelPrix.setText("Prix must be a valid number.");
+            isValid = false;
+        }
+
+        // Validate if code and nombrePersonne are integers
+        try {
+            Integer.parseInt(code);
+        } catch (NumberFormatException e) {
+            errorLabelCode.setText("Code must be a valid integer.");
+            isValid = false;
+        }
+
+        try {
+            Integer.parseInt(nombrePersonne);
+        } catch (NumberFormatException e) {
+            errorLabelNbPersonne.setText("Nombre Personne must be a valid integer.");
+            isValid = false;
+        }
+
+        // Validate if image is not empty
+        if (image == null || image.trim().isEmpty()) {
+            errorLabelImage.setText("Image must not be empty.");
+            isValid = false;
+        } else {
+            errorLabelImage.setText("");
+        }
+
+        return isValid;
+    }
+
+
+
     public void ajouterVolAction(ActionEvent actionEvent) throws SQLException, IOException {
+
+        if (!checkErrors()) {
+            return;
+        }
+
+
         String imagePath = tfImage.getText();
         Vol newVol = new Vol(
-                tfAeroportDepart.getText(),tfAeroportArrive.getText(),valueOf( tfDateArrive.getText()),valueOf(tfDateArrive.getText()),Float.parseFloat(tfPrix.getText()),Integer.parseInt( tfCode.getText()),Integer.parseInt(tfNombrePersonne.getText()),tfImage.getText() ) ;
+                tfAeroportDepart.getText(),tfAeroportArrive.getText(),valueOf( tfDateDepart.getValue()),valueOf(tfDateArrive.getValue()),Float.parseFloat(tfPrix.getText()),Integer.parseInt( tfCode.getText()),Integer.parseInt(tfNombrePersonne.getText()),tfImage.getText() ) ;
         sp.ajouter(newVol);
 
         System.out.println("New Vol: " + newVol);
@@ -142,10 +253,11 @@ public class AjouterVol {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/TicketVol.fxml"));
         Pane pane = loader.load();
 
-
         // Get the controller and update the ticket details
         TicketVol controller = loader.getController();
         controller.setVol(newVol,pane,VolContainer);
+
+        controller.setAjouterVolController(this);
 
         paneVolMap.put(pane, newVol);
         selectedPane= pane;
@@ -178,8 +290,8 @@ public class AjouterVol {
                 currentVol.getId(),
                 tfAeroportDepart.getText(),
                 tfAeroportArrive.getText(),
-                java.sql.Date.valueOf(tfDateDepart.getText()),
-                java.sql.Date.valueOf(tfDateArrive.getText()),
+                java.sql.Date.valueOf(tfDateDepart.getValue()),
+                java.sql.Date.valueOf(tfDateArrive.getValue()),
                 Float.parseFloat(tfPrix.getText()),
                 Integer.parseInt(tfCode.getText()),
                 Integer.parseInt(tfNombrePersonne.getText()),
@@ -198,12 +310,19 @@ public class AjouterVol {
     private void clearFormFields() {
         tfAeroportDepart.clear();
         tfAeroportArrive.clear();
-        tfDateDepart.clear();
-        tfDateArrive.clear();
+
+        // Assuming tfDateDepart and tfDateArrive are DatePickers
+        tfDateDepart.setValue(null);
+        tfDateArrive.setValue(null);
+
+        // Assuming tfPrix, tfCode, and tfNombrePersonne are TextFields
         tfPrix.clear();
         tfCode.clear();
         tfNombrePersonne.clear();
-        tfImage.clear();
+
+        // Assuming tfImage is an ImageView or similar component
+        tfImage.clear();  // Clearing the image by setting it to null
+
     }
 
     public void NavigateHomeAction(ActionEvent actionEvent) {
