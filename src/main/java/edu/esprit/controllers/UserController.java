@@ -790,9 +790,9 @@ public class UserController {
     private void GoogleConnexion()
     {
         OAuthGoogleAuthenticator googleAuthenticator = new OAuthGoogleAuthenticator(
-                "979015115678-c8939r0q7h9euket4q1pfc90anqtj0e9.apps.googleusercontent.com",
+                "",
                 "http://localhost/dashboard",
-                "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",
+                "",
                 "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email"
         );
         googleAuthenticator.startLogin();
@@ -801,9 +801,9 @@ public class UserController {
     private void FacebookConnexion()
     {
         OAuthFacebookAuthenticator facebookAuthenticator = new OAuthFacebookAuthenticator(
-                "1586773298750133",
+                "",
                 "http://localhost/dashboard",
-                "446dd7a56fdbecbf9d11222537d77a01",
+                "",
                 "email,name,id"
         );
         facebookAuthenticator.startLogin();

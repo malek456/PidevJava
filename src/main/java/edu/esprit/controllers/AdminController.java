@@ -626,7 +626,6 @@ public class AdminController {
         File file2 =new File(imageProfile.getImage().getUrl());
         User user = new User(email,nom,prenom,password,phoneNumber,rolesJson,false,createdAt,pays,description0,file2.getName());
         return user;
-        //api key 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
     }
     private User getTextfieldModif() {
         String description0 = description_modif.getText();
