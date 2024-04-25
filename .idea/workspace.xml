@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0da84d23-d4b6-4c83-9e32-46cf548d08f9" name="Changes" comment="" />
+    <list default="true" id="71c5c3b3-bbcc-4eb8-ba59-58e6e6ef9d3b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,53 +13,138 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 8
+  &quot;associatedIndex&quot;: 0
 }</component>
-  <component name="ProjectId" id="2fVvNMfmVX3HZlt28ejp9a0sOUZ" />
+  <component name="ProjectId" id="2c5OVoMo3t0ZmsFH2PLkvLA7DJW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainFX.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Maven.getionPersonne3A4 [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/BOUZIDI MALEK/IdeaProjects/projetGit&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/BOUZIDI MALEK/IdeaProjects/pidevJava&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/BOUZIDI MALEK/IdeaProjects/untitled1/src/main/java/org/example/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager" selected="Application.MainFX">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.Main" />
+      <module name="getionPersonne3A4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.esprit.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.MainFX" />
+      <module name="getionPersonne3A4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.esprit.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainFX" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0da84d23-d4b6-4c83-9e32-46cf548d08f9" name="Changes" comment="" />
-      <created>1713899019906</created>
+      <changelist id="71c5c3b3-bbcc-4eb8-ba59-58e6e6ef9d3b" name="Changes" comment="" />
+      <created>1707398000602</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1713899019906</updated>
-      <workItem from="1713899020953" duration="1000" />
-      <workItem from="1713901181506" duration="343000" />
-      <workItem from="1713901546779" duration="51000" />
-      <workItem from="1713901752696" duration="1229000" />
-      <workItem from="1713952770188" duration="10000" />
+      <updated>1707398000602</updated>
+      <workItem from="1707398001659" duration="7404000" />
+      <workItem from="1708001300879" duration="5763000" />
+      <workItem from="1712107873935" duration="1602000" />
+      <workItem from="1712564683008" duration="12168000" />
+      <workItem from="1712578658933" duration="252000" />
+      <workItem from="1712578933294" duration="135000" />
+      <workItem from="1712579114243" duration="1984000" />
+      <workItem from="1712653856874" duration="979000" />
+      <workItem from="1712654935941" duration="209000" />
+      <workItem from="1712656386198" duration="417000" />
+      <workItem from="1712656838350" duration="916000" />
+      <workItem from="1712658715429" duration="26000" />
+      <workItem from="1712658775685" duration="247000" />
+      <workItem from="1712659048515" duration="537000" />
+      <workItem from="1712661024483" duration="62000" />
+      <workItem from="1712661100441" duration="383000" />
+      <workItem from="1712661520548" duration="22000" />
+      <workItem from="1712661608186" duration="459000" />
+      <workItem from="1712662111400" duration="173000" />
+      <workItem from="1712662345954" duration="11000" />
+      <workItem from="1712662368592" duration="86000" />
+      <workItem from="1712662471343" duration="925000" />
+      <workItem from="1712829140971" duration="6657000" />
+      <workItem from="1713362196811" duration="4283000" />
+      <workItem from="1713370033168" duration="1572000" />
+      <workItem from="1713377844013" duration="11617000" />
+      <workItem from="1713459864848" duration="15174000" />
+      <workItem from="1713503421357" duration="7052000" />
+      <workItem from="1713526342664" duration="1970000" />
+      <workItem from="1713531094108" duration="960000" />
+      <workItem from="1713596534699" duration="45000" />
+      <workItem from="1713626984731" duration="1422000" />
+      <workItem from="1713634104842" duration="38000" />
+      <workItem from="1713636737665" duration="653000" />
+      <workItem from="1713683965385" duration="669000" />
+      <workItem from="1713686204315" duration="10579000" />
+      <workItem from="1713899001457" duration="17000" />
+      <workItem from="1713901526834" duration="19000" />
     </task>
     <servers />
   </component>
@@ -69,12 +154,15 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>15</line>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.UnsupportedClassVersionError" package="java.lang" />
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
