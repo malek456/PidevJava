@@ -1,11 +1,11 @@
-package com.example.reclamation.controllers;
+package edu.esprit.controllers;
 
-import com.example.reclamation.models.Reclamation;
-import com.example.reclamation.models.Reponse;
-import com.example.reclamation.models.User;
-import com.example.reclamation.services.ServiceReclamation;
-import com.example.reclamation.services.ServiceReponse;
-import com.example.reclamation.test.FxMain;
+import edu.esprit.entities.Reclamation;
+import edu.esprit.entities.Reponse;
+import edu.esprit.entities.User;
+import edu.esprit.services.ServiceReclamation;
+import edu.esprit.services.ServiceReponse;
+import edu.esprit.tests.FxMain;
 import com.itextpdf.kernel.pdf.colorspace.PdfDeviceCs;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
@@ -59,6 +59,12 @@ public class AfficherReponseController {
     private TextArea tacontenu;
     private Button updaterep;
     private Button deleterep;
+    @FXML
+    private VBox vboxContenu;
+    @FXML
+    private VBox vboxEtat;
+    @FXML
+    private VBox reponseFormVbox;
     UpdateReponseController updateReponseFXML;
     ServiceReponse sr = new ServiceReponse();
     ServiceReclamation srec = new ServiceReclamation();
@@ -67,6 +73,16 @@ public class AfficherReponseController {
     private int i = 0;
 
 
+    @FXML
+    public void initialize(){
+        if (FxMain.getGlobalUserData().getRoles().equals("[\"ROLE_ADMIN\"]")) {
+            reponseFormVbox.setVisible(true);
+        } else if (FxMain.getGlobalUserData().getRoles().equals("[\"ROLE_USER\"]")) {
+            reponseFormVbox.setVisible(false);
+            reponseFormVbox.setMaxHeight(0);
+
+        }
+    }
 
     public void afficherReponse(Reclamation Rec){
         this.reclam = Rec;
@@ -163,14 +179,8 @@ public class AfficherReponseController {
         try {
             if(list != null && list.indexOf(rep) != -1)
                 throw new RuntimeException("Response exists");
-            if(rep.getEtat().equals(""))
-                throw new RuntimeException("etat must not be null");
-            if(rep.getEtat().length()>20)
-                throw new RuntimeException("etat must be less than 20 characters");
-            if(rep.getContenu().equals(""))
-                throw new RuntimeException("contenu must not be null");
-            if(rep.getContenu().length()>2000)
-                throw new RuntimeException("contenu must be less than 2000 characters");
+            if(rep.getEtat().equals("") || rep.getEtat().length()>20 || rep.getContenu().equals("") || rep.getContenu().length()<10 || rep.getContenu().length()>2000 )
+                throw new RuntimeException();
             if(list == null) {
                 list = new ArrayList<>();
             }
@@ -205,16 +215,55 @@ public class AfficherReponseController {
             throw new RuntimeException(e);
         }
         catch (Exception ex){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erreur de saisie");
-            alert.setContentText(ex.getMessage());
-            alert.show();
+
+            Label errorEtatLabel = new Label("");
+            Label errorContenuLabel = new Label("");
+            errorEtatLabel.setTextFill(Color.RED);
+            errorContenuLabel.setTextFill(Color.RED);
+            clearErrors();
+
+            if(rep.getEtat().isEmpty()){
+                errorEtatLabel.setText("etat must not be null");
+                vboxEtat.getChildren().add(errorEtatLabel);
+            }
+            else {
+                if (rep.getEtat().length() > 20) {
+                    errorEtatLabel.setText("etat must be less than 20 characters");
+                    vboxEtat.getChildren().add(errorEtatLabel);
+                }
+            }
+
+            if(rep.getContenu().isEmpty()){
+                errorContenuLabel.setText("contenu must not be null");
+                vboxContenu.getChildren().add(errorContenuLabel);
+            }
+            else{
+                if(rep.getContenu().length() < 10 || rep.getContenu().length() > 1000){
+                    errorContenuLabel.setText("contenu must be between 10 and 1000 characters");
+                    vboxContenu.getChildren().add(errorContenuLabel);
+                }
+            }
+
+
+            if(ex.getMessage()!=null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur de saisie");
+                alert.setContentText(ex.getMessage());
+                alert.show();
+            }
         }
     }
 
+    private void clearErrors(){
+        if(vboxEtat.getChildren().size() > 1)
+            vboxEtat.getChildren().remove(1);
+        if(vboxContenu.getChildren().size() > 1)
+            vboxContenu.getChildren().remove(1);
+
+    }
     public void showPopup(String text){
         Popup popup = new Popup();
-        Image image = new Image("C:\\Users\\gasso\\IdeaProjects\\reclamation\\src\\main\\resources\\com\\example\\reclamation\\images\\icons8-ok-48.png");
+        Image image = new Image("C:\\Users\\gasso\\IdeaProjects\\reclamation\\src\\main\\resources\\edu\\esprit\\images\\icons8-ok-48.png");
         ImageView popupimg = new ImageView();
         popupimg.setImage(image);
         Label label2 = new Label(text);
@@ -248,7 +297,7 @@ public class AfficherReponseController {
 
         try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/reclamation/UpdateReponseFXML.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/edu/esprit/UpdateReponseFXML.fxml"));
             Parent root = loader.load();
             // Show the scene
             Scene scene = new Scene(root);
@@ -275,7 +324,7 @@ public class AfficherReponseController {
             Scene scene =null;
             try {
                 //Stage stage = new Stage();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/reclamation/AjouterReclamationFXML.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/edu/esprit/Home1.fxml"));
                 Parent root = loader.load();
                 // Show the scene
                 scene = reponseVbox.getScene();
@@ -294,7 +343,7 @@ public class AfficherReponseController {
             Scene scene =null;
             try {
                 //Stage stage = new Stage();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/reclamation/AfficherReclamationBackFXML.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/edu/esprit/AfficherReclamationBackFXML.fxml"));
                 Parent root = loader.load();
                 // Show the scene
                 scene = reponseVbox.getScene();

@@ -1,15 +1,18 @@
-package com.example.reclamation.controllers;
+package edu.esprit.controllers;
 
-import com.example.reclamation.models.Reclamation;
-import com.example.reclamation.models.Reponse;
-import com.example.reclamation.services.ServiceReponse;
+import edu.esprit.entities.Reclamation;
+import edu.esprit.entities.Reponse;
+import edu.esprit.services.ServiceReponse;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -24,6 +27,10 @@ public class UpdateReponseController {
 
     @FXML
     private TextField tfetat;
+    @FXML
+    private VBox vboxContenu;
+    @FXML
+    private VBox vboxEtat;
     ServiceReponse sr = new ServiceReponse();
     Reponse Rep;
     AfficherReponseController afficherReponseController;
@@ -46,14 +53,9 @@ public class UpdateReponseController {
         Rep2.setDate(Rep.getDate());
         Rep2.setReclamation(Rep.getReclamation());
         try {
-            if(Rep2.getEtat().equals(""))
-                throw new RuntimeException("etat must not be null");
-            if(Rep2.getEtat().length()>20)
-                throw new RuntimeException("etat must be less than 20 characters");
-            if(Rep2.getContenu().equals(""))
-                throw new RuntimeException("contenu must not be null");
-            if(Rep2.getContenu().length()>2000)
-                throw new RuntimeException("contenu must be less than 2000 characters");
+            if(Rep2.getEtat().equals("") || Rep2.getEtat().length()>20 || Rep2.getContenu().equals("") || Rep2.getContenu().length()>2000 || Rep2.getContenu().length() < 10)
+                throw new RuntimeException();
+
             if(Rep2.equals(Rep))
                 throw new RuntimeException("No modifications made");
             sr.updateOne(Rep2);
@@ -64,12 +66,48 @@ public class UpdateReponseController {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }catch(Exception ex){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erreur de saisie");
-            alert.setContentText(ex.getMessage());
-            alert.show();
+            Label errorEtatLabel = new Label("");
+            Label errorContenuLabel = new Label("");
+            errorEtatLabel.setTextFill(Color.RED);
+            errorContenuLabel.setTextFill(Color.RED);
+            clearErrors();
+
+            if(Rep2.getEtat().isEmpty()){
+                errorEtatLabel.setText("etat must not be null");
+                vboxEtat.getChildren().add(errorEtatLabel);
+            }
+            else {
+                if (Rep2.getEtat().length() > 20) {
+                    errorEtatLabel.setText("etat must be less than 20 characters");
+                    vboxEtat.getChildren().add(errorEtatLabel);
+                }
+            }
+
+            if(Rep2.getContenu().isEmpty()){
+                errorContenuLabel.setText("contenu must not be null");
+                vboxContenu.getChildren().add(errorContenuLabel);
+            }
+            else{
+                if(Rep2.getContenu().length() < 10 || Rep2.getContenu().length() > 1000){
+                    errorContenuLabel.setText("contenu must be between 10 and 1000 characters");
+                    vboxContenu.getChildren().add(errorContenuLabel);
+                }
+            }
+            if(ex.getMessage()!=null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur de saisie");
+                alert.setContentText(ex.getMessage());
+                alert.show();
+            }
         }
 
+    }
+
+    private void clearErrors(){
+        if(vboxEtat.getChildren().size() > 1)
+            vboxEtat.getChildren().remove(1);
+        if(vboxContenu.getChildren().size() > 1)
+            vboxContenu.getChildren().remove(1);
     }
 
 }
