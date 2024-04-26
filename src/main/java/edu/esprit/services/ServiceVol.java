@@ -4,6 +4,8 @@ import com.mysql.cj.x.protobuf.MysqlxCrud;
 import edu.esprit.entities.Vol;
 import edu.esprit.entities.Vol;
 import edu.esprit.utils.DataSource;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 
 import java.sql.*;
 import java.util.Date;
@@ -13,6 +15,15 @@ import java.util.Set;
 public class ServiceVol implements IService<Vol> {
 
     private Vol currentVol;
+   private int i =0;
+
+    public int getI() {
+        return i;
+    }
+
+    public void setI(int i) {
+        this.i = i;
+    }
 
     Connection cnx = DataSource.getInstance().getCnx();
     @Override

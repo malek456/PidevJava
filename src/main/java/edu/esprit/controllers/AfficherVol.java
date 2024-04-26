@@ -2,9 +2,16 @@ package edu.esprit.controllers;
 
 import edu.esprit.entities.Vol;
 import edu.esprit.services.ServiceVol;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -24,16 +31,49 @@ public class AfficherVol {
     private ScrollPane scrollPane;
 
     @FXML
+    private TableView TablePanier;
+
+    @FXML
+    private Button ButtonPanier;
+
+    @FXML
+    private Pane PanePanier;
+
+    @FXML
     private Pane selectedPane;
     private final ServiceVol sp = new ServiceVol();
 
     Map<Pane, Vol> paneVolMap = new HashMap<>();
+
+    private int visible=0;
+
+
 
 
     @FXML
     private void initialize() throws IOException {
         // Call method to populate TableView when the scene is loaded
         populateScrollPane();
+
+        if(visible==0)
+        PanePanier.setVisible(false);
+
+        TableColumn<ObservableList<String>, String> column1 = new TableColumn<>("Code");
+        column1.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().get(0)));
+
+        TableColumn<ObservableList<String>, String> column2 = new TableColumn<>("Aeroport Depart");
+        column2.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().get(1)));
+
+        TableColumn<ObservableList<String>, String> column3 = new TableColumn<>("Aeroport Arrive");
+        column3.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().get(2)));
+
+        TableColumn<ObservableList<String>, String> column4 = new TableColumn<>("Prix");
+        column4.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().get(3)));
+
+
+
+        // Add the columns to the TableView
+        TablePanier.getColumns().addAll(column1, column2, column3,column4);
 
 
     }
@@ -77,4 +117,30 @@ public class AfficherVol {
         scrollPane.setContent(VolContainer);
     }
 
+    public void addToPanier(Vol vol) {
+        // Create a new row with the vol's information
+        ObservableList<String> row = FXCollections.observableArrayList();
+        row.add(String.valueOf(vol.getCode()));
+        row.add(vol.getAeroport_depart());
+        row.add(vol.getGetAeroport_arrive());
+        row.add(vol.getPrix().toString());
+        TablePanier.getItems().add(row);
+    }
+
+    public void ShowPanierAction(ActionEvent actionEvent) {
+        visible = 1 - visible;
+        visible(visible);
+
+    }
+
+    public void visible(int i){
+        if(i==0)
+            PanePanier.setVisible(false);
+        else
+            PanePanier.setVisible(true);
+
+    }
+
+    public void PayerPanierAction(ActionEvent actionEvent) {
+    }
 }

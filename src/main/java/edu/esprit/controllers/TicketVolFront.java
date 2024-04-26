@@ -1,6 +1,8 @@
 package edu.esprit.controllers;
 
 import edu.esprit.entities.Vol;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -44,6 +47,7 @@ public class TicketVolFront {
     @FXML
     private ImageView labelImage;
 
+
     @FXML
     private Pane thisPane;
 
@@ -56,6 +60,13 @@ public class TicketVolFront {
 
 
 
+    public int getCode(){
+        return currentVol.getCode();
+    }
+
+    public  void setCde(Vol currentVol) {
+        this.currentVol= currentVol;
+    }
 
 
     public void setVolImage(Image image) {
@@ -87,14 +98,20 @@ public class TicketVolFront {
     }
 
 
+
+
     public void setAfficherVolController(AfficherVol afficherVol) {
         this.AfficherVol = afficherVol;
     }
 
     public void NavigateAjouterPaimentAction(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/AjouterPaiement.fxml"));
-            // Getting the scene and setting the root
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterPaiement.fxml"));
+            Parent root = loader.load();
+            AjouterPaiement ajouterPaiementController = loader.getController();
+
+            // Set the ticketVolFront
+            ajouterPaiementController.setTicketVolFront(this);
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -105,5 +122,10 @@ public class TicketVolFront {
             alert.setTitle("Error");
             alert.show();
         }
+    }
+
+    public void AjouterPanierAcrion(ActionEvent actionEvent) {
+        System.out.println("currentVol"+currentVol);
+       AfficherVol.addToPanier(currentVol);
     }
 }

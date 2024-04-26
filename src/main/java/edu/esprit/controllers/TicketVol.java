@@ -126,6 +126,11 @@ public class TicketVol {
             // Populate the form with the data of the selected Vol
             AjouterVol.populateForm(currentVol);
             ticketVol.setCurrentVol(currentVol);
+
+            AjouterVol.ActivateButton();
+
+
+
         } else {
             // Handle cases where no Vol is associated or AjouterVol is not set
             if (currentVol == null) {

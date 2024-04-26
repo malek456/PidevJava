@@ -90,3 +90,83 @@
     -fx-background-color: #14961f;
 }
 
+.Reserver{
+    -fx-background-color: #c20000;
+    -fx-background-radius: 4px;
+    -fx-text-fill: white; /* Set text color to white */
+    -fx-font-weight: bold italic; /* Make text bold */
+    -fx-font-family: "Comic Sans MS"; /* Set font to Comic Sans */
+}
+
+.Reserver:hover{
+    -fx-background-color: #d73f3f;
+}
+
+.Reserver:pressed{
+    -fx-background-color: #a60000;
+}
+
+.text-field {
+    -fx-background-color: linear-gradient(to bottom, rgba(244, 244, 244, 0), #c7f3ff);
+    -fx-background-radius: 6px;
+    -fx-border-color: #d5d5d5;
+    -fx-border-radius: 4px;
+    -fx-border-width: 1px;
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-effect: dropshadow(gaussian, rgb(232, 232, 232), 5, 0.2, 0, 1);
+}
+
+.text-field:hover {
+    -fx-background-color: linear-gradient(to bottom, #bffafa, #ebffff);
+}
+
+.text-field:disabled {
+    -fx-opacity: 0.7;
+}
+
+.confirmerP{
+    -fx-background-color: #1321cc;
+    -fx-background-radius: 3px;
+    -fx-text-fill: white; /* Set text color to white */
+    -fx-font-weight: bold italic; /* Make text bold */
+    -fx-font-family: "Comic Sans MS"; /* Set font to Comic Sans */
+
+}
+.confirmerP:hover{
+    -fx-background-color: #2647e3;
+}
+
+.confirmerP:pressed{
+    -fx-background-color: #151e93;
+}
+
+.SearchBar{
+    -fx-background-color: #dae1ff;
+    -fx-background-radius: 10px;
+    -fx-text-fill: white; /* Set text color to white */
+    -fx-font-weight: bold italic; /* Make text bold */
+    -fx-font-family: "Comic Sans MS"; /* Set font to Comic Sans */
+    -fx-border-radius: 10px;
+
+}
+.SearchBar:hover{
+    -fx-background-color: #d8d8d9;
+}
+
+.SortBar{
+    -fx-background-color: rgb(230, 236, 255);
+    -fx-background-radius: 10px;
+    -fx-text-fill: white; /* Set text color to white */
+    -fx-font-weight: bold italic; /* Make text bold */
+    -fx-font-family: "Comic Sans MS"; /* Set font to Comic Sans */
+    -fx-border-radius: 10px;
+
+}
+.SortBar:hover{
+    -fx-background-color: #d8d8d9;
+}
+
+
+

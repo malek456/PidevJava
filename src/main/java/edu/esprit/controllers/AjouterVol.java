@@ -13,6 +13,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.input.InputMethodEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -22,9 +24,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static java.lang.String.valueOf;
 import static java.sql.Date.valueOf;
@@ -81,6 +81,21 @@ public class AjouterVol {
     @FXML
     private Label errorLabelImage;
 
+    @FXML
+    private Button saveButton;
+
+    @FXML
+    private TextField tfSearch;
+
+    @FXML
+    private TextField tfSearch1;
+
+    @FXML
+    private ComboBox comboBoxSortItem;
+
+    @FXML
+    private ComboBox comboBoxOrder;
+
 
     @FXML
     private VBox VolContainer = new VBox();
@@ -100,6 +115,9 @@ public class AjouterVol {
 
         // Call method to populate TableView when the scene is loaded
         populateScrollPane();
+
+        saveButton.setDisable(true);
+
 
 
 
@@ -193,12 +211,7 @@ public class AjouterVol {
             errorLabelDateD.setText("");
         }
 
-        if (dateArrive == null || dateArrive == null || !dateDepart.isAfter(dateArrive)) {
-            errorLabelDateA.setText("Date Depart must be after Date Depart.");
-            isValid = false;
-        } else {
-            errorLabelDateA.setText("");
-        }
+
 
         // Validate if prix is a float
         try {
@@ -268,6 +281,15 @@ public class AjouterVol {
         VolContainer.getChildren().add(pane);
         scrollPane.setContent(VolContainer);
         clearFormFields();
+        showSuccessAlert();
+    }
+
+    private void showSuccessAlert() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Operation Successful");
+        alert.setHeaderText(null);
+        alert.setContentText("The new flight has been added successfully!");
+        alert.showAndWait();
     }
 
     public void uploadImageAction(ActionEvent actionEvent) {
@@ -280,6 +302,7 @@ public class AjouterVol {
     }
 
     public void saveChanges(ActionEvent actionEvent) throws IOException {
+
         TicketVol ticketVol = TicketVol.getInstance();
 
         Vol currentVol = ticketVol.getCurrentVol();
@@ -302,8 +325,10 @@ public class AjouterVol {
 
         // Update the Vol object in the database
         sp.modifier(updatedVol);
+
         populateScrollPane();
         clearFormFields();
+        saveButton.setDisable(true);
 
     }
 
@@ -353,6 +378,128 @@ public class AjouterVol {
             alert.setContentText("Sorry");
             alert.setTitle("Error");
             alert.show();
+        }
+    }
+
+    public void ActivateButton() {
+        saveButton.setDisable(false);
+    }
+
+    public void searchAction(KeyEvent keyEvent) throws IOException {
+        String searchText = tfSearch.getText().trim().toLowerCase(); // Normalize search text to lower case
+        Set<Vol> allVols = sp.getAll();
+
+        // Clear the VolContainer to remove previous search results
+        VolContainer.getChildren().clear();
+
+        // Iterate over all Vols and add only those that match the search criteria
+        for (Vol vol : allVols) {
+            // Check if the departure airport contains the search text
+            if (vol.getAeroport_depart().toLowerCase().contains(searchText)) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/TicketVol.fxml"));
+                Pane pane = loader.load();
+
+                // Get the controller and update the ticket details
+                TicketVol controller = loader.getController();
+                controller.setVol(vol, pane, VolContainer);
+
+                // Optionally load and display the image
+                String imagePath = vol.getImage();
+                if (imagePath != null && !imagePath.isEmpty()) {
+                    File file = new File(imagePath);
+                    if (file.exists()) {
+                        Image image = new Image(file.toURI().toString());
+                        controller.setVolImage(image);
+                    }
+                }
+
+                // Add the matching pane to the container
+                VolContainer.getChildren().add(pane);
+            }
+        }
+    }
+
+
+    public void handleSortChange() throws IOException {
+        if (comboBoxSortItem.getValue() == null || comboBoxOrder.getValue() == null) {
+            return; // Do nothing if either combo box has no selected value
+        }
+
+        String sortField = comboBoxSortItem.getValue().toString();
+        String sortOrder = comboBoxOrder.getValue().toString();
+
+        Comparator<Vol> comparator = (sortField.equals("Aéroport de départ"))
+                ? Comparator.comparing(Vol::getAeroport_depart)
+                : Comparator.comparing(Vol::getGetAeroport_arrive);
+
+        if ("Décroissant".equals(sortOrder)) {
+            comparator = comparator.reversed();
+        }
+        Set<Vol> allVols = sp.getAll();
+        List<Vol> volList = new ArrayList<>(allVols);
+
+        Collections.sort(volList, comparator);
+        updateUI(volList);
+    }
+
+    private void updateUI(List<Vol> sortedVols) throws IOException {
+        // Clear the VolContainer to remove old entries
+        VolContainer.getChildren().clear();
+        VolContainer.setSpacing(50);
+
+        // Use the sorted list of Vols to update the UI
+        for (Vol vol : sortedVols) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/TicketVol.fxml"));
+            Pane pane = loader.load();
+
+            TicketVol controller = loader.getController();
+            controller.setVol(vol, pane, VolContainer);
+
+            String imagePath = vol.getImage();
+            if (imagePath != null && !imagePath.isEmpty()) {
+                File file = new File(imagePath);
+                if (file.exists()) {
+                    Image image = new Image(file.toURI().toString());
+                    controller.setVolImage(image);
+                }
+            }
+
+            controller.setAjouterVolController(this); // Ensure the controller is properly initialized
+            VolContainer.getChildren().add(pane);
+        }
+    }
+
+    public void searchAction1(KeyEvent keyEvent) throws IOException {
+        String searchText = tfSearch1.getText().trim().toLowerCase(); // Normalize search text to lower case
+        Set<Vol> allVols = sp.getAll();
+
+        // Clear the VolContainer to remove previous search results
+        VolContainer.getChildren().clear();
+
+        // Iterate over all Vols and add only those that match the search criteria
+        for (Vol vol : allVols) {
+            // Check if the departure airport contains the search text
+            if (vol.getGetAeroport_arrive().toLowerCase().contains(searchText)) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/TicketVol.fxml"));
+                Pane pane = loader.load();
+
+                // Get the controller and update the ticket details
+                TicketVol controller = loader.getController();
+                controller.setVol(vol, pane, VolContainer);
+
+                // Optionally load and display the image
+                String imagePath = vol.getImage();
+                if (imagePath != null && !imagePath.isEmpty()) {
+                    File file = new File(imagePath);
+                    if (file.exists()) {
+                        Image image = new Image(file.toURI().toString());
+                        controller.setVolImage(image);
+                    }
+                }
+
+                // Add the matching pane to the container
+                VolContainer.getChildren().add(pane);
+            }
         }
     }
 }

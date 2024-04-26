@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -30,18 +33,16 @@
                         <String fx:value="shadow" />
                     </styleClass>
                     <children>
-                        <Button layoutX="233.0" layoutY="503.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="42.0" prefWidth="104.0" styleClass="buttonA" stylesheets="@buttons.css" text="save" />
-                  <Pane layoutX="204.0" layoutY="70.0" prefHeight="398.0" prefWidth="267.0">
+                        <Button fx:id="saveButton" layoutX="286.0" layoutY="491.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="42.0" prefWidth="104.0" styleClass="buttonA" stylesheets="@buttons.css" text="save" />
+                  <Pane layoutX="133.0" layoutY="70.0" prefHeight="398.0" prefWidth="361.0">
                      <children>
-                                <TextField fx:id="tfAeroportDepart" prefHeight="36.0" prefWidth="267.0" promptText="Destination" stylesheets="@dashboardDesign.css" />
-                        <TextField fx:id="tfCode" layoutY="250.0" prefHeight="36.0" prefWidth="267.0" promptText="Destination" stylesheets="@dashboardDesign.css" />
-                        <TextField fx:id="tfPrix" layoutY="200.0" prefHeight="36.0" prefWidth="267.0" promptText="Destination" stylesheets="@dashboardDesign.css" />
-                        <TextField fx:id="tfDateArrive" layoutY="150.0" prefHeight="36.0" prefWidth="267.0" promptText="Destination" stylesheets="@dashboardDesign.css" />
-                        <TextField fx:id="tfDateDepart" layoutY="100.0" prefHeight="36.0" prefWidth="267.0" promptText="Destination" stylesheets="@dashboardDesign.css" />
-                        <TextField fx:id="tfAeroportArrive" layoutY="50.0" prefHeight="36.0" prefWidth="267.0" promptText="Destination" stylesheets="@dashboardDesign.css" />
-                        <TextField fx:id="tfNombrePersonne" layoutY="300.0" prefHeight="36.0" prefWidth="267.0" promptText="Destination" stylesheets="@dashboardDesign.css" />
-                        <TextField fx:id="tfImage" layoutY="350.0" prefHeight="36.0" prefWidth="267.0" promptText="Destination" stylesheets="@dashboardDesign.css" />
-                         <Button layoutX="206.0" layoutY="345.0" onAction="#uploadImageAction" prefHeight="36.0" prefWidth="56.0" styleClass="button-upload" stylesheets="@Vol.css">
+                                <TextField fx:id="tfAeroportDepart" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
+                        <TextField fx:id="tfCode" layoutY="250.0" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
+                        <TextField fx:id="tfPrix" layoutY="200.0" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
+                        <TextField fx:id="tfAeroportArrive" layoutY="50.0" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
+                        <TextField fx:id="tfNombrePersonne" layoutY="300.0" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
+                        <TextField fx:id="tfImage" layoutY="350.0" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
+                         <Button layoutX="301.0" layoutY="346.0" onAction="#uploadImageAction" prefHeight="36.0" prefWidth="56.0" styleClass="button-upload" stylesheets="@Vol.css">
                              <graphic>
                                  <StackPane prefHeight="36.0" prefWidth="56.0">
                                      <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -50,16 +51,58 @@
                                  </StackPane>
                              </graphic>
                          </Button>
+                        <DatePicker fx:id="tfDateDepart" layoutY="103.0" prefHeight="36.0" prefWidth="362.0" />
+                        <DatePicker fx:id="tfDateArrive" layoutY="148.0" prefHeight="36.0" prefWidth="362.0" />
+                        <Label fx:id="errorLabelAereportD" layoutX="87.0" prefHeight="36.0" prefWidth="277.0" textFill="RED">
+                           <font>
+                              <Font name="Comic Sans MS Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="errorLabelAereportA" layoutX="87.0" layoutY="50.0" prefHeight="36.0" prefWidth="277.0" textFill="RED">
+                           <font>
+                              <Font name="Comic Sans MS Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="errorLabelDateD" layoutX="81.0" layoutY="103.0" prefHeight="36.0" prefWidth="255.0" textFill="RED">
+                           <font>
+                              <Font name="Comic Sans MS Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="errorLabelCode" layoutX="87.0" layoutY="250.0" prefHeight="36.0" prefWidth="277.0" textFill="RED">
+                           <font>
+                              <Font name="Comic Sans MS Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="errorLabelPrix" layoutX="87.0" layoutY="200.0" prefHeight="36.0" prefWidth="277.0" textFill="RED">
+                           <font>
+                              <Font name="Comic Sans MS Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="errorLabelDateA" layoutX="81.0" layoutY="148.0" prefHeight="36.0" prefWidth="255.0" textFill="RED">
+                           <font>
+                              <Font name="Comic Sans MS Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="errorLabelImage" layoutX="91.0" layoutY="350.0" prefHeight="36.0" prefWidth="212.0" textFill="RED">
+                           <font>
+                              <Font name="Comic Sans MS Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="errorLabelNbPersonne" layoutX="87.0" layoutY="300.0" prefHeight="36.0" prefWidth="277.0" textFill="RED">
+                           <font>
+                              <Font name="Comic Sans MS Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
-                  <Pane layoutX="19.0" layoutY="70.0" prefHeight="398.0" prefWidth="158.0">
+                  <Pane layoutX="19.0" layoutY="70.0" prefHeight="398.0" prefWidth="113.0">
                      <children>
-                              <Label prefHeight="26.0" prefWidth="138.0" text="Aeroport Départ" textFill="#1f201f">
+                              <Label prefHeight="26.0" prefWidth="114.0" text="Aeroport Départ" textFill="#1f201f">
                                   <font>
                                       <Font name="System Bold Italic" size="12.0" />
                                   </font>
                         </Label>
-                        <Label layoutY="250.0" prefHeight="26.0" prefWidth="74.0" text="Code" textFill="#1f201f">
+                        <Label layoutY="250.0" prefHeight="26.0" prefWidth="112.0" text="Numéro de vol" textFill="#1f201f">
                            <font>
                               <Font name="System Bold Italic" size="12.0" />
                            </font>
@@ -84,7 +127,7 @@
                               <Font name="System Bold Italic" size="12.0" />
                            </font>
                         </Label>
-                        <Label layoutY="50.0" prefHeight="26.0" prefWidth="144.0" text="Aeoroport Arrivé" textFill="#1f201f">
+                        <Label layoutY="50.0" prefHeight="26.0" prefWidth="112.0" text="Aeoroport Arrivé" textFill="#1f201f">
                            <font>
                               <Font name="System Bold Italic" size="12.0" />
                            </font>
@@ -96,7 +139,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Button layoutX="344.0" layoutY="503.0" mnemonicParsing="false" onAction="#ajouterVolAction" prefHeight="42.0" prefWidth="97.0" styleClass="buttonA" stylesheets="@buttons.css" text="add" />
+                  <Button layoutX="397.0" layoutY="491.0" mnemonicParsing="false" onAction="#ajouterVolAction" prefHeight="42.0" prefWidth="97.0" styleClass="buttonA" stylesheets="@buttons.css" text="add" />
                     </children>
                 </AnchorPane>
                 <AnchorPane layoutX="21.0" layoutY="38.0" prefHeight="646.0" prefWidth="642.0" stylesheets="@dashboardDesign.css">
@@ -105,7 +148,33 @@
                         <String fx:value="shadow" />
                     </styleClass>
                     <children>
-                        <ScrollPane fx:id="scrollPane" layoutX="22.0" layoutY="26.0" prefHeight="590.0" prefWidth="588.0" />
+                        <ScrollPane fx:id="scrollPane" layoutX="22.0" layoutY="113.0" prefHeight="505.0" prefWidth="588.0" />
+                  <Pane layoutX="22.0" layoutY="14.0" prefHeight="91.0" prefWidth="588.0">
+                     <children>
+                        <TextField fx:id="tfSearch1" layoutX="14.0" onKeyTyped="#searchAction1" prefHeight="36.0" prefWidth="246.0" promptText="Aereport arrivé" styleClass="SearchBar" stylesheets="@Vol.css" />
+                        <TextField fx:id="tfSearch" layoutX="14.0" layoutY="48.0" onKeyTyped="#searchAction" prefHeight="39.0" prefWidth="246.0" promptText="Aereport Départ" styleClass="SearchBar" stylesheets="@Vol.css">
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </TextField>
+                        <ComboBox fx:id="comboBoxOrder" layoutX="342.0" layoutY="1.0" onAction="#handleSortChange" prefHeight="36.0" prefWidth="246.0" promptText="sort order" styleClass="SortBar" stylesheets="@Vol.css">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Croissant" />
+                                 <String fx:value="Décroissant" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                          <ComboBox fx:id="comboBoxSortItem" layoutX="342.0" layoutY="46.0" onAction="#handleSortChange" prefHeight="36.0" prefWidth="246.0" promptText="sort item" styleClass="SortBar" stylesheets="@Vol.css">
+                              <items>
+                                  <FXCollections fx:factory="observableArrayList">
+                                      <String fx:value="Aéroport de départ" />
+                                      <String fx:value="Aéroport d'arrivée" />
+                                  </FXCollections>
+                              </items>
+                          </ComboBox>
+                     </children>
+                  </Pane>
 
 
                     </children>
@@ -269,7 +338,7 @@
                 </ImageView>
                 <Pane prefHeight="56.0" prefWidth="870.0">
                     <children>
-                        <Button layoutX="14.0" layoutY="1.0" mnemonicParsing="false" prefHeight="54.0" onAction="#NavigateHomeAction" prefWidth="158.0" styleClass="appBar-btn" stylesheets="@buttons.css" text="Home" />
+                        <Button layoutX="14.0" layoutY="1.0" mnemonicParsing="false" onAction="#NavigateHomeAction" prefHeight="54.0" prefWidth="158.0" styleClass="appBar-btn" stylesheets="@buttons.css" text="Home" />
                         <Button layoutX="172.0" layoutY="1.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="158.0" styleClass="appBar-btn" stylesheets="@buttons.css" text="Button" />
                         <Button layoutX="330.0" layoutY="1.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="158.0" styleClass="appBar-btn" stylesheets="@buttons.css" text="Button" />
                         <Button layoutX="488.0" layoutY="1.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="158.0" styleClass="appBar-btn" stylesheets="@buttons.css" text="Button" />

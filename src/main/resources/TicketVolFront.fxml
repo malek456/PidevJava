@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="250.0" prefWidth="800.0" styleClass="ticketVolFront" stylesheets="@Vol.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.TicketVolFront">
    <children>
       <Label layoutX="301.0" layoutY="20.0" prefHeight="39.0" prefWidth="148.0" text="Numéro de vol :">
@@ -54,7 +53,12 @@
             <Font name="Comic Sans MS Bold Italic" size="48.0" />
          </font>
       </Label>
-      <Button layoutX="601.0" layoutY="196.0" mnemonicParsing="false" onAction="#NavigateAjouterPaimentAction" prefHeight="39.0" prefWidth="184.0" styleClass="Selectionner" stylesheets="@Vol.css" text="Sélectionner" textFill="WHITE">
+      <Button layoutX="601.0" layoutY="196.0" mnemonicParsing="false" onAction="#NavigateAjouterPaimentAction" prefHeight="39.0" prefWidth="184.0" styleClass="Selectionner" stylesheets="@Vol.css" text="Payer" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="411.0" layoutY="196.0" mnemonicParsing="false" onAction="#AjouterPanierAcrion" prefHeight="39.0" prefWidth="184.0" styleClass="Reserver" stylesheets="@Vol.css" text="Réserver" textFill="WHITE">
          <font>
             <Font name="Comic Sans MS Italic" size="14.0" />
          </font>

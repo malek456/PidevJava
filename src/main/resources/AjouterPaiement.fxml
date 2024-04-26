@@ -277,52 +277,75 @@
                 </VBox>
             </children>
         </VBox>
-        <AnchorPane layoutX="262.0" layoutY="168.0" prefHeight="511.0" prefWidth="1230.0" stylesheets="@frontStyle.css">
-            <styleClass>
-                <String fx:value="blue-bg" />
-                <String fx:value="shadow" />
-            </styleClass>
-        </AnchorPane>
-          <AnchorPane layoutX="330.0" layoutY="245.0" prefHeight="366.0" prefWidth="1098.0" stylesheets="@dashboardDesign.css">
+          <AnchorPane layoutX="669.0" layoutY="125.0" prefHeight="635.0" prefWidth="442.0" stylesheets="@dashboardDesign.css">
               <styleClass>
                   <String fx:value="white-bg1" />
                   <String fx:value="shadow" />
               </styleClass>
          <children>
-             <ComboBox fx:id="comboBoxVol" layoutX="159.0" layoutY="90.0" prefHeight="68.0" prefWidth="318.0" promptText="Numéro de vol" styleClass="text-field" stylesheets="@dashboardDesign.css" />
-            <Label layoutX="42.0" layoutY="111.0" prefHeight="26.0" prefWidth="94.0" text="Numéro de vol" textFill="#1f201f">
+             <ComboBox fx:id="comboBoxVol" layoutX="53.0" layoutY="136.0" opacity="0.59" prefHeight="46.0" prefWidth="335.0" promptText="Numéro de vol" styleClass="text-field" stylesheets="@Vol.css" />
+            <Label layoutX="55.0" layoutY="109.0" prefHeight="26.0" prefWidth="94.0" text="Numéro de vol" textFill="#1f201f">
                <font>
-                  <Font name="System Bold Italic" size="12.0" />
+                  <Font name="System Italic" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="tfNumCarte" layoutX="685.0" layoutY="183.0" prefHeight="68.0" prefWidth="318.0" promptText="numéro de carte" stylesheets="@dashboardDesign.css" />
-             <ComboBox fx:id="comboBoxEmail" layoutX="159.0" layoutY="182.0" prefHeight="68.0" prefWidth="318.0" promptText="email" styleClass="text-field" stylesheets="@dashboardDesign.css" />
-            <ComboBox fx:id="comboBoxMode" layoutX="685.0" layoutY="90.0" prefHeight="68.0" prefWidth="318.0" promptText="mode de paiment" stylesheets="@dashboardDesign.css" />
-            <Label layoutX="560.0" layoutY="204.0" prefHeight="26.0" prefWidth="112.0" text="numéro de carte" textFill="#1f201f">
+            <TextField fx:id="tfNumCarte" layoutX="53.0" layoutY="456.0" prefHeight="46.0" prefWidth="335.0" promptText="numéro de carte" styleClass="text-field" stylesheets="@Vol.css" />
+             <ComboBox fx:id="comboBoxEmail" layoutX="53.0" layoutY="237.0" opacity="0.59" prefHeight="46.0" prefWidth="335.0" promptText="email" styleClass="text-field" stylesheets="@Vol.css" />
+            <ComboBox fx:id="comboBoxMode" layoutX="54.0" layoutY="349.0" opacity="0.59" prefHeight="26.0" prefWidth="202.0" promptText="mode de paiment" styleClass="text-field" stylesheets="@Vol.css" />
+            <Label layoutX="55.0" layoutY="429.0" prefHeight="26.0" prefWidth="135.0" text="numéro de carte" textFill="#1f201f">
                <font>
-                  <Font name="System Bold Italic" size="12.0" />
+                  <Font name="System Italic" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="560.0" layoutY="111.0" prefHeight="26.0" prefWidth="112.0" text="mode de paiment" textFill="#1f201f">
+            <Label layoutX="53.0" layoutY="322.0" prefHeight="26.0" prefWidth="158.0" text="moyen de paiement" textFill="#1f201f">
                <font>
-                  <Font name="System Bold Italic" size="12.0" />
+                  <Font name="System Italic" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="42.0" layoutY="204.0" prefHeight="26.0" prefWidth="70.0" text="email" textFill="#1f201f">
+            <Label layoutX="53.0" layoutY="210.0" prefHeight="26.0" prefWidth="70.0" text="email" textFill="#1f201f">
                <font>
-                  <Font name="System Bold Italic" size="12.0" />
+                  <Font name="System Italic" size="14.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="362.0" layoutY="-27.0" prefHeight="54.0" prefWidth="395.0" styleClass="paiement" stylesheets="@Vol.css" text="Paiement">
-               <font>
-                  <Font name="Comic Sans MS Bold Italic" size="36.0" />
-               </font>
-            </Label>
-            <Button layoutX="881.0" layoutY="296.0" mnemonicParsing="false" onAction="#ajouterPaiementAction" prefHeight="39.0" prefWidth="184.0" styleClass="confirmer" stylesheets="@Vol.css" text="confirmer" textFill="WHITE">
+            <Button layoutX="53.0" layoutY="541.0" mnemonicParsing="false" onAction="#ajouterPaiementAction" prefHeight="50.0" prefWidth="335.0" styleClass="confirmerP" stylesheets="@Vol.css" text="confirmer" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS Italic" size="14.0" />
                </font>
             </Button>
+            <HBox layoutX="272.0" layoutY="349.0" prefHeight="46.0" prefWidth="118.0">
+               <children>
+                  <ImageView fitHeight="43.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/creditCards.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Label alignment="CENTER" layoutX="44.0" layoutY="23.0" prefHeight="54.0" prefWidth="335.0" text="Remplir votre paiement" textFill="#0600a6">
+               <font>
+                  <Font name="Arial Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelErrorNumC" layoutX="55.0" layoutY="502.0" prefHeight="26.0" prefWidth="335.0" textFill="RED">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelErrorMode" layoutX="53.0" layoutY="395.0" prefHeight="26.0" prefWidth="335.0" textFill="RED">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelErrorEmail" layoutX="55.0" layoutY="283.0" prefHeight="26.0" prefWidth="335.0" textFill="RED">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelErrorVol" layoutX="55.0" layoutY="182.0" prefHeight="26.0" prefWidth="335.0" textFill="RED">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
          </children>
           </AnchorPane>
     </children>
