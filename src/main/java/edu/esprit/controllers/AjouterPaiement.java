@@ -4,26 +4,32 @@ import edu.esprit.entities.Paiement;
 import edu.esprit.entities.User;
 import edu.esprit.entities.Vol;
 import edu.esprit.services.ServicePaiement;
-import edu.esprit.services.ServiceVol;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+;
 import javafx.scene.layout.Pane;
-import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
-import static java.sql.Date.valueOf;
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.util.Properties;
+import java.util.stream.Stream;
 
 public class AjouterPaiement {
 
@@ -51,6 +57,12 @@ public class AjouterPaiement {
     @FXML
     private Label labelErrorVol;
 
+    @FXML
+    private ProgressIndicator progressIndicator;
+
+    @FXML
+    private Pane paneProgressor;
+
 
 
     private final ServicePaiement sp = new ServicePaiement();
@@ -62,6 +74,10 @@ public class AjouterPaiement {
 
         // Now you can use ticketVolFront to initialize your ComboBox or perform other actions
         initializeVolComboBox();
+
+        paneProgressor.setVisible(false);
+        progressIndicator.setProgress(-1);
+        progressIndicator.setVisible(false);
     }
 
 
@@ -153,17 +169,102 @@ public class AjouterPaiement {
         System.out.println("New Paiement added: " + newPaiement);
 
         // Clear the form fields
-        showSuccessAlert();
+        sendEmail(progressIndicator,paneProgressor,selectedUserEmail,numCarte);
+
     }
+
+
+
+    private void sendEmail(ProgressIndicator progressIndicator , Pane paneProgressor,String selectedUserEmail, int numCarte  ){
+        final String username = "bouzidimalek01@gmail.com";
+        final String password = "njir jqdr dvwo cale";
+
+        Properties prop = new Properties();
+        prop.put("mail.smtp.host", "smtp.gmail.com");
+        prop.put("mail.smtp.port", "587");
+        prop.put("mail.smtp.auth", "true");
+        prop.put("mail.smtp.starttls.enable", "true");
+
+        Session session = Session.getInstance(prop,
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);
+                    }
+                });
+
+        new Thread(() -> {
+            try {
+                Platform.runLater(() -> {
+                    paneProgressor.setVisible(true);
+                    progressIndicator.setVisible(true);
+                    progressIndicator.setProgress(-1);
+                });
+
+                Message message = new MimeMessage(session);
+                message.setFrom(new InternetAddress("bouzidimalek01@gmail.com"));
+                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("bouzidimalek01@gmail.com"));
+                message.setSubject("Payment Confirmation");
+
+                // Load HTML content from a file
+                String htmlContent = loadEmailTemplate("src/main/resources/email_Template.html");
+                htmlContent = htmlContent.replace("{{name}}", selectedUserEmail)
+                        .replace("{{cardNumber}}", String.valueOf(numCarte));
+                message.setContent(htmlContent, "text/html");
+
+                Transport.send(message);
+
+                System.out.println("Done");
+                Platform.runLater(this::showSuccessAlert);
+
+            } catch (MessagingException e) {
+                e.printStackTrace();
+                System.out.println("Failed to send email");
+            } finally {
+                Platform.runLater(() -> {
+                    progressIndicator.setVisible(false);
+                    paneProgressor.setVisible(false);
+                });
+            }
+        }).start();
+
+    }
+
+    private String loadEmailTemplate(String filePath) {
+        StringBuilder contentBuilder = new StringBuilder();
+        try (Stream<String> stream = Files.lines(Paths.get(filePath), StandardCharsets.UTF_8)) {
+            stream.forEach(s -> contentBuilder.append(s).append("\n"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return contentBuilder.toString();
+    }
+
+
 
     private void showSuccessAlert() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Operation Successful");
         alert.setHeaderText(null);
-        alert.setContentText("The new flight has been added successfully!");
+        alert.setContentText("you payment has bee confirmed check you email Box");
         alert.showAndWait();
     }
+
+    public void NavigateDashboardAction(ActionEvent actionEvent) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/ajouterVol.fxml"));
+            // Getting the scene and setting the root
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Sorry");
+            alert.setTitle("Error");
+            alert.show();
+        }
     }
+}
 
 
 

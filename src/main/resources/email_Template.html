@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Confirmation</title>
+</head>
+<body style="font-family: 'Comic Sans MS', cursive, sans-serif; background-color: #f0f8ff; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; height: 100vh;">
+<div style="background: linear-gradient(135deg, #6d5dfc, #c792ec); border-radius: 10px; width: 90%; max-width: 600px; margin: auto; padding: 20px; box-shadow: 0 8px 16px rgba(0,0,0,0.2);">
+    <h1 style="color: white; text-align: center; font-size: 28px; border-bottom: 2px solid #ffffff; padding-bottom: 10px;">Payment Confirmation</h1>
+    <p style="color: #ffffff; font-size: 16px; line-height: 1.5;">Hello, <strong>{{name}}</strong>!</p>
+    <p style="color: #ffffff; font-size: 16px;">Thank you for your payment. We have received your payment and your transaction is now complete.</p>
+    <div style="background-color: #ffffff; padding: 15px; border-left: 5px solid #4a00e0; border-radius: 5px; margin: 20px 0;">
+        <p style="font-size: 16px; color: #333;"><strong>Payment Details:</strong></p>
+        <p style="font-size: 16px; color: #333;"><strong>Amount:</strong> ${{amount}}</p>
+        <p style="font-size: 16px; color: #333;"><strong>Card Number:</strong> ****-****-****-{{cardNumber}}</p>
+        <p style="font-size: 16px; color: #333;"><strong>Date:</strong> {{date}}</p>
+    </div>
+    <p style="color: #ffffff; font-size: 16px;">This is an automated email confirmation. If you have any questions or issues regarding this payment, please contact our customer support.</p>
+    <p style="color: #ffffff; font-size: 16px;">Thank you for choosing us!</p>
+    <img src="https://drive.google.com/uc?export=view&id=16BSKDz3I_vbyZMMtpDt-sGJ5PMd9QWUI" alt="Company Logo" style="display: block; margin: 20px auto; width: 100px; height: auto;">
+    <p style="text-align: center; font-size: 14px; color: #ffffff;">Best Regards,<br>WeTravel</p>
+</div>
+</body>
+</html>

@@ -246,7 +246,7 @@
                         <Insets top="20.0" />
                     </VBox.margin>
                 </VBox>
-                <VBox prefHeight="126.0" prefWidth="174.0">
+                <VBox prefHeight="138.0" prefWidth="202.0">
                     <children>
                         <Separator prefWidth="200.0" />
                         <Label alignment="CENTER" prefHeight="46.0" prefWidth="177.0" text="Exit Account" textFill="#3610df">
@@ -276,6 +276,11 @@
                         </HBox>
                     </children>
                 </VBox>
+            <Button mnemonicParsing="false" onAction="#NavigateDashboardAction" prefHeight="54.0" prefWidth="231.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="Dashborad">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Button>
             </children>
         </VBox>
           <AnchorPane layoutX="413.0" layoutY="133.0" prefHeight="706.0" prefWidth="952.0" stylesheets="@dashboardDesign.css">
