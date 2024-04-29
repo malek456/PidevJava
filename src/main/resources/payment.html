@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #payment-form {
+            width: 300px;
+            margin: 50px auto;
+            background-color: #f7f7f7;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        #card-element {
+            padding: 10px 15px;
+            width: 100%;
+            background-color: white;
+            border-radius: 4px;
+            border: 1px solid #ccd0d2;
+        }
+
+        button {
+            background-color: #5469d4;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #4353b3;
+        }
+
+        .invalid-feedback {
+            color: #fa755a;
+            margin-top: 8px;
+            display: none;
+        }
+    </style>
+    <title>Stripe Payment</title>
+
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        var stripe;
+        var elements;
+        var card;
+        document.addEventListener('DOMContentLoaded', function () {
+            stripe = Stripe('pk_test_51P7Cvk04qOkA2vrLUObFGjNoDR634dFY75b5SGIBeY2Hme771fjotedkmQl3qDrQeM8UgDiYv5wZig7PTXoNkcHL00v0Kexdxx');
+            elements = stripe.elements();
+            var style = {
+                base: {
+                    color: "#32325d",
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    fontSmoothing: "antialiased",
+                    fontSize: "16px",
+                    "::placeholder": {
+                        color: "#aab7c4"
+                    }
+                },
+                invalid: {
+                    color: "#fa755a",
+                    iconColor: "#fa755a"
+                }
+            };
+
+            card = elements.create('card', { style: style });
+            card.mount('#card-element');
+
+            var form = document.getElementById('payment-form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                submitPayment();
+            });
+        });
+
+
+
+        function submitPayment() {
+            stripe.createToken(card).then(function(result) {
+                if (result.error) {
+                    // Display error message
+                    var errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                    errorElement.style.display = 'block';
+                } else {
+                    // Send the token to your server
+                    fetch('/path/to/your/server/endpoint', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ token: result.token.id })
+                    }).then(response => response.json())
+                        .then(data => {
+                            alert('Payment Successful');
+                        });
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<form id="payment-form">
+    <div id="card-element">
+        <!-- Stripe will insert the card input component here -->
+    </div>
+    <div class="invalid-feedback" id="card-errors"></div>
+    <button type="submit">Pay</button>
+</form>
+</body>
+</html>
