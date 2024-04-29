@@ -1,10 +1,9 @@
 package edu.esprit.controllers;
-import edu.esprit.entities.User;
+
+import edu.esprit.entities.SessionManager;
 import edu.esprit.entities.SessionUtilisateur;
-import edu.esprit.HelloApplication;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import edu.esprit.entities.User;
+import edu.esprit.utils.connexion;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.io.IOException;
@@ -17,7 +16,6 @@ import java.time.LocalDateTime;
 public class OAuthGoogleAuthenticator extends OAuthAuthenticator{
 
     private String GOOGLE_apiScope = "https://www.googleapis.com/auth/userinfo.profile";
-
     public OAuthGoogleAuthenticator(String clientID, String redirectUri, String clientSecret, String apiScope) {
         super(clientID, redirectUri, clientSecret);
         GOOGLE_apiScope = apiScope;
@@ -71,9 +69,12 @@ public class OAuthGoogleAuthenticator extends OAuthAuthenticator{
                 statement.setString(8, "defaultProfile.png");
                 int rowsInserted = statement.executeUpdate();
                 if (rowsInserted > 0) {
-                    System.out.println("User from google signed up successfully!");
                     SessionUtilisateur.demarrerSession(user);
-                    redirectToFrontend(new Stage());
+                    SessionManager.createSession();
+                    SessionManager.setUserEmail(SessionUtilisateur.getUtilisateurActuel().getEmail());
+                    System.out.println(SessionManager.getUserEmail());
+                    System.out.println("User from google signed up successfully!");
+                    UserController.redirectToFrontend();
                 }
                 else {
                     System.out.println("Failed to sign up user.");
@@ -81,12 +82,5 @@ public class OAuthGoogleAuthenticator extends OAuthAuthenticator{
             }
         }
 
-    }
-    private void redirectToFrontend(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/front.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1920, 1000);
-        stage.setTitle("Acceuil!");
-        stage.setScene(scene);
-        stage.show();
     }
 }

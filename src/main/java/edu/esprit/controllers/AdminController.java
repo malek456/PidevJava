@@ -1,16 +1,21 @@
 package edu.esprit.controllers;
-import edu.esprit.entities.SessionUtilisateur;
-import edu.esprit.entities.User;
-import edu.esprit.HelloApplication;
+
 import com.jfoenix.controls.JFXButton;
+import edu.esprit.entities.SessionManager;
+import edu.esprit.entities.SessionUtilisateur;
+import edu.esprit.tests.HelloApplication;
+import edu.esprit.services.ServiceUser;
+import edu.esprit.entities.User;
 import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -27,26 +32,31 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.time.LocalDateTime;
-import java.util.Base64;
-import java.util.List;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
-
 import static java.nio.file.Files.newInputStream;
 
-
 public class AdminController {
-    private final Connection connection = connexion.getInstance().getCnx();
+    @FXML
+    public VBox statistique;
+    @FXML
+    public PieChart NbrPays;
+    @FXML
+    public BarChart<String, Integer> BarMonth;
+    @FXML
+    public TextField search;
+    private final ServiceUser serviceUser = new ServiceUser();
     public User userModify= new User();
     private static final String EMAIL_REGEX =
             "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@" +
@@ -152,15 +162,16 @@ public class AdminController {
     @FXML
     public TextArea description_modif;
     @FXML
-    public ComboBox country_modif;
+    public ComboBox<String> country_modif;
     private Stage stage;
 
     @FXML
     private void initialize() throws IOException {
         AddForm.setTranslateY(2000);
+        statistique.setTranslateY(2000);
         Details.setTranslateY(2000);
         modifForm1.setTranslateY(2000);
-        showAllUsers2();
+        showAllUsers2(serviceUser.getAll());
         ObservableList<String> items = FXCollections.observableArrayList(
                 "Tunisia",
                 "United state",
@@ -169,10 +180,11 @@ public class AdminController {
                 "Belguim"
         );
         combo.setItems(items);
-        emailprofile.setText(SessionUtilisateur.getUtilisateurActuel().getEmail());
-        String EditPathProfile = "C:\\Users\\User\\Desktop\\projetJava\\PidevJava\\src\\main\\resources\\assets\\"+SessionUtilisateur.getUtilisateurActuel().getImageName();
+        emailprofile.setText(SessionManager.getUserEmail());
+        String EditPathProfile = "C:\\Users\\User\\IdeaProjects\\ProjectHOpe\\src\\main\\resources\\assets\\"+SessionManager.getUserImage();
         Image image = new Image(new File(EditPathProfile).toURI().toString());
         profileImage.setImage(image);
+        System.out.println(search.getText().isEmpty());
     }
     private void slideOut(VBox vbox)
     {
@@ -196,26 +208,7 @@ public class AdminController {
         slideInTransition.setToY(0);
         slideInTransition.play();
     }
-    public ObservableList<User> getUserList() {
-
-        ObservableList<User> UserList = FXCollections.observableArrayList();
-        try {
-            String query2 = "SELECT * FROM  user ";
-            PreparedStatement smt = connection.prepareStatement(query2);
-            User user;
-            ResultSet resultSet = smt.executeQuery();
-            while (resultSet.next()) {
-                user = new User(resultSet.getInt("id"), resultSet.getString("email"), resultSet.getString("nom"), resultSet.getString("prenom"),
-                        resultSet.getString("password"), resultSet.getString("phone_number"), resultSet.getString("roles"), resultSet.getBoolean("is_verified"), resultSet.getTimestamp("created_at").toLocalDateTime(), resultSet.getString("pays"), resultSet.getString("description_user"),resultSet.getString("image_name"));
-                UserList.add(user);
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return UserList;
-    }
-    public void showAllUsers2() throws IOException {
-        List<User> users = getUserList();
+    public void showAllUsers2(List<User> users) throws IOException {
         tableUser2.getChildren().clear();
         for (User user : users) {
             HBox userCard = new HBox(10);
@@ -227,7 +220,7 @@ public class AdminController {
             countryLabel.setStyle("-fx-font-family:'Franklin Gothic Medium Cond'; -fx-font-size: 12pt;");
             HBox nameAndPrenom = new HBox(10);
             nameAndPrenom.getChildren().addAll(nameLabel,PrenomLabel);
-            String SupprimerPath = "C:\\Users\\User\\Desktop\\projetJava\\PidevJava\\src\\main\\resources\\assets\\supprimer2.png";
+            String SupprimerPath = "C:\\Users\\User\\IdeaProjects\\ProjectHOpe\\src\\main\\resources\\assets\\supprimer2.png";
             Image imageSupprimer = new Image(new FileInputStream(SupprimerPath));
             ImageView imageViewSupprimer = new ImageView(imageSupprimer);
             imageViewSupprimer.setFitHeight(70);
@@ -251,7 +244,7 @@ public class AdminController {
                 System.out.println("Button Supprimer clicked!");
 
             });
-            String EditPath = "C:\\Users\\User\\Desktop\\projetJava\\PidevJava\\src\\main\\resources\\assets\\crayon.png";
+            String EditPath = "C:\\Users\\User\\IdeaProjects\\ProjectHOpe\\src\\main\\resources\\assets\\crayon.png";
             Image imageEdit = new Image(new FileInputStream(EditPath));
             ImageView imageViewEdit = new ImageView(imageEdit);
             imageViewEdit.setFitHeight(70);
@@ -278,7 +271,7 @@ public class AdminController {
                 description_modif.setText(user.getDescriptionUser());
                 country_modif.setValue(user.getPays());
                 userModify = user;
-                String EditPathProfile = "C:\\Users\\User\\Desktop\\projetJava\\PidevJava\\src\\main\\resources\\assets\\"+user.getImageName();
+                String EditPathProfile = "C:\\Users\\User\\IdeaProjects\\ProjectHOpe\\src\\main\\resources\\assets\\"+user.getImageName();
                 Image image = new Image(new File(EditPathProfile).toURI().toString());
                 imageProfile11.setImage(image);
                 slideOut2(scroll);
@@ -288,7 +281,7 @@ public class AdminController {
             HBox buttons = new HBox(10);
             buttons.setStyle("-fx-padding: 50px 0 0 0;");
             buttons.getChildren().addAll(imageViewEdit,imageViewSupprimer);
-            String imagePath = "C:\\Users\\User\\Desktop\\projetJava\\PidevJava\\src\\main\\resources\\assets\\" + user.getImageName();
+            String imagePath = "C:\\Users\\User\\IdeaProjects\\ProjectHOpe\\src\\main\\resources\\assets\\" + user.getImageName();
             Image image = new Image(newInputStream(Path.of(imagePath)));
             ImageView imageView = new ImageView(image);
             imageView.setFitHeight(200);
@@ -326,7 +319,7 @@ public class AdminController {
                     Status.setText("Not Verified");
                 descriptionDetails.setText(user.getDescriptionUser());
                 countryDetails.setText(user.getPays());
-                String imagePath2 = "C:\\Users\\User\\Desktop\\projetJava\\PidevJava\\src\\main\\resources\\assets\\" + user.getImageName();
+                String imagePath2 = "C:\\Users\\User\\IdeaProjects\\ProjectHOpe\\src\\main\\resources\\assets\\" + user.getImageName();
                 try {
                     Image image2 = new Image(newInputStream(Path.of(imagePath2)));
                     imageProfile1.setImage(image2);
@@ -341,37 +334,15 @@ public class AdminController {
     }
     public void deleteUserAndUpdateUI(User user) {
         try {
-            deleteUser(user);
-            showAllUsers2(); // Refresh UI after deletion
+            serviceUser.supprimer(user);
+            showAllUsers2(serviceUser.getAll()); // Refresh UI after deletion
         } catch (SQLException | IOException e) {
             throw new RuntimeException(e);
         }
     }
     // Method to show user details
-    private void showUserDetails(User user) {
-        // Implement your logic to display user details here
-        // You can show the details in a popup window, dialog, or any other UI component
-        System.out.println("User details: " + user);
-    }
-    private void deleteUser(User user) throws SQLException {
-        String query="delete from user where email=?";
-        PreparedStatement statement = connection.prepareStatement(query);
-        statement.setString(1, user.getEmail());
-        int row_delete = statement.executeUpdate();
-        if(row_delete>0)
-        {
-            System.out.println("User deleted  succesufully");
-        }
-        else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("WeTransfet :: Error Message");
-            alert.setHeaderText(null);
-            alert.setContentText("Cannot delete User !!");
-            alert.showAndWait();
-        }
-    }
     @FXML
-    private void handlebuttonAddAdmin(ActionEvent event)
+    private void handlebuttonAddAdmin()
     {
         nom_add.clear();
         prenom_add.clear();
@@ -387,9 +358,20 @@ public class AdminController {
         slideIn(AddForm);
         isAddFormVisible = true;
         slideOut(Details);
+        slideOut(statistique);
     }
     @FXML
-    private void handlebuttonListAdmin(ActionEvent event)
+    private void handlebuttonStat() throws SQLException {
+        slideIn(statistique);
+        slideOut(AddForm);
+        slideOut(modifForm1);
+        slideOut2(scroll);
+        slideOut(Details);
+        stati();
+        populateBarChart();
+    }
+    @FXML
+    private void handlebuttonListAdmin()
     {
         slideIn2(scroll);
         isListUsersVisible = true;
@@ -397,9 +379,10 @@ public class AdminController {
         slideOut(modifForm1);
         isAddFormVisible = false;
         slideOut(Details);
+        slideOut(statistique);
     }
     @FXML
-    private void handleOpenButtonAction(ActionEvent event) throws MalformedURLException {
+    private void handleOpenButtonAction() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open File");
         FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("ImageFile","*.png","*.jpg","*.gif");
@@ -420,10 +403,6 @@ public class AdminController {
         String prenom = prenom_add.getText();
         String phoneNumber = phone_number_add.getText();
         String email = email_add.getText();
-        String[] roles = {"ROLE_USER","ROLE_ADMIN"};
-        JSONArray rolesArray = new JSONArray(roles);
-        String rolesJson = rolesArray.toString();
-        LocalDateTime createdAt = LocalDateTime.now(); // Current timestamp
         // Insert user into the database
         try {
             if (nom.isEmpty()) {
@@ -476,43 +455,23 @@ public class AdminController {
             if (!nom.isEmpty() && !prenom.isEmpty() && !password.isEmpty() && !email.isEmpty() && !phoneNumber.isEmpty() &&
                     !confirmPassword.isEmpty() && pattern_name.matcher(nom).matches() && pattern_name.matcher(prenom).matches() && pattern_password.matcher(password).matches() &&
                     password.equals(confirmPassword) && pattern_email.matcher(email).matches() && pattern_phone.matcher(phoneNumber).matches()) {
-
-                String query = "INSERT INTO user (nom, prenom, phone_number, email, password, roles, created_at,is_verified,pays,description_user,image_name) VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?,?)";
-                PreparedStatement statement = connection.prepareStatement(query);
-                statement.setString(1, user.getNom());
-                statement.setString(2, user.getPrenom());
-                statement.setString(3, user.getPhoneNumber());
-                statement.setString(4, user.getEmail());
-                statement.setString(5, hashPassword(user.getPassword()));
-                statement.setString(6, rolesJson);
-                statement.setTimestamp(7, Timestamp.valueOf(createdAt)); // Set the created_at parameter
-                statement.setBoolean(8, false);
-                statement.setString(9, user.getPays());
-                statement.setString(10,user.getDescriptionUser());
-                statement.setString(11, user.getImageName());
-                int rowsInserted = statement.executeUpdate();
+                int rowsInserted = serviceUser.ajouterAdmin(user);
                 if (rowsInserted > 0) {
                     copyImageToFolder(user);
                     System.out.println("Admin added  successfully!");
                     slideOut(AddForm);
                     slideIn2(scroll);
-                    showAllUsers2();
+                    showAllUsers2(serviceUser.getAll());
                 }
                 else {
                     System.out.println("Failed to add admin.");
                 }
             }
         } catch(SQLException e){
-            e.printStackTrace();
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "An exception occurred", e);
             System.out.println("An error occurred while signing up.");
         } catch (
-                NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (URISyntaxException e) {
+                NoSuchAlgorithmException | IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
     }
@@ -521,8 +480,6 @@ public class AdminController {
         String prenom = prenom_modif.getText();
         String phoneNumber = phone_modif.getText();
         String email = email_modif.getText();
-        String[] roles = {"ROLE_USER","ROLE_ADMIN"};
-        JSONArray rolesArray = new JSONArray(roles);
         // Insert user into the database
         try {
             if (nom.isEmpty()) {
@@ -560,31 +517,20 @@ public class AdminController {
             if (!nom.isEmpty() && !prenom.isEmpty()  && !email.isEmpty() && !phoneNumber.isEmpty()
                     && pattern_name.matcher(nom).matches() && pattern_name.matcher(prenom).matches()
                     && pattern_email.matcher(email).matches() && pattern_phone.matcher(phoneNumber).matches()) {
-
-                String query = "UPDATE user SET email=?,nom=?,prenom=?,phone_number=?,pays=?,description_user=?,image_name=? WHERE email =?";
-                PreparedStatement statement = connection.prepareStatement(query);
-                statement.setString(2, user.getNom());
-                statement.setString(3, user.getPrenom());
-                statement.setString(4, user.getPhoneNumber());
-                statement.setString(1, user.getEmail());
-                statement.setString(5, user.getPays());
-                statement.setString(6,user.getDescriptionUser());
-                statement.setString(7, user.getImageName());
-                statement.setString(8, userModify.getEmail());
-                int rowsInserted = statement.executeUpdate();
+                int rowsInserted = serviceUser.modifer(user,userModify);
                 if (rowsInserted > 0) {
                     copyImageToFolder(user);
                     System.out.println("Admin modified  successfully!");
                     slideOut(modifForm1);
                     slideIn2(scroll);
-                    showAllUsers2();
+                    showAllUsers2(serviceUser.getAll());
                 }
                 else {
                     System.out.println("Failed to modifiy admin.");
                 }
             }
         } catch(SQLException | FileNotFoundException e){
-            e.printStackTrace();
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "An exception occurred", e);
             System.out.println("An error occurred while signing up.");
         } catch (URISyntaxException | IOException e) {
             throw new RuntimeException(e);
@@ -593,20 +539,17 @@ public class AdminController {
     public void copyImageToFolder(User user) throws IOException, URISyntaxException {
         // Convert the URL to a URI first
         URI uri = new URI(imageProfile.getImage().getUrl());
+
         // Then convert the URI to a Path
         Path sourcePath = Paths.get(uri);
+
         // Define the destination Path
-        Path destinationPath = Paths.get("C:\\Users\\User\\Desktop\\projetJava\\PidevJava\\src\\main\\resources\\assets\\", user.getImageName());
+        Path destinationPath = Paths.get("C:\\Users\\User\\IdeaProjects\\ProjectHOpe\\src\\main\\resources\\assets\\", user.getImageName());
         // Copy the file to the destination directory
         Files.copy(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
     }
-    public static String hashPassword(String password) throws NoSuchAlgorithmException {
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        byte[] hashedBytes = digest.digest(password.getBytes());
-        return Base64.getEncoder().encodeToString(hashedBytes);
-    }
     @FXML
-    public void InsertAdminButton(ActionEvent event) {
+    public void InsertAdminButton() {
         User user=getTextfieldAdd();
         AddAdminFunction(user);
     }
@@ -614,7 +557,6 @@ public class AdminController {
         String password = password_add.getText();
         String description0 = description.getText();
         String pays = combo.getValue();
-        String confirmPassword = comfirm_pass_add.getText();
         String nom = nom_add.getText();
         String prenom = prenom_add.getText();
         String phoneNumber = phone_number_add.getText();
@@ -624,13 +566,11 @@ public class AdminController {
         String rolesJson = rolesArray.toString();
         LocalDateTime createdAt = LocalDateTime.now(); // Current timestamp
         File file2 =new File(imageProfile.getImage().getUrl());
-        User user = new User(email,nom,prenom,password,phoneNumber,rolesJson,false,createdAt,pays,description0,file2.getName());
-        return user;
-        //api key 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
+        return new User(email,nom,prenom,password,phoneNumber,rolesJson,false,createdAt,pays,description0,file2.getName());
     }
     private User getTextfieldModif() {
         String description0 = description_modif.getText();
-        String pays = (String) country_modif.getValue();
+        String pays = country_modif.getValue();
         String nom = nom_modif.getText();
         String prenom = prenom_modif.getText();
         String phoneNumber = phone_modif.getText();
@@ -640,8 +580,8 @@ public class AdminController {
         String rolesJson = rolesArray.toString();
         LocalDateTime createdAt = LocalDateTime.now(); // Current timestamp
         File file2 =new File(imageProfile11.getImage().getUrl());
-        User user = new User(email,nom,prenom,phoneNumber,rolesJson,false,createdAt,pays,description0,file2.getName());
-        return user;
+        return new User(email,nom,prenom,phoneNumber,rolesJson,false,createdAt,pays,description0,file2.getName());
+
     }
     @FXML
     private void ModifyAdminButton()
@@ -653,16 +593,47 @@ public class AdminController {
     @FXML
     private void logoutButtom() throws IOException {
         redirectToLogin();
+        SessionManager.endSession();
         SessionUtilisateur.arreterSession();
         System.out.println("Logout est faite par success");
     }
     private void redirectToLogin() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/login.fxml"));
         stage.getScene().setRoot(fxmlLoader.load());
+        UserController userController = fxmlLoader.getController();
+        userController.setStage(stage);
         stage.setTitle("Login");
     }
-
     public void setStage(Stage stage) {
         this.stage = stage;
+    }
+    public void stati() throws SQLException {
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
+        ResultSet resultSet = serviceUser.StateNbrPays();
+        while (resultSet.next()) {
+            String pays = resultSet.getString("pays");
+            long nombreUtilisateurs = resultSet.getLong("nombre_utilisateurs");
+            pieChartData.add(new PieChart.Data(pays, nombreUtilisateurs));
+        }
+        NbrPays.setData(pieChartData);
+    }
+    public void populateBarChart() throws SQLException {
+        XYChart.Series<String, Integer> series = new XYChart.Series<>();
+        series.setName("Users Created Per Month");
+
+        Map<String, Integer> data = serviceUser.getUserStatistics(); // Call the method that retrieves data from the database
+        data.forEach((month, numberOfUsers) -> System.out.println(month + ": " + numberOfUsers));
+        data.forEach((month, count) -> {
+            XYChart.Data<String, Integer> chartData = new XYChart.Data<>(month, count);
+            series.getData().add(chartData);
+        });
+        BarMonth.getData().clear(); // Clear previous data if necessary
+        BarMonth.getData().add(series);
+    }
+    @FXML
+    public void searchUser() throws IOException {
+            System.out.println(search.getText());
+            tableUser2.getChildren().clear();
+            showAllUsers2(serviceUser.SearchByNomOrPrenom(search.getText()));
     }
 }

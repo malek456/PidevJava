@@ -1,0 +1,55 @@
+package edu.esprit.tests;
+
+import edu.esprit.controllers.AdminController;
+import edu.esprit.controllers.UserController;
+import edu.esprit.controllers.indexController;
+import edu.esprit.entities.SessionManager;
+import edu.esprit.utils.connexion;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import java.io.IOException;
+
+public class HelloApplication extends Application {
+    @Override
+    public void start(Stage stage) throws IOException {
+        if (SessionManager.hasSession())
+        {
+            if (SessionManager.getUserRole().contains("ROLE_ADMIN")) {
+                // Redirection vers le tableau de bord admin
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/dashAdmin.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 1920, 1000);
+                stage.setTitle("Hello!");
+            AdminController adminController = fxmlLoader.getController();
+            adminController.setStage(stage);
+                connexion.getInstance();
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                // Redirection vers le front-end
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/front.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 1920, 1000);
+                stage.setTitle("Hello!");
+                indexController indexController0 = fxmlLoader.getController();
+                indexController0.setStage(stage);
+                connexion.getInstance();
+                stage.setScene(scene);
+                stage.show();
+            }
+        }
+        else {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/login.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 1920, 1000);
+            stage.setTitle("Hello!");
+            UserController userController = fxmlLoader.getController();
+            userController.setStage(stage);
+            connexion.getInstance();
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
+    public static void main(String[] args) {
+        launch();
+    }
+}

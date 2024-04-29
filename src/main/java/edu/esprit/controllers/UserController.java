@@ -1,17 +1,18 @@
 package edu.esprit.controllers;
-import edu.esprit.entities.User;
+
+import edu.esprit.entities.SessionManager;
 import edu.esprit.entities.SessionUtilisateur;
-import edu.esprit.HelloApplication;
+import edu.esprit.entities.User;
+import edu.esprit.services.ServiceUser;
+import edu.esprit.tests.HelloApplication;
+import edu.esprit.utils.connexion;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.TranslateTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -29,8 +30,11 @@ import java.time.LocalDateTime;
 import java.util.Base64;
 import java.util.Properties;
 import java.util.regex.Pattern;
+
+
 public class UserController {
-    private Stage stage;
+    public final ServiceUser serviceUser = new ServiceUser();
+    private static Stage stage;
     @FXML
     public Button loginButton;
     @FXML
@@ -50,8 +54,6 @@ public class UserController {
     public PasswordField password_reg;
     @FXML
     public PasswordField comfirm_pass;
-    @FXML
-    public JFXButton SignUpButton;
     @FXML
     public Text password_error;
     @FXML
@@ -123,24 +125,24 @@ public class UserController {
     private boolean isRegistrationFormVisible = false;
     private boolean isAboutUsVisible = false;
     private boolean isContactUsVisible = false;
-    private final Connection connection = connexion.getInstance().getCnx();
-    private static final String EMAIL_REGEX =
+    public final Connection connection = connexion.getInstance().getCnx();
+    public static final String EMAIL_REGEX =
             "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@" +
                     "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
 
-    private static final Pattern pattern_email = Pattern.compile(EMAIL_REGEX);
-    private static final String PHONE_REGEX =
+    public static final Pattern pattern_email = Pattern.compile(EMAIL_REGEX);
+    public static final String PHONE_REGEX =
             "^\\d{8}$";
-    private static final Pattern pattern_phone = Pattern.compile(PHONE_REGEX);
+    public static final Pattern pattern_phone = Pattern.compile(PHONE_REGEX);
     private static final String Name_REGEX =
             "^[a-zA-Z]{3,}$";
-    private static final Pattern pattern_name = Pattern.compile(Name_REGEX);
+    public static final Pattern pattern_name = Pattern.compile(Name_REGEX);
 
-    private static final String PASSWORD_REGEX =
+    public static final String PASSWORD_REGEX =
             "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
 
-    private static final Pattern pattern_password = Pattern.compile(PASSWORD_REGEX);
-    private final String random = generateOTP();
+    public static final Pattern pattern_password = Pattern.compile(PASSWORD_REGEX);
+    public final String random = generateOTP();
     @FXML
     private void initialize() {
             // Proceed with initialization logic
@@ -157,7 +159,7 @@ public class UserController {
         }
 
     @FXML
-    private void handleLoginButtonAction(ActionEvent event) {
+    private void handleLoginButtonAction() {
         if (!isLoginFormVisible) {
             slideIn(loginForm);
             slideOut(registrationForm);
@@ -193,7 +195,7 @@ public class UserController {
     }
 
     @FXML
-    private void handleAboutButtonAction(ActionEvent event) {
+    private void handleAboutButtonAction() {
         if (!isAboutUsVisible) {
             slideIn(AboutUS);
             slideOut(loginForm);
@@ -210,7 +212,7 @@ public class UserController {
         }
     }
     @FXML
-    private void handleContactButtonAction(ActionEvent event) {
+    private void handleContactButtonAction() {
         if (!isContactUsVisible) {
             slideIn(contactus);
             slideOut(loginForm);
@@ -246,10 +248,6 @@ public class UserController {
         String prenom = prenom_registre.getText();
         String phoneNumber = phone_number_reg.getText();
         String email = email_registre.getText();
-        String[] roles = {"ROLE_USER"};
-        JSONArray rolesArray = new JSONArray(roles);
-        String rolesJson = rolesArray.toString();
-        LocalDateTime createdAt = LocalDateTime.now(); // Current timestamp
         // Insert user into the database
         try {
             if (nom.isEmpty()) {
@@ -302,25 +300,19 @@ public class UserController {
             if (!nom.isEmpty() && !prenom.isEmpty() && !password.isEmpty() && !email.isEmpty() && !phoneNumber.isEmpty() &&
             !confirmPassword.isEmpty() && pattern_name.matcher(nom).matches() && pattern_name.matcher(prenom).matches() && pattern_password.matcher(password).matches() &&
             password.equals(confirmPassword) && pattern_email.matcher(email).matches() && pattern_phone.matcher(phoneNumber).matches()) {
-
-                String query = "INSERT INTO user (nom, prenom, phone_number, email, password, roles, created_at,is_verified,image_name) VALUES (?, ?, ?, ?, ?, ?, ?,?,?)";
-                PreparedStatement statement = connection.prepareStatement(query);
-                statement.setString(1, user.getNom());
-                statement.setString(2, user.getPrenom());
-                statement.setString(3, user.getPhoneNumber());
-                statement.setString(4, user.getEmail());
-                statement.setString(5, hashPassword(user.getPassword()));
-                statement.setString(6, rolesJson);
-                statement.setTimestamp(7, Timestamp.valueOf(createdAt)); // Set the created_at parameter
-                statement.setBoolean(8, false);
-                statement.setString(9, "defaultProfile.png");
-                int rowsInserted = statement.executeUpdate();
+                int rowsInserted = serviceUser.ajouter(user) ;
                 if (rowsInserted > 0) {
                     System.out.println("User signed up successfully!");
                     sendVerificationEmail(user.getEmail(),opt,"Email Verification");
                     slideOut(registrationForm);
                     slideIn(opt_verf);
                     isRegistrationFormVisible = false;
+                    SessionUtilisateur.demarrerSession(user);
+                    SessionManager.setUserEmail(SessionUtilisateur.getUtilisateurActuel().getEmail());
+                    SessionManager.setUserRole(SessionUtilisateur.getUtilisateurActuel().getRoles());
+                    SessionManager.setUserImage(SessionUtilisateur.getUtilisateurActuel().getImageName());
+                    SessionManager.setUserId(SessionUtilisateur.getUtilisateurActuel().getId());
+                    SessionManager.setUserNom(user.getNom());
                 }
                 else {
                     System.out.println("Failed to sign up user.");
@@ -359,7 +351,6 @@ public class UserController {
     public void sendVerificationEmail(String recipientEmail, String verificationCode,String header) {
         final String senderEmail = "aymenbenchhaaben@gmail.com"; // Change this
         final String senderPassword = "qowmgmopaiswnguu"; // Change this
-
         // Setup mail server properties
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
@@ -449,18 +440,13 @@ public class UserController {
         };
     }
     private TextField getNextTextField2(String currentTextFieldId) {
-        switch (currentTextFieldId) {
-            case "optField11":
-                return optField21;
-            case "optField21":
-                return optField31;
-            case "optField31":
-                return optField41;
-            case "optField41":
-                return optField51;
-            default:
-                return null; // Retourne null si le champ de texte actuel est le dernier
-        }
+        return switch (currentTextFieldId) {
+            case "optField11" -> optField21;
+            case "optField21" -> optField31;
+            case "optField31" -> optField41;
+            case "optField41" -> optField51;
+            default -> null; // Retourne null si le champ de texte actuel est le dernier
+        };
     }
     private void handleSupprimerButtonAction() {
         TextField currentTextField = getCurrentTextField();
@@ -520,36 +506,24 @@ public class UserController {
     }
     // Method to get the previous text field
     private TextField getPreviousTextField(String currentTextFieldId) {
-        switch (currentTextFieldId) {
-            case "optField1":
-                return null; // There is no previous text field
-            case "optField2":
-                return optField1;
-            case "optField3":
-                return optField2;
-            case "optField4":
-                return optField3;
-            case "optField5":
-                return optField4;
-            default:
-                return null;
-        }
+        return switch (currentTextFieldId) {
+            case "optField1" -> null; // There is no previous text field
+            case "optField2" -> optField1;
+            case "optField3" -> optField2;
+            case "optField4" -> optField3;
+            case "optField5" -> optField4;
+            default -> null;
+        };
     }
     private TextField getPreviousTextField2(String currentTextFieldId) {
-        switch (currentTextFieldId) {
-            case "optField11":
-                return null; // There is no previous text field
-            case "optField21":
-                return optField11;
-            case "optField31":
-                return optField21;
-            case "optField41":
-                return optField31;
-            case "optField51":
-                return optField41;
-            default:
-                return null;
-        }
+        return switch (currentTextFieldId) {
+            case "optField11" -> null; // There is no previous text field
+            case "optField21" -> optField11;
+            case "optField31" -> optField21;
+            case "optField41" -> optField31;
+            case "optField51" -> optField41;
+            default -> null;
+        };
     }
     @FXML
     private void handleKeyPressed(KeyEvent event) {
@@ -568,26 +542,22 @@ public class UserController {
         }
     }
     @FXML
-    private void handleCodeOptButton() throws SQLException {
+    private void handleCodeOptButton() throws SQLException, IOException {
         User user = getTextfieldReg();
         String CodeFromTextField=optField1.getText()+optField2.getText()+optField3.getText()+optField4.getText()+optField5.getText();
         if(opt.equals(CodeFromTextField)){
-            String query = "UPDATE user SET is_verified = ? where email = ?";
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setBoolean(1, true);
-            statement.setString(2, user.getEmail());
-            int rowsModified = statement.executeUpdate();
+            int rowsModified = serviceUser.modifyIsVerify(user);
             if (rowsModified > 0) {
                 System.out.println("User verfified successefuly!");
             }
             else {
                 System.out.println("Failed to verify user.");
             }
-            SessionUtilisateur.demarrerSession(user);
-            if (SessionUtilisateur.estSessionActive()) {
-                User utilisateurActuel = SessionUtilisateur.getUtilisateurActuel();
-                System.out.println("Session active pour : " + utilisateurActuel);
-            }
+            SessionManager.createSession();
+            SessionManager.setUserEmail(user.getEmail());
+            SessionManager.setUserNom(user.getNom());
+            redirectToFrontend();
+
         }
         else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -627,6 +597,7 @@ public class UserController {
                 alert.showAndWait();
             }
             else {
+                SessionManager.createSession();
                 User user = new User();
                 user.setId(resultSet.getInt("id"));
                 user.setEmail(resultSet.getString("email"));
@@ -642,17 +613,18 @@ public class UserController {
                 user.setImageName(resultSet.getString("Image_name"));
                 user.setVerified(resultSet.getBoolean("is_verified"));
                 SessionUtilisateur.demarrerSession(user);
-                if (SessionUtilisateur.estSessionActive()) {
-                    System.out.println("User login succussefuly");
-                    User utilisateurActuel = SessionUtilisateur.getUtilisateurActuel();
-                    System.out.println("Session active pour : " + utilisateurActuel);
-                    if (user.getRoles().contains("ROLE_ADMIN")) {
-                        // Redirection vers le tableau de bord admin
-                        redirectToAdminDashboard();
-                    } else {
-                        // Redirection vers le front-end
-                        redirectToFrontend();
-                    }
+                SessionManager.setUserEmail(SessionUtilisateur.getUtilisateurActuel().getEmail());
+                SessionManager.setUserRole(SessionUtilisateur.getUtilisateurActuel().getRoles());
+                SessionManager.setUserImage(SessionUtilisateur.getUtilisateurActuel().getImageName());
+                SessionManager.setUserId(SessionUtilisateur.getUtilisateurActuel().getId());
+                SessionManager.setUserNom(user.getNom());
+                System.out.println(SessionManager.getUserEmail()+SessionManager.getUserImage());
+                if (user.getRoles().contains("ROLE_ADMIN")) {
+
+                    redirectToAdminDashboard();
+                } else {
+                    // Redirection vers le front-end
+                    redirectToFrontend();
                 }
             }
     }
@@ -660,7 +632,7 @@ public class UserController {
     public void handleLoginButton() throws SQLException, NoSuchAlgorithmException, IOException {
         login();
     }
-    private void redirectToAdminDashboard() throws IOException {
+    public void redirectToAdminDashboard() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/dashAdmin.fxml"));
         stage.getScene().setRoot(fxmlLoader.load());
         AdminController adminController = fxmlLoader.getController();
@@ -668,11 +640,14 @@ public class UserController {
         stage.setTitle("Dashboard");
     }
 
-    private void redirectToFrontend() throws IOException {
+    public static void redirectToFrontend() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/front.fxml"));
         stage.getScene().setRoot(fxmlLoader.load());
+        indexController indexController0 = fxmlLoader.getController();
+        indexController0.setStage(stage);
         stage.setTitle("Acceuil");
     }
+
 
     @FXML
     private void handleButtonforgetPassword()
@@ -787,8 +762,7 @@ public class UserController {
 
     }
     @FXML
-    private void GoogleConnexion()
-    {
+    private void GoogleConnexion() throws IOException {
         OAuthGoogleAuthenticator googleAuthenticator = new OAuthGoogleAuthenticator(
                 "979015115678-c8939r0q7h9euket4q1pfc90anqtj0e9.apps.googleusercontent.com",
                 "http://localhost/dashboard",
@@ -798,8 +772,7 @@ public class UserController {
         googleAuthenticator.startLogin();
     }
     @FXML
-    private void FacebookConnexion()
-    {
+    private void FacebookConnexion() throws IOException {
         OAuthFacebookAuthenticator facebookAuthenticator = new OAuthFacebookAuthenticator(
                 "1586773298750133",
                 "http://localhost/dashboard",
@@ -810,6 +783,6 @@ public class UserController {
     }
 
     public void setStage(Stage stage) {
-        this.stage = stage;
+        UserController.stage = stage;
     }
 }

@@ -227,7 +227,7 @@ public class User {
 
     public String getImagePath()
     {
-        return "C:\\Users\\User\\IdeaProjects\\MyJavaFxApp\\src\\main\\resources\\assets\\"+getImageName();
+        return "C:\\Users\\User\\IdeaProjects\\ProjectHOpe\\src\\main\\resources\\assets\\"+getImageName();
     }
 }
 

@@ -1,0 +1,44 @@
+.sidebar{
+    -fx-background-color: #151e93;
+    -fx-background-radius: 0px 50px 0px 0px;
+}
+.labbtn{
+    -fx-text-fill: #0e60e8;
+    -fx-background-color: #FEFFFD;
+    -fx-background-radius: 50px;
+}
+.sidebar-btn{
+    -fx-background-color: transparent;
+}
+.sidebar-btn-text{
+    -fx-text-fill: #A2BEE8;
+}
+.sidebar-btn:hover .sidebar-btn-text{
+    -fx-text-fill: #7AA2E7;
+}
+
+
+
+.sidebarBtn
+{
+    -fx-background-color : #151e93;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Montserrat", "Poppins", sans-serif;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-font-style: italic; /* Make the text italic */
+    -fx-padding: 8px 12px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-width: 1px;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0.2, 0, 1);
+}
+.sidebarBtn:hover{
+    -fx-background-color : #0998bd;
+}
+.sidebarBtn:pressed
+{
+    -fx-background-color : #3278e8;
+}
