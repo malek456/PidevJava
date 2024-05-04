@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="d940e7e0-d37c-4437-9fc0-cac8a7209d68" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
@@ -18,6 +19,18 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/reclamation/AfficherReclamation.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/reclamation/AjouterReclamationFXML.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/reclamation/hello-view.fxml" afterDir="false" />
+=======
+    <list default="true" id="c71f41e7-1028-4ef2-910f-34b512721878" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+>>>>>>> ba038a7 (metiers+api)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,10 +40,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+<<<<<<< HEAD
         <option value="Enum" />
         <option value="JUnit5 Test Class" />
         <option value="JavaFXApplication" />
         <option value="FxmlFile" />
+=======
+>>>>>>> ba038a7 (metiers+api)
         <option value="Class" />
       </list>
     </option>
@@ -38,6 +54,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
@@ -59,10 +76,17 @@
 }</component>
   <component name="ProjectId" id="2e8kiiyjvIuYMEmGHiDX3MWmXVB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+=======
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2fwuJZ8Xuc9zfQe7qh4xFrbCnsL" />
+>>>>>>> ba038a7 (metiers+api)
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.AsyncTranscribeMediaUrl.executor": "Run",
@@ -149,6 +173,37 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.reclamation.test.*" />
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.FxMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.maintraduction.executor&quot;: &quot;Run&quot;,
+    &quot;Application.testchatMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.testjson.executor&quot;: &quot;Run&quot;,
+    &quot;Application.tradtest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Application.tradtest">
+    <configuration name="FxMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.FxMain" />
+      <module name="reclamation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.esprit.tests.*" />
+>>>>>>> ba038a7 (metiers+api)
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -156,6 +211,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="cameratest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.reclamation.test.cameratest" />
       <module name="reclamation" />
@@ -188,6 +244,14 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.reclamation.test.*" />
+=======
+    <configuration name="maintraduction" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.maintraduction" />
+      <module name="reclamation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.esprit.tests.*" />
+>>>>>>> ba038a7 (metiers+api)
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -196,11 +260,19 @@
       </method>
     </configuration>
     <configuration name="tradtest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+<<<<<<< HEAD
       <option name="MAIN_CLASS_NAME" value="com.example.reclamation.test.tradtest" />
       <module name="reclamation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.reclamation.test.*" />
+=======
+      <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.tradtest" />
+      <module name="reclamation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.esprit.tests.*" />
+>>>>>>> ba038a7 (metiers+api)
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -210,11 +282,17 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Application.FxMain" />
         <item itemvalue="Application.testresp" />
         <item itemvalue="Application.cameratest" />
         <item itemvalue="Application.tradtest" />
         <item itemvalue="Application.navigatetest" />
+=======
+        <item itemvalue="Application.tradtest" />
+        <item itemvalue="Application.maintraduction" />
+        <item itemvalue="Application.FxMain" />
+>>>>>>> ba038a7 (metiers+api)
       </list>
     </recent_temporary>
   </component>
@@ -228,6 +306,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="d940e7e0-d37c-4437-9fc0-cac8a7209d68" name="Changes" comment="" />
       <created>1711293725178</created>
       <option name="number" value="Default" />
@@ -274,12 +353,23 @@
       <workItem from="1713690707341" duration="28260000" />
       <workItem from="1713730009445" duration="130000" />
       <workItem from="1713902386562" duration="316000" />
+=======
+      <changelist id="c71f41e7-1028-4ef2-910f-34b512721878" name="Changes" comment="" />
+      <created>1714724391166</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714724391166</updated>
+      <workItem from="1714724394124" duration="10219000" />
+      <workItem from="1714741609591" duration="6351000" />
+      <workItem from="1714820717850" duration="193000" />
+>>>>>>> ba038a7 (metiers+api)
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< HEAD
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -306,4 +396,6 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
+=======
+>>>>>>> ba038a7 (metiers+api)
 </project>

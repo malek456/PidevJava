@@ -227,7 +227,11 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
+<<<<<<< HEAD
               <mainClass>com.example.reclamation/com.example.reclamation.HelloApplication</mainClass>
+=======
+              <mainClass>edu.esprit/edu.esprit.HelloApplication</mainClass>
+>>>>>>> ba038a7 (metiers+api)
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>

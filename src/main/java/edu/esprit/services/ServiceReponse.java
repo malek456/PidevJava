@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 package com.example.reclamation.services;
 
 import com.example.reclamation.models.Notification;
 import com.example.reclamation.models.Reponse;
 import com.example.reclamation.utils.DBConnection;
+=======
+package edu.esprit.services;
+
+import edu.esprit.entities.Notification;
+import edu.esprit.entities.Reponse;
+import edu.esprit.utils.DBConnection;
+>>>>>>> ba038a7 (metiers+api)
 
 import java.sql.Connection;
 import java.sql.ResultSet;

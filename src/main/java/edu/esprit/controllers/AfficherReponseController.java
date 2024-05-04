@@ -14,6 +14,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+<<<<<<< HEAD
+=======
+import javafx.geometry.Pos;
+>>>>>>> ba038a7 (metiers+api)
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -32,6 +36,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+<<<<<<< HEAD
+=======
+import java.time.format.DateTimeFormatter;
+>>>>>>> ba038a7 (metiers+api)
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -48,12 +56,17 @@ public class AfficherReponseController {
 
     @FXML
     private VBox reponseVbox;
+<<<<<<< HEAD
     @FXML
     private Label latype;
 
     @FXML
     private Label ladescription;
     @FXML
+=======
+
+    @FXML
+>>>>>>> ba038a7 (metiers+api)
     private TextField tfetat;
     @FXML
     private TextArea tacontenu;
@@ -65,12 +78,32 @@ public class AfficherReponseController {
     private VBox vboxEtat;
     @FXML
     private VBox reponseFormVbox;
+<<<<<<< HEAD
+=======
+    @FXML
+    private Label choicelabel;
+
+    @FXML
+    private Label datelabel;
+
+    @FXML
+    private Label descriptionlabel;
+
+    @FXML
+    private Label typelabel;
+    private int i = 1;
+>>>>>>> ba038a7 (metiers+api)
     UpdateReponseController updateReponseFXML;
     ServiceReponse sr = new ServiceReponse();
     ServiceReclamation srec = new ServiceReclamation();
     private Reclamation reclam;
     private List<Reponse> list;
+<<<<<<< HEAD
     private int i = 0;
+=======
+    @FXML
+    private Label rpslbl;
+>>>>>>> ba038a7 (metiers+api)
 
 
     @FXML
@@ -86,6 +119,7 @@ public class AfficherReponseController {
 
     public void afficherReponse(Reclamation Rec){
         this.reclam = Rec;
+<<<<<<< HEAD
         latype.setText(Rec.getType());
         ladescription.setText(Rec.getDescription());
         if(Rec.getStatut().equals("résolu")) {
@@ -98,19 +132,59 @@ public class AfficherReponseController {
                 vbox1.getChildren().add(label);
                 reclamPane.getChildren().add(vbox1);
                 Label test = new Label();
+=======
+        typelabel.setText(Rec.getType());
+        descriptionlabel.setText(Rec.getDescription());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        datelabel.setText(Rec.getDate_envoi().toLocalDateTime().format(formatter));
+        if(Rec.getType().equals("reservation"))
+            choicelabel.setText("Date: "+Rec.getId_reservation().getDate_from().toLocalDateTime().format(formatter)+"\nNombre de personnes: "+Rec.getId_reservation().getNumber_of_persons());
+        else if (Rec.getType().equals("paiement")) {
+            choicelabel.setText("Mode: "+Rec.getId_paiement().getMode()+"\nNumero cart: "+Rec.getId_paiement().getNum_carte());
+        }
+        if(Rec.getStatut().equals("résolu")) {
+            rpslbl.setVisible(true);
+            try {
+>>>>>>> ba038a7 (metiers+api)
                 list = new ArrayList<>();
                 list.addAll(sr.selectAll_by_idReclamation(Rec.getId()));
                     for (Reponse rep : list) {
                         Label labelrep = new Label("Reponse " + i);
+<<<<<<< HEAD
                         Label label1 = new Label(rep.getContenu());
                         VBox vbox2 = new VBox();
                         vbox2.getChildren().addAll(labelrep, label1);
+=======
+                        labelrep.setStyle("-fx-background-color: rgba(0, 0, 250, 0.1);\n" +
+                                "    -fx-background-radius: 20px;\n" +
+                                "    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);\n" +
+                                "    -fx-padding: 20px;\n" +
+                                "    -fx-spacing: 10px;\n" +
+                                "    -fx-max-width: 400px;");
+                        Label datelabel = new Label(rep.getDate().toLocalDateTime().format(formatter));
+                        datelabel.setStyle("-fx-background-color: rgba(0, 0, 250, 0.1);\n" +
+                                "    -fx-background-radius: 20px;\n" +
+                                "    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);\n" +
+                                "    -fx-max-width: 400px;");
+                        HBox rephb = new HBox(labelrep,datelabel);
+                        HBox.setMargin(labelrep,new Insets(0,150,0,0));
+                        rephb.setAlignment(Pos.CENTER_LEFT);
+                        rephb.setPadding(new Insets(0,0,10,0));
+                        Label labelcontenu = new Label(rep.getContenu());
+                        labelcontenu.setStyle("-fx-background-color: rgba(0, 0, 250, 0.1);\n" +
+                                "    -fx-background-radius: 20px;\n" +
+                                "    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);");
+                        VBox vbox2 = new VBox(rephb,labelcontenu);
+                        vbox2.setPadding(new Insets(10,0,0,20));
+                        VBox.setMargin(labelcontenu, new Insets(0,0,0,20));
+>>>>>>> ba038a7 (metiers+api)
 
                         if (FxMain.getGlobalUserData().getRoles().equals("[\"ROLE_ADMIN\"]")) {
                             updaterep = new Button("update");
                             deleterep = new Button("delete");
                             updaterep.setOnAction(event -> navigateToUpdateReponse(rep));
                             deleterep.setOnAction(event -> deleteAction(rep));
+<<<<<<< HEAD
     //                        Alert a = new Alert(AlertType.CONFIRMATION);
     //                        a.setContentText("Are you sure you want to delete the claim?");
     //                        EventHandler<ActionEvent> event = new EventHandler<ActionEvent>(){
@@ -138,12 +212,40 @@ public class AfficherReponseController {
                         pane1.getChildren().add(vbox2);
                         reponseVbox.getChildren().add(pane1);
                         i++;
+=======
+
+                            HBox hboxbtns = new HBox();
+                            hboxbtns.getChildren().addAll(updaterep, deleterep);
+                            hboxbtns.setPadding(new Insets(10,200,0,0));
+                            vbox2.getChildren().add(hboxbtns);
+                        }
+
+                        Pane pane1 = new Pane(vbox2);
+                        pane1.setStyle("-fx-background-color: rgba(0, 0, 255, 0.1);\n" +
+                                "    -fx-background-radius: 20px;\n" +
+                                "    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);\n" +
+                                "    -fx-padding: 20px;\n" +
+                                "    -fx-spacing: 10px;\n" +
+                                "    -fx-max-width: 400px;");
+                        pane1.setMinHeight(150);
+                        reponseVbox.getChildren().add(pane1);
+                        i++;
+                        VBox.setMargin(pane1, new Insets(0,0,20,0));
+
+>>>>>>> ba038a7 (metiers+api)
                     }
 
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }
+<<<<<<< HEAD
+=======
+        else{
+            reponseVbox.setPrefHeight(0);
+            rpslbl.setVisible(false);
+        }
+>>>>>>> ba038a7 (metiers+api)
 
         if(FxMain.getGlobalUserData().getRoles().equals("[\"ROLE_ADMIN\"]")) {
 
@@ -154,7 +256,11 @@ public class AfficherReponseController {
         }
 
 
+<<<<<<< HEAD
         //VBox.setMargin(pane, new Insets(0,0,20,0));
+=======
+
+>>>>>>> ba038a7 (metiers+api)
     }
 
     public void deleteAction(Reponse rep){
@@ -263,7 +369,11 @@ public class AfficherReponseController {
     }
     public void showPopup(String text){
         Popup popup = new Popup();
+<<<<<<< HEAD
         Image image = new Image("C:\\Users\\gasso\\IdeaProjects\\reclamation\\src\\main\\resources\\edu\\esprit\\images\\icons8-ok-48.png");
+=======
+        Image image = new Image("C:\\Users\\gasso\\IdeaProjects\\reclamation\\src\\main\\resources\\images\\icons8-ok-48.png");
+>>>>>>> ba038a7 (metiers+api)
         ImageView popupimg = new ImageView();
         popupimg.setImage(image);
         Label label2 = new Label(text);
@@ -276,7 +386,14 @@ public class AfficherReponseController {
         hbox.setStyle("-fx-background-color: white");
         popup.getContent().addAll(hbox);
         popup.setAutoHide(true);
+<<<<<<< HEAD
 
+=======
+        Scene scene = choicelabel.getScene();
+        Stage stage = (Stage) scene.getWindow();
+        popup.setX(stage.getX()+740);
+        popup.setY(stage.getY()+125);
+>>>>>>> ba038a7 (metiers+api)
         PauseTransition delay = new PauseTransition(Duration.seconds(3));
         delay.setOnFinished(e -> popup.hide());
         popup.show(reponseVbox.getScene().getWindow());
@@ -285,7 +402,11 @@ public class AfficherReponseController {
 
     @FXML
     void reload(ActionEvent event) {
+<<<<<<< HEAD
         i=0;
+=======
+        i=1;
+>>>>>>> ba038a7 (metiers+api)
         reponseVbox.getChildren().clear();
         afficherReponse(reclam);
     }
@@ -297,7 +418,11 @@ public class AfficherReponseController {
 
         try {
 
+<<<<<<< HEAD
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/edu/esprit/UpdateReponseFXML.fxml"));
+=======
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UpdateReponseFXML.fxml"));
+>>>>>>> ba038a7 (metiers+api)
             Parent root = loader.load();
             // Show the scene
             Scene scene = new Scene(root);
@@ -324,7 +449,11 @@ public class AfficherReponseController {
             Scene scene =null;
             try {
                 //Stage stage = new Stage();
+<<<<<<< HEAD
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/edu/esprit/Home1.fxml"));
+=======
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Home1.fxml"));
+>>>>>>> ba038a7 (metiers+api)
                 Parent root = loader.load();
                 // Show the scene
                 scene = reponseVbox.getScene();
@@ -343,7 +472,11 @@ public class AfficherReponseController {
             Scene scene =null;
             try {
                 //Stage stage = new Stage();
+<<<<<<< HEAD
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/edu/esprit/AfficherReclamationBackFXML.fxml"));
+=======
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherReclamationBackFXML.fxml"));
+>>>>>>> ba038a7 (metiers+api)
                 Parent root = loader.load();
                 // Show the scene
                 scene = reponseVbox.getScene();

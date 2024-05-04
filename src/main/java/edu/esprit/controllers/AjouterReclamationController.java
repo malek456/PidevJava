@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 package com.example.reclamation.controllers;
 import com.example.reclamation.chatbot.BotResponse;
 import com.example.reclamation.models.*;
 import com.example.reclamation.services.*;
 import com.example.reclamation.test.FxMain;
+=======
+package edu.esprit.controllers;
+import edu.esprit.chatbot.BotResponse;
+import edu.esprit.entities.*;
+import edu.esprit.services.*;
+import edu.esprit.tests.FxMain;
+>>>>>>> ba038a7 (metiers+api)
 import javafx.animation.PauseTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -57,7 +65,11 @@ public class AjouterReclamationController implements Initializable {
     @FXML
     private HBox hboxchoice;
     @FXML
+<<<<<<< HEAD
     private Text choicelabel;
+=======
+    private Label choicelabel;
+>>>>>>> ba038a7 (metiers+api)
 
     @FXML
     private TextArea tfDescription;
@@ -65,6 +77,18 @@ public class AjouterReclamationController implements Initializable {
     private ImageView notif;
     @FXML
     private ImageView Chatbtn;
+<<<<<<< HEAD
+=======
+    @FXML
+    private VBox vboxDate;
+    @FXML
+    private VBox vboxType;
+    @FXML
+    private VBox vboxChoice;
+    @FXML
+    private VBox vboxDescription;
+
+>>>>>>> ba038a7 (metiers+api)
     TextArea chatArea;
     VBox vbox;
 
@@ -79,6 +103,7 @@ public class AjouterReclamationController implements Initializable {
 
     @FXML
     void ajouterReclamation(ActionEvent event) {
+<<<<<<< HEAD
 //        user = (User)notif.getScene().getUserData();
 //
 //        System.out.println("id="+user.getId()+"  role="+user.getRoles());
@@ -96,12 +121,21 @@ public class AjouterReclamationController implements Initializable {
                 throw new RuntimeException("date must be before today");
             if(recl.getType() == null)
                 throw new RuntimeException("type must not be empty");
+=======
+
+        User user = FxMain.getGlobalUserData();
+        Timestamp currentTimestamp = new Timestamp(System.currentTimeMillis());
+        Reclamation recl = null;
+        try {
+            recl = new Reclamation(ctype.getValue(), tfDescription.getText(), "en attente",currentTimestamp,user);
+>>>>>>> ba038a7 (metiers+api)
             int index = choicecombo.getSelectionModel().getSelectedIndex();
             if(index != -1 && listr!=null)
                 recl.setId_reservation(listr.get(choicecombo.getSelectionModel().getSelectedIndex()));
             else if (index != -1 && listp!=null) {
                 recl.setId_paiement(listp.get(choicecombo.getSelectionModel().getSelectedIndex()));
             }
+<<<<<<< HEAD
             if(recl.getId_reservation() == null && recl.getId_paiement() == null)
                 throw new RuntimeException("select a type");
 
@@ -111,6 +145,15 @@ public class AjouterReclamationController implements Initializable {
             if(recl.getDescription().length() > 2000)
                 throw new RuntimeException("description must be less than 2000 characters");
 
+=======
+            if(datepicker.getValue() == null)
+                throw new RuntimeException();
+            recl.setDate(Date.valueOf(datepicker.getValue()));
+
+
+            if(recl.getDate().after(currentTimestamp) || recl.getType() == null || recl.getDescription().equals("") || recl.getDescription().length() > 1000 || recl.getDescription().length() < 10 || (recl.getId_reservation() == null && recl.getId_paiement() == null))
+                throw new RuntimeException();
+>>>>>>> ba038a7 (metiers+api)
             if(afficherReclamationFXMLController.getList().indexOf(recl) != -1)
                 throw new RuntimeException("Reclamation exists");
 
@@ -121,18 +164,74 @@ public class AjouterReclamationController implements Initializable {
         }catch(SQLException e){
             System.err.println("Erreur: "+e.getMessage());
         }catch(Exception ex){
+<<<<<<< HEAD
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur de saisie");
             alert.setContentText(ex.getMessage());
             alert.show();
+=======
+            Label errorDateLabel = new Label("");
+            Label errorTypeLabel = new Label("");
+            Label errorChoiceLabel = new Label("");
+            Label errorDescriptionLabel = new Label("");
+            errorDateLabel.setTextFill(Color.RED);
+            errorTypeLabel.setTextFill(Color.RED);
+            errorChoiceLabel.setTextFill(Color.RED);
+            errorDescriptionLabel.setTextFill(Color.RED);
+            errorDateLabel.setPadding(new Insets(0,0,0,93));
+            errorTypeLabel.setPadding(new Insets(0,0,0,93));
+            errorChoiceLabel.setPadding(new Insets(0,0,0,93));
+            errorDescriptionLabel.setPadding(new Insets(0,0,0,93));
+            clearErrors();
+
+            if(datepicker.getValue() == null){
+                errorDateLabel.setText("Date must not be null");
+                vboxDate.getChildren().add(errorDateLabel);
+            }
+            else if(recl.getDate().after(currentTimestamp)){
+                errorDateLabel.setText("Date must be before today");
+                vboxDate.getChildren().add(errorDateLabel);
+            }
+            if(recl.getType() == null){
+                errorTypeLabel.setText("Type must not be empty");
+                vboxType.getChildren().add(errorTypeLabel);
+            }
+            else {
+                if (recl.getId_reservation() == null && recl.getId_paiement() == null) {
+                    errorChoiceLabel.setText("Choose a type");
+                    vboxChoice.getChildren().add(errorChoiceLabel);
+                }
+            }
+            if(recl.getDescription().isEmpty()){
+                errorDescriptionLabel.setText("Description must not be empty");
+                vboxDescription.getChildren().add(errorDescriptionLabel);
+            }
+            else if(recl.getDescription().length() > 1000 || recl.getDescription().length() < 10){
+                errorDescriptionLabel.setText("Description must be between 10 and 1000 characters");
+                vboxDescription.getChildren().add(errorDescriptionLabel);
+            }
+            if(ex.getMessage()!=null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur de saisie");
+                alert.setContentText(ex.getMessage());
+                alert.show();
+            }
+>>>>>>> ba038a7 (metiers+api)
         }
 
     }
 
 
+<<<<<<< HEAD
     public void showPopup(String text){
         Popup popup = new Popup();
         Image image = new Image("C:\\Users\\gasso\\IdeaProjects\\reclamation\\src\\main\\resources\\com\\example\\reclamation\\images\\icons8-ok-48.png");
+=======
+
+    public void showPopup(String text){
+        Popup popup = new Popup();
+        Image image = new Image("C:\\Users\\gasso\\IdeaProjects\\reclamation\\src\\main\\resources\\images\\icons8-ok-48.png");
+>>>>>>> ba038a7 (metiers+api)
         ImageView popupimg = new ImageView();
         popupimg.setImage(image);
         Label label2 = new Label(text);
@@ -142,10 +241,20 @@ public class AjouterReclamationController implements Initializable {
         label2.setPadding(new Insets(15,0,0,0));
         HBox hbox = new HBox(popupimg,label2);
         hbox.setPadding(new Insets(10,20,10,10));
+<<<<<<< HEAD
         hbox.setStyle("-fx-background-color: white");
         popup.getContent().addAll(hbox);
         popup.setAutoHide(true);
 
+=======
+        hbox.setStyle("-fx-background-color: linear-gradient(to bottom, rgb(47,242,104), white);");
+        popup.getContent().addAll(hbox);
+        popup.setAutoHide(true);
+        Scene scene = choicelabel.getScene();
+        Stage stage = (Stage) scene.getWindow();
+        popup.setX(stage.getX()+740);
+        popup.setY(stage.getY()+115);
+>>>>>>> ba038a7 (metiers+api)
         PauseTransition delay = new PauseTransition(Duration.seconds(3));
         delay.setOnFinished(e -> popup.hide());
         popup.show(notif.getScene().getWindow());
@@ -156,6 +265,20 @@ public class AjouterReclamationController implements Initializable {
         ctype.setValue(null);
         tfDescription.clear();
         datepicker.setValue(null);
+<<<<<<< HEAD
+=======
+        clearErrors();
+    }
+    private void clearErrors(){
+        if(vboxDate.getChildren().size() > 1)
+            vboxDate.getChildren().remove(1);
+        if(vboxType.getChildren().size() > 1)
+            vboxType.getChildren().remove(1);
+        if(vboxChoice.getChildren().size() > 1)
+            vboxChoice.getChildren().remove(1);
+        if(vboxDescription.getChildren().size() > 1)
+            vboxDescription.getChildren().remove(1);
+>>>>>>> ba038a7 (metiers+api)
     }
 
 
@@ -213,6 +336,7 @@ public class AjouterReclamationController implements Initializable {
     @FXML
     public void modifierReclamation(ActionEvent event){
 
+<<<<<<< HEAD
 
 
 //        int index = choicecombo.getSelectionModel().getSelectedIndex();
@@ -269,6 +393,40 @@ public class AjouterReclamationController implements Initializable {
 //                }
 //            }
 
+=======
+        Timestamp currentTimestamp = new Timestamp(System.currentTimeMillis());
+        Reclamation recl2 = null;
+        try {
+            Reclamation rec = afficherReclamationFXMLController.getRec();
+            if(rec == null)
+                throw new RuntimeException("No Reclamation selected");
+
+            recl2 = new Reclamation(rec.getId(),ctype.getValue(),rec.getDate(), tfDescription.getText(), rec.getStatut(),rec.getDate_envoi(),rec.getId_client());
+            Reservation res = null;
+            Paiement pm = null;
+            int index = choicecombo.getSelectionModel().getSelectedIndex();
+            if(index != -1) {
+                if (listr != null) {
+                    res = listr.get(index);
+                    recl2.setId_reservation(res);
+                }
+                if (listp != null) {
+                    pm = listp.get(index);
+                    recl2.setId_paiement(pm);
+                }
+            }
+            if(datepicker.getValue() == null)
+                throw new RuntimeException();
+            recl2.setDate(Date.valueOf(datepicker.getValue()));
+
+
+            if(recl2.getDate().after(currentTimestamp) || recl2.getType() == null || recl2.getDescription().equals("") || recl2.getDescription().length() > 1000 || recl2.getDescription().length() < 10 || (recl2.getId_reservation() == null && recl2.getId_paiement() == null) || index == -1)
+                throw new RuntimeException();
+
+            if(recl2.equals(rec))
+                throw new RuntimeException("No modifications made");
+
+>>>>>>> ba038a7 (metiers+api)
             sr.updateOne(recl2);
             clearFields(event);
             showPopup("Reclamation modified");
@@ -278,10 +436,64 @@ public class AjouterReclamationController implements Initializable {
             System.err.println("Erreur: "+e.getMessage());
         }
         catch(Exception ex){
+<<<<<<< HEAD
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur de saisie");
             alert.setContentText(ex.getMessage());
             alert.show();
+=======
+            Label errorDateLabel = new Label("");
+            Label errorTypeLabel = new Label("");
+            Label errorChoiceLabel = new Label("");
+            Label errorDescriptionLabel = new Label("");
+            errorDateLabel.setTextFill(Color.RED);
+            errorTypeLabel.setTextFill(Color.RED);
+            errorChoiceLabel.setTextFill(Color.RED);
+            errorDescriptionLabel.setTextFill(Color.RED);
+            errorDateLabel.setPadding(new Insets(0,0,0,93));
+            errorTypeLabel.setPadding(new Insets(0,0,0,93));
+            errorChoiceLabel.setPadding(new Insets(0,0,0,93));
+            errorDescriptionLabel.setPadding(new Insets(0,0,0,93));
+
+            clearErrors();
+
+            if(datepicker.getValue() == null){
+                errorDateLabel.setText("Date must not be null");
+                vboxDate.getChildren().add(errorDateLabel);
+            }
+            else if(recl2.getDate().after(currentTimestamp)){
+                errorDateLabel.setText("Date must be before today");
+                vboxDate.getChildren().add(errorDateLabel);
+            }
+            if(recl2.getType() == null){
+                errorTypeLabel.setText("Type must not be empty");
+                vboxType.getChildren().add(errorTypeLabel);
+            }
+            else {
+                if (choicecombo.getSelectionModel().getSelectedIndex() == -1) {
+                    errorChoiceLabel.setText("Choose a type");
+                    vboxChoice.getChildren().add(errorChoiceLabel);
+                }
+            }
+            System.out.println(choicecombo.getSelectionModel().getSelectedIndex());
+            if(recl2.getDescription().isEmpty()){
+                errorDescriptionLabel.setText("Description must not be empty");
+                vboxDescription.getChildren().add(errorDescriptionLabel);
+            }
+            else {
+                if(recl2.getDescription().length() > 1000 || recl2.getDescription().length() < 10){
+                    errorDescriptionLabel.setText("Description must be between 10 and 1000 characters");
+                    vboxDescription.getChildren().add(errorDescriptionLabel);
+                }
+            }
+
+            if(ex.getMessage()!=null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur de saisie");
+                alert.setContentText(ex.getMessage());
+                alert.show();
+            }
+>>>>>>> ba038a7 (metiers+api)
         }
 
     }
@@ -290,6 +502,10 @@ public void onChoiceType(ActionEvent event) {
     listr=null;
     listp=null;
     hboxchoice.setVisible(true);
+<<<<<<< HEAD
+=======
+    vboxChoice.setPadding(new Insets(0,0,20,0));
+>>>>>>> ba038a7 (metiers+api)
     hboxchoice.setMinHeight(Region.USE_COMPUTED_SIZE);
     choicecombo.setValue(null);
     if(ctype.getValue()=="reservation"){
@@ -453,7 +669,11 @@ public void onChoiceType(ActionEvent event) {
         popup.show(stage);
 //        Stage stage = new Stage();
 //        try{
+<<<<<<< HEAD
 //            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/reclamation/testChatFXML.fxml"));
+=======
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/testChatFXML.fxml"));
+>>>>>>> ba038a7 (metiers+api)
 //            Parent root = loader.load();
 //            // Show the scene
 //            Scene scene = new Scene(root);
@@ -681,7 +901,11 @@ public void onChoiceType(ActionEvent event) {
 
         Stage stage = new Stage();
         try{
+<<<<<<< HEAD
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/reclamation/cameraFXML.fxml"));
+=======
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/cameraFXML.fxml"));
+>>>>>>> ba038a7 (metiers+api)
             Parent root = loader.load();
             // Show the scene
             Scene scene = new Scene(root);
@@ -699,7 +923,11 @@ public void onChoiceType(ActionEvent event) {
         Scene scene =null;
         try{
             //Stage stage = new Stage();
+<<<<<<< HEAD
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/reclamation/home.fxml"));
+=======
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/front.fxml"));
+>>>>>>> ba038a7 (metiers+api)
             Parent root = loader.load();
             // Show the scene
             scene = notif.getScene();
