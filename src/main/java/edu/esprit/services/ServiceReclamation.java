@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package com.example.reclamation.services;
 import com.example.reclamation.models.Notification;
 import com.example.reclamation.models.Reclamation;
@@ -6,13 +7,18 @@ import com.example.reclamation.models.Reponse;
 import com.example.reclamation.models.Reservation;
 import com.example.reclamation.utils.DBConnection;
 =======
+=======
+>>>>>>> GestionReclamations
 package edu.esprit.services;
 import edu.esprit.entities.Notification;
 import edu.esprit.entities.Reclamation;
 import edu.esprit.entities.Reponse;
 import edu.esprit.entities.Reservation;
 import edu.esprit.utils.DBConnection;
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
 
 import java.net.Authenticator;
 import java.sql.*;
@@ -128,10 +134,14 @@ if(reclamation.getType().equals("paiement")){
     public List<Reclamation> selectAll_ByIdUser(int id) throws SQLException{
         List<Reclamation> reclamList = new ArrayList<>();
 <<<<<<< HEAD
+<<<<<<< HEAD
         String req = "SELECT * FROM `reclamation` WHERE client_id="+id;
 =======
         String req = "SELECT * FROM `reclamation` WHERE client_id="+id+" order by date_envoi desc";
 >>>>>>> ba038a7 (metiers+api)
+=======
+        String req = "SELECT * FROM `reclamation` WHERE client_id="+id+" order by date_envoi desc";
+>>>>>>> GestionReclamations
         Statement st = cnx.createStatement();
 
         ResultSet rs = st.executeQuery(req);

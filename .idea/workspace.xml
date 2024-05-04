@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="d940e7e0-d37c-4437-9fc0-cac8a7209d68" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
@@ -21,6 +22,8 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/reclamation/AjouterReclamationFXML.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/reclamation/hello-view.fxml" afterDir="false" />
 =======
+=======
+>>>>>>> GestionReclamations
     <list default="true" id="c71f41e7-1028-4ef2-910f-34b512721878" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
@@ -31,11 +34,15 @@
       <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
     </list>
 =======
     <list default="true" id="485b3cd8-922b-4e26-a88d-44df013abbea" name="Changes" comment="" />
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+    </list>
+>>>>>>> GestionReclamations
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +51,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <option value="Enum" />
@@ -55,10 +63,13 @@
 =======
         <option value="Interface" />
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+>>>>>>> GestionReclamations
         <option value="Class" />
       </list>
     </option>
   </component>
+<<<<<<< HEAD
 <<<<<<< HEAD
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -86,10 +97,16 @@
   <component name="ProjectId" id="2e8kiiyjvIuYMEmGHiDX3MWmXVB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
 =======
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+>>>>>>> GestionReclamations
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2fwuJZ8Xuc9zfQe7qh4xFrbCnsL" />
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
 =======
   <component name="MavenImportPreferences">
@@ -104,10 +121,13 @@
 }</component>
   <component name="ProjectId" id="2fYjUYinWtrN2C0LPqAsecsA0T3" />
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+>>>>>>> GestionReclamations
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
@@ -197,6 +217,8 @@
         <pattern>
           <option name="PATTERN" value="com.example.reclamation.test.*" />
 =======
+=======
+>>>>>>> GestionReclamations
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.FxMain.executor&quot;: &quot;Run&quot;,
@@ -208,6 +230,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+<<<<<<< HEAD
 =======
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
@@ -220,11 +243,16 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/User&quot;,
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+>>>>>>> GestionReclamations
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> GestionReclamations
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
@@ -239,7 +267,10 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="edu.esprit.tests.*" />
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -247,6 +278,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <configuration name="cameratest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.reclamation.test.cameratest" />
@@ -281,13 +313,18 @@
         <pattern>
           <option name="PATTERN" value="com.example.reclamation.test.*" />
 =======
+=======
+>>>>>>> GestionReclamations
     <configuration name="maintraduction" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.maintraduction" />
       <module name="reclamation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="edu.esprit.tests.*" />
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -297,18 +334,24 @@
     </configuration>
     <configuration name="tradtest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <option name="MAIN_CLASS_NAME" value="com.example.reclamation.test.tradtest" />
       <module name="reclamation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.reclamation.test.*" />
 =======
+=======
+>>>>>>> GestionReclamations
       <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.tradtest" />
       <module name="reclamation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="edu.esprit.tests.*" />
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -318,6 +361,7 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <item itemvalue="Application.FxMain" />
         <item itemvalue="Application.testresp" />
@@ -329,6 +373,11 @@
         <item itemvalue="Application.maintraduction" />
         <item itemvalue="Application.FxMain" />
 >>>>>>> ba038a7 (metiers+api)
+=======
+        <item itemvalue="Application.tradtest" />
+        <item itemvalue="Application.maintraduction" />
+        <item itemvalue="Application.FxMain" />
+>>>>>>> GestionReclamations
       </list>
     </recent_temporary>
   </component>
@@ -338,6 +387,7 @@
         <option value="jdk-17.0.9-jbr-17.0.9-4caba194b151-51f1b679" />
       </set>
     </attachedChunks>
+<<<<<<< HEAD
 =======
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -378,10 +428,13 @@
       <item itemvalue="Application.ChatServer" />
     </list>
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+>>>>>>> GestionReclamations
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       <changelist id="d940e7e0-d37c-4437-9fc0-cac8a7209d68" name="Changes" comment="" />
@@ -431,6 +484,8 @@
       <workItem from="1713730009445" duration="130000" />
       <workItem from="1713902386562" duration="316000" />
 =======
+=======
+>>>>>>> GestionReclamations
       <changelist id="c71f41e7-1028-4ef2-910f-34b512721878" name="Changes" comment="" />
       <created>1714724391166</created>
       <option name="number" value="Default" />
@@ -439,6 +494,7 @@
       <workItem from="1714724394124" duration="10219000" />
       <workItem from="1714741609591" duration="6351000" />
       <workItem from="1714820717850" duration="193000" />
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
 =======
       <changelist id="485b3cd8-922b-4e26-a88d-44df013abbea" name="Changes" comment="" />
@@ -467,12 +523,15 @@
       <workItem from="1714756128702" duration="10391000" />
       <workItem from="1714811118250" duration="299000" />
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+>>>>>>> GestionReclamations
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   <component name="Vcs.Log.Tabs.Properties">
@@ -514,4 +573,6 @@
     </breakpoint-manager>
   </component>
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+>>>>>>> GestionReclamations
 </project>

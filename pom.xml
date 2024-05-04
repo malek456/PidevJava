@@ -5,6 +5,9 @@
   <modelVersion>4.0.0</modelVersion>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> GestionReclamations
   <groupId>com.example</groupId>
   <artifactId>reclamation</artifactId>
   <version>1.0-SNAPSHOT</version>
@@ -28,6 +31,7 @@
       <version>8.0.33</version>
     </dependency>
     <dependency>
+<<<<<<< HEAD
 =======
   <groupId>edu.esprit</groupId>
   <artifactId>ProjectHOpe</artifactId>
@@ -41,6 +45,8 @@
   <dependencies>
     <dependency>
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+>>>>>>> GestionReclamations
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
       <version>17.0.6</version>
@@ -51,6 +57,9 @@
       <version>17.0.6</version>
     </dependency>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> GestionReclamations
 <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-web</artifactId>
@@ -220,6 +229,7 @@
       </dependency>
 
 
+<<<<<<< HEAD
 =======
 
 <dependency>
@@ -245,6 +255,8 @@
           <version>17.0.6</version>
       </dependency>
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+>>>>>>> GestionReclamations
   </dependencies>
 
   <build>
@@ -269,6 +281,7 @@
             <configuration>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               <mainClass>com.example.reclamation/com.example.reclamation.HelloApplication</mainClass>
 =======
               <mainClass>edu.esprit/edu.esprit.HelloApplication</mainClass>
@@ -276,6 +289,9 @@
 =======
               <mainClass>edu.esprit.projecthope/edu.esprit.projecthope.tests.HelloApplication</mainClass>
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+              <mainClass>edu.esprit/edu.esprit.HelloApplication</mainClass>
+>>>>>>> GestionReclamations
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>

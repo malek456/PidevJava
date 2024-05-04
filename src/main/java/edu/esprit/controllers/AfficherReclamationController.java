@@ -1,16 +1,22 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package com.example.reclamation.controllers;
 import com.example.reclamation.models.Reponse;
 import com.example.reclamation.models.User;
 import com.example.reclamation.services.ServiceReponse;
 import com.example.reclamation.test.FxMain;
 =======
+=======
+>>>>>>> GestionReclamations
 package edu.esprit.controllers;
 import edu.esprit.entities.Reponse;
 import edu.esprit.entities.User;
 import edu.esprit.services.ServiceReponse;
 import edu.esprit.tests.FxMain;
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,10 +27,15 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 >>>>>>> ba038a7 (metiers+api)
+=======
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+>>>>>>> GestionReclamations
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -32,6 +43,7 @@ import javafx.event.ActionEvent;
 
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+<<<<<<< HEAD
 <<<<<<< HEAD
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -45,6 +57,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 =======
+=======
+>>>>>>> GestionReclamations
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -67,7 +81,10 @@ import javafx.stage.Stage;
 
 import javax.swing.*;
 
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
 public class AfficherReclamationController {
 
     @FXML
@@ -84,12 +101,18 @@ public class AfficherReclamationController {
     private AjouterReclamationController ajouterReclamationFXML;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     private AfficherReponseController afficherReponseFXML;
 =======
 
     private AfficherReponseController afficherReponseController;
 
 >>>>>>> ba038a7 (metiers+api)
+=======
+
+    private AfficherReponseController afficherReponseController;
+
+>>>>>>> GestionReclamations
     ServiceReclamation sr = new ServiceReclamation();
     @FXML
     Pane pane;
@@ -98,9 +121,13 @@ public class AfficherReclamationController {
     @FXML
     private VBox reponseVbox;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> ba038a7 (metiers+api)
+=======
+
+>>>>>>> GestionReclamations
     private List<Reclamation> list;
     public void setControllerA(AjouterReclamationController controllerA) {
         this.ajouterReclamationFXML = controllerA;
@@ -115,12 +142,15 @@ public class AfficherReclamationController {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public void afficherReclamation(ActionEvent event) {
 //        User user = (User) vbox.getScene().getUserData();
 //        System.out.println("userdata="+user.getId()+"  "+user.getRoles());
         User user = FxMain.getGlobalUserData();
         System.out.println("userdata="+user.getId()+"  "+user.getRoles());
 =======
+=======
+>>>>>>> GestionReclamations
     @FXML
     void initialize() {
         afficherReclamation(new ActionEvent());
@@ -130,20 +160,27 @@ public class AfficherReclamationController {
 
         User user = FxMain.getGlobalUserData();
         clearVbox();
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
         try {
 
             list = new ArrayList<>();
             list.addAll(sr.selectAll_ByIdUser(user.getId()));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
            // ObservableList<Reclamation> observableList = FXCollections.observableList(list);
 =======
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
             int i=1;
             for(Reclamation reclam : list){
 
                 Label labelrec = new Label("Reclamation "+i);
+<<<<<<< HEAD
 <<<<<<< HEAD
                 Label label = new Label(reclam.getDescription());
                 VBox vbox1 = new VBox();
@@ -170,6 +207,8 @@ public class AfficherReclamationController {
                 pane.setUserData(reclam.getId());
                 pane.setStyle("-fx-background-color: #ffffff;\n" +
 =======
+=======
+>>>>>>> GestionReclamations
                 labelrec.setFont(Font.font("System",FontWeight.BOLD, FontPosture.ITALIC , 15));
                 labelrec.setStyle("-fx-background-color: rgba(0,0,240,0.3)");
                 int maxCharacters = 20;
@@ -228,32 +267,44 @@ public class AfficherReclamationController {
                 Pane pane = new Pane(hbox);
                 pane.setUserData(reclam.getId());
                 pane.setStyle("-fx-background-color: rgba(0, 0, 255, 0.1);\n" +
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
                         "    -fx-background-radius: 8px;\n" +
                         "    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);\n" +
                         "    -fx-padding: 20px;\n" +
                         "    -fx-spacing: 10px;\n" +
 <<<<<<< HEAD
+<<<<<<< HEAD
                         "    -fx-max-width: 200px;");
                 VBox.setMargin(pane, new Insets(0,0,20,0));
                 vbox.getChildren().add(pane);
 =======
+=======
+>>>>>>> GestionReclamations
                         "    -fx-max-width: 600px;\n" +
                         "    -fx-max-height: 80px;");
 
 
 
 
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
                 EventHandler<MouseEvent> event2 =
                         new EventHandler<MouseEvent>() {
                             public void handle(MouseEvent e)
                             {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
                                 try {
                                     rec=sr.selectOne_by_id((int) pane.getUserData());
                                 } catch (SQLException ex) {
@@ -266,15 +317,22 @@ public class AfficherReclamationController {
                         };
                 pane.setOnMouseClicked(event2);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 VBox vbox1 = new VBox(labelrec,pane);
                 VBox.setMargin(pane, new Insets(0,0,20,0));
                 vbox.getChildren().add(vbox1);
 >>>>>>> ba038a7 (metiers+api)
+=======
+                VBox vbox1 = new VBox(labelrec,pane);
+                VBox.setMargin(pane, new Insets(0,0,20,0));
+                vbox.getChildren().add(vbox1);
+>>>>>>> GestionReclamations
 
             }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 //            tableview.setItems(observableList);
 //
@@ -286,16 +344,23 @@ public class AfficherReclamationController {
 //            statut.setCellValueFactory(new PropertyValueFactory<Reclamation, String>("statut"));
 =======
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
 
         }catch(SQLException e){
             System.err.println("Erreur: "+e.getMessage());
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
 >>>>>>> ba038a7 (metiers+api)
+=======
+
+
+>>>>>>> GestionReclamations
     }
 
     public void clearVbox(){
@@ -303,6 +368,7 @@ public class AfficherReclamationController {
     }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     @FXML
@@ -324,6 +390,8 @@ public class AfficherReclamationController {
 
 =======
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
     public void supprimerReclamation(Reclamation rec){
         try {
             if(rec.getStatut().equals("résolu"))
@@ -345,10 +413,14 @@ public class AfficherReclamationController {
         try {
             //Stage stage = new Stage();
 <<<<<<< HEAD
+<<<<<<< HEAD
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/reclamation/afficherReponseFXML.fxml"));
 =======
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/afficherReponse2FXML.fxml"));
 >>>>>>> ba038a7 (metiers+api)
+=======
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/afficherReponse2FXML.fxml"));
+>>>>>>> GestionReclamations
             Parent root = loader.load();
             // Show the scene
             scene = vbox.getScene();
@@ -357,12 +429,17 @@ public class AfficherReclamationController {
             Stage stage = (Stage) scene.getWindow();
             stage.setTitle("afficher Reponses");
 <<<<<<< HEAD
+<<<<<<< HEAD
             afficherReponseFXML = loader.getController();
             afficherReponseFXML.afficherReponse(Rec);
 =======
             afficherReponseController = loader.getController();
             afficherReponseController.afficherReponse(Rec);
 >>>>>>> ba038a7 (metiers+api)
+=======
+            afficherReponseController = loader.getController();
+            afficherReponseController.afficherReponse(Rec);
+>>>>>>> GestionReclamations
 
         }
         catch (IOException e){

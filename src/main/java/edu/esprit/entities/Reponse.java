@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package com.example.reclamation.models;
 =======
 package edu.esprit.entities;
 >>>>>>> ba038a7 (metiers+api)
+=======
+package edu.esprit.entities;
+>>>>>>> GestionReclamations
 
 import java.sql.Timestamp;
 import java.util.Objects;

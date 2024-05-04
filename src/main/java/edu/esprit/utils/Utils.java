@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package com.example.reclamation.utils;
 =======
 package edu.esprit.utils;
 >>>>>>> ba038a7 (metiers+api)
+=======
+package edu.esprit.utils;
+>>>>>>> GestionReclamations
 
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;

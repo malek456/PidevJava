@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package com.example.reclamation.services;
 =======
 package edu.esprit.services;
 >>>>>>> ba038a7 (metiers+api)
+=======
+package edu.esprit.services;
+>>>>>>> GestionReclamations
 
 import java.sql.SQLException;
 import java.util.List;

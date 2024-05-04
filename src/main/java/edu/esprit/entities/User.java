@@ -1,6 +1,9 @@
 package edu.esprit.entities;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> GestionReclamations
 import java.util.Objects;
 
 public class User {
@@ -29,6 +32,7 @@ public class User {
         this.id = id;
     }
 
+<<<<<<< HEAD
 =======
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -168,6 +172,8 @@ public class User {
     }
 
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+>>>>>>> GestionReclamations
     public String getRoles() {
         return roles;
     }
@@ -176,6 +182,7 @@ public class User {
         this.roles = roles;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     public String getPassword() {
@@ -187,6 +194,8 @@ public class User {
     }
 
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+>>>>>>> GestionReclamations
     public String getNom() {
         return nom;
     }
@@ -204,6 +213,9 @@ public class User {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> GestionReclamations
     public String getImage_name() {
         return image_name;
     }
@@ -233,6 +245,7 @@ public class User {
         return Objects.hash(id, roles);
     }
 }
+<<<<<<< HEAD
 =======
     public LocalDateTime getCreatedAt() {
         return createdAt;
@@ -297,3 +310,5 @@ public class User {
 }
 
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+>>>>>>> GestionReclamations

@@ -1,7 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 =======
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+>>>>>>> GestionReclamations
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
@@ -11,6 +15,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   <component name="PWA">
@@ -28,4 +33,7 @@
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK" />
+>>>>>>> GestionReclamations
 </project>

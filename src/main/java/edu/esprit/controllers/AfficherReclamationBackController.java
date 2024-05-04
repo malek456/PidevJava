@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package com.example.reclamation.controllers;
 
 import com.example.reclamation.models.Notification;
@@ -8,6 +9,8 @@ import com.example.reclamation.services.ServiceNotification;
 import com.example.reclamation.services.ServiceReclamation;
 import com.example.reclamation.test.FxMain;
 =======
+=======
+>>>>>>> GestionReclamations
 package edu.esprit.controllers;
 
 import edu.esprit.entities.Notification;
@@ -16,7 +19,10 @@ import edu.esprit.entities.User;
 import edu.esprit.services.ServiceNotification;
 import edu.esprit.services.ServiceReclamation;
 import edu.esprit.tests.FxMain;
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -31,11 +37,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.cell.TextFieldListCell;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 =======
+=======
+>>>>>>> GestionReclamations
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -44,7 +53,10 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 
@@ -52,9 +64,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import java.time.format.DateTimeFormatter;
 >>>>>>> ba038a7 (metiers+api)
+=======
+import java.time.format.DateTimeFormatter;
+>>>>>>> GestionReclamations
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -75,6 +91,7 @@ public class AfficherReclamationBackController implements Initializable {
             list.addAll(sr.selectAll());
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             // ObservableList<Reclamation> observableList = FXCollections.observableList(list);
             int i=1;
             for(Reclamation reclam : list){
@@ -88,6 +105,8 @@ public class AfficherReclamationBackController implements Initializable {
                     button.setOnAction(event2 -> navigateToAfficherReponse(reclam));
                     vbox1.getChildren().add(button);
 =======
+=======
+>>>>>>> GestionReclamations
             for(Reclamation reclam : list){
                 User user = reclam.getId_client();
                 Image img = new Image(String.valueOf(getClass().getResource("/images/"+user.getImage_name())));
@@ -111,11 +130,15 @@ public class AfficherReclamationBackController implements Initializable {
                 if(reclam.getStatut().equals("résolu")) {
                     button = new Button("Voir réponse");
                     button.setOnAction(event2 -> navigateToAfficherReponse(reclam));
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
                 }
                 else {
                     button = new Button("répondre");
                     button.setOnAction(event2 -> navigateToAfficherReponse(reclam));
+<<<<<<< HEAD
 <<<<<<< HEAD
                     vbox1.getChildren().add(button);
 
@@ -128,18 +151,24 @@ public class AfficherReclamationBackController implements Initializable {
                 pane.setPrefHeight(100);
                 pane.setMinHeight(100);
 =======
+=======
+>>>>>>> GestionReclamations
                 }
                 vbox1.getChildren().add(button);
                 vbox1.setPadding(new Insets(10,0,0,10));
                 VBox.setMargin(button, new Insets(0,0,0,350));
 
                 Pane pane = new Pane();
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
                 pane.getChildren().add(vbox1);
                 pane.setUserData(reclam.getId());
                 pane.setStyle("-fx-background-color: #ffffff;\n" +
                         "    -fx-background-radius: 8px;\n" +
                         "    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);\n" +
+<<<<<<< HEAD
 <<<<<<< HEAD
                         "    -fx-padding: 20px;\n" +
                         "    -fx-spacing: 10px;\n" +
@@ -149,6 +178,11 @@ public class AfficherReclamationBackController implements Initializable {
                         "    -fx-max-width: 500px;\n" +
                         "    -fx-max-height: 150;");
 >>>>>>> ba038a7 (metiers+api)
+=======
+                        "    -fx-padding: 10px;\n" +
+                        "    -fx-max-width: 500px;\n" +
+                        "    -fx-max-height: 150;");
+>>>>>>> GestionReclamations
                 VBox.setMargin(pane, new Insets(0,0,20,0));
                 vbox.getChildren().add(pane);
 
@@ -166,10 +200,14 @@ public class AfficherReclamationBackController implements Initializable {
         try {
             //Stage stage = new Stage();
 <<<<<<< HEAD
+<<<<<<< HEAD
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/reclamation/afficherReponseFXML.fxml"));
 =======
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/afficherReponseBackFXML.fxml"));
 >>>>>>> ba038a7 (metiers+api)
+=======
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/afficherReponseBackFXML.fxml"));
+>>>>>>> GestionReclamations
             Parent root = loader.load();
             // Show the scene
             scene = vbox.getScene();

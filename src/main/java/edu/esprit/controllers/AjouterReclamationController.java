@@ -1,16 +1,22 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package com.example.reclamation.controllers;
 import com.example.reclamation.chatbot.BotResponse;
 import com.example.reclamation.models.*;
 import com.example.reclamation.services.*;
 import com.example.reclamation.test.FxMain;
 =======
+=======
+>>>>>>> GestionReclamations
 package edu.esprit.controllers;
 import edu.esprit.chatbot.BotResponse;
 import edu.esprit.entities.*;
 import edu.esprit.services.*;
 import edu.esprit.tests.FxMain;
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
 import javafx.animation.PauseTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -66,10 +72,14 @@ public class AjouterReclamationController implements Initializable {
     private HBox hboxchoice;
     @FXML
 <<<<<<< HEAD
+<<<<<<< HEAD
     private Text choicelabel;
 =======
     private Label choicelabel;
 >>>>>>> ba038a7 (metiers+api)
+=======
+    private Label choicelabel;
+>>>>>>> GestionReclamations
 
     @FXML
     private TextArea tfDescription;
@@ -78,7 +88,10 @@ public class AjouterReclamationController implements Initializable {
     @FXML
     private ImageView Chatbtn;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> GestionReclamations
     @FXML
     private VBox vboxDate;
     @FXML
@@ -88,7 +101,10 @@ public class AjouterReclamationController implements Initializable {
     @FXML
     private VBox vboxDescription;
 
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
     TextArea chatArea;
     VBox vbox;
 
@@ -103,6 +119,7 @@ public class AjouterReclamationController implements Initializable {
 
     @FXML
     void ajouterReclamation(ActionEvent event) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 //        user = (User)notif.getScene().getUserData();
 //
@@ -122,19 +139,25 @@ public class AjouterReclamationController implements Initializable {
             if(recl.getType() == null)
                 throw new RuntimeException("type must not be empty");
 =======
+=======
+>>>>>>> GestionReclamations
 
         User user = FxMain.getGlobalUserData();
         Timestamp currentTimestamp = new Timestamp(System.currentTimeMillis());
         Reclamation recl = null;
         try {
             recl = new Reclamation(ctype.getValue(), tfDescription.getText(), "en attente",currentTimestamp,user);
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
             int index = choicecombo.getSelectionModel().getSelectedIndex();
             if(index != -1 && listr!=null)
                 recl.setId_reservation(listr.get(choicecombo.getSelectionModel().getSelectedIndex()));
             else if (index != -1 && listp!=null) {
                 recl.setId_paiement(listp.get(choicecombo.getSelectionModel().getSelectedIndex()));
             }
+<<<<<<< HEAD
 <<<<<<< HEAD
             if(recl.getId_reservation() == null && recl.getId_paiement() == null)
                 throw new RuntimeException("select a type");
@@ -146,6 +169,8 @@ public class AjouterReclamationController implements Initializable {
                 throw new RuntimeException("description must be less than 2000 characters");
 
 =======
+=======
+>>>>>>> GestionReclamations
             if(datepicker.getValue() == null)
                 throw new RuntimeException();
             recl.setDate(Date.valueOf(datepicker.getValue()));
@@ -153,7 +178,10 @@ public class AjouterReclamationController implements Initializable {
 
             if(recl.getDate().after(currentTimestamp) || recl.getType() == null || recl.getDescription().equals("") || recl.getDescription().length() > 1000 || recl.getDescription().length() < 10 || (recl.getId_reservation() == null && recl.getId_paiement() == null))
                 throw new RuntimeException();
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
             if(afficherReclamationFXMLController.getList().indexOf(recl) != -1)
                 throw new RuntimeException("Reclamation exists");
 
@@ -165,11 +193,14 @@ public class AjouterReclamationController implements Initializable {
             System.err.println("Erreur: "+e.getMessage());
         }catch(Exception ex){
 <<<<<<< HEAD
+<<<<<<< HEAD
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur de saisie");
             alert.setContentText(ex.getMessage());
             alert.show();
 =======
+=======
+>>>>>>> GestionReclamations
             Label errorDateLabel = new Label("");
             Label errorTypeLabel = new Label("");
             Label errorChoiceLabel = new Label("");
@@ -216,22 +247,31 @@ public class AjouterReclamationController implements Initializable {
                 alert.setContentText(ex.getMessage());
                 alert.show();
             }
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
         }
 
     }
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public void showPopup(String text){
         Popup popup = new Popup();
         Image image = new Image("C:\\Users\\gasso\\IdeaProjects\\reclamation\\src\\main\\resources\\com\\example\\reclamation\\images\\icons8-ok-48.png");
 =======
+=======
+>>>>>>> GestionReclamations
 
     public void showPopup(String text){
         Popup popup = new Popup();
         Image image = new Image("C:\\Users\\gasso\\IdeaProjects\\reclamation\\src\\main\\resources\\images\\icons8-ok-48.png");
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
         ImageView popupimg = new ImageView();
         popupimg.setImage(image);
         Label label2 = new Label(text);
@@ -242,11 +282,14 @@ public class AjouterReclamationController implements Initializable {
         HBox hbox = new HBox(popupimg,label2);
         hbox.setPadding(new Insets(10,20,10,10));
 <<<<<<< HEAD
+<<<<<<< HEAD
         hbox.setStyle("-fx-background-color: white");
         popup.getContent().addAll(hbox);
         popup.setAutoHide(true);
 
 =======
+=======
+>>>>>>> GestionReclamations
         hbox.setStyle("-fx-background-color: linear-gradient(to bottom, rgb(47,242,104), white);");
         popup.getContent().addAll(hbox);
         popup.setAutoHide(true);
@@ -254,7 +297,10 @@ public class AjouterReclamationController implements Initializable {
         Stage stage = (Stage) scene.getWindow();
         popup.setX(stage.getX()+740);
         popup.setY(stage.getY()+115);
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
         PauseTransition delay = new PauseTransition(Duration.seconds(3));
         delay.setOnFinished(e -> popup.hide());
         popup.show(notif.getScene().getWindow());
@@ -266,7 +312,10 @@ public class AjouterReclamationController implements Initializable {
         tfDescription.clear();
         datepicker.setValue(null);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> GestionReclamations
         clearErrors();
     }
     private void clearErrors(){
@@ -278,7 +327,10 @@ public class AjouterReclamationController implements Initializable {
             vboxChoice.getChildren().remove(1);
         if(vboxDescription.getChildren().size() > 1)
             vboxDescription.getChildren().remove(1);
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
     }
 
 
@@ -337,6 +389,7 @@ public class AjouterReclamationController implements Initializable {
     public void modifierReclamation(ActionEvent event){
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 //        int index = choicecombo.getSelectionModel().getSelectedIndex();
@@ -394,6 +447,8 @@ public class AjouterReclamationController implements Initializable {
 //            }
 
 =======
+=======
+>>>>>>> GestionReclamations
         Timestamp currentTimestamp = new Timestamp(System.currentTimeMillis());
         Reclamation recl2 = null;
         try {
@@ -426,7 +481,10 @@ public class AjouterReclamationController implements Initializable {
             if(recl2.equals(rec))
                 throw new RuntimeException("No modifications made");
 
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
             sr.updateOne(recl2);
             clearFields(event);
             showPopup("Reclamation modified");
@@ -437,11 +495,14 @@ public class AjouterReclamationController implements Initializable {
         }
         catch(Exception ex){
 <<<<<<< HEAD
+<<<<<<< HEAD
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur de saisie");
             alert.setContentText(ex.getMessage());
             alert.show();
 =======
+=======
+>>>>>>> GestionReclamations
             Label errorDateLabel = new Label("");
             Label errorTypeLabel = new Label("");
             Label errorChoiceLabel = new Label("");
@@ -493,7 +554,10 @@ public class AjouterReclamationController implements Initializable {
                 alert.setContentText(ex.getMessage());
                 alert.show();
             }
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
         }
 
     }
@@ -503,9 +567,13 @@ public void onChoiceType(ActionEvent event) {
     listp=null;
     hboxchoice.setVisible(true);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     vboxChoice.setPadding(new Insets(0,0,20,0));
 >>>>>>> ba038a7 (metiers+api)
+=======
+    vboxChoice.setPadding(new Insets(0,0,20,0));
+>>>>>>> GestionReclamations
     hboxchoice.setMinHeight(Region.USE_COMPUTED_SIZE);
     choicecombo.setValue(null);
     if(ctype.getValue()=="reservation"){
@@ -670,10 +738,14 @@ public void onChoiceType(ActionEvent event) {
 //        Stage stage = new Stage();
 //        try{
 <<<<<<< HEAD
+<<<<<<< HEAD
 //            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/reclamation/testChatFXML.fxml"));
 =======
 //            FXMLLoader loader = new FXMLLoader(getClass().getResource("/testChatFXML.fxml"));
 >>>>>>> ba038a7 (metiers+api)
+=======
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/testChatFXML.fxml"));
+>>>>>>> GestionReclamations
 //            Parent root = loader.load();
 //            // Show the scene
 //            Scene scene = new Scene(root);
@@ -902,10 +974,14 @@ public void onChoiceType(ActionEvent event) {
         Stage stage = new Stage();
         try{
 <<<<<<< HEAD
+<<<<<<< HEAD
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/reclamation/cameraFXML.fxml"));
 =======
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/cameraFXML.fxml"));
 >>>>>>> ba038a7 (metiers+api)
+=======
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/cameraFXML.fxml"));
+>>>>>>> GestionReclamations
             Parent root = loader.load();
             // Show the scene
             Scene scene = new Scene(root);
@@ -924,10 +1000,14 @@ public void onChoiceType(ActionEvent event) {
         try{
             //Stage stage = new Stage();
 <<<<<<< HEAD
+<<<<<<< HEAD
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/reclamation/home.fxml"));
 =======
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/front.fxml"));
 >>>>>>> ba038a7 (metiers+api)
+=======
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/front.fxml"));
+>>>>>>> GestionReclamations
             Parent root = loader.load();
             // Show the scene
             scene = notif.getScene();

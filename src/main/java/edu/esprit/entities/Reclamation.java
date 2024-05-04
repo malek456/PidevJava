@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package com.example.reclamation.models;
 =======
 package edu.esprit.entities;
 >>>>>>> ba038a7 (metiers+api)
+=======
+package edu.esprit.entities;
+>>>>>>> GestionReclamations
 
 import java.sql.Date;
 import java.sql.Timestamp;
@@ -60,7 +64,10 @@ public class Reclamation {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> GestionReclamations
     public Reclamation(int id, String type, String description, String statut, Timestamp date_envoi, User id_client) {
         this.id = id;
         this.type = type;
@@ -70,7 +77,10 @@ public class Reclamation {
         this.id_client = id_client;
     }
 
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
     public Reclamation(int id, String type, Date date, String description, String statut, Timestamp date_envoi, User id_client) {
         this.id = id;
         this.type = type;
@@ -82,7 +92,10 @@ public class Reclamation {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> GestionReclamations
     public Reclamation(String type, String description, String statut, Timestamp date_envoi, User id_client) {
         this.type = type;
         this.description = description;
@@ -91,7 +104,10 @@ public class Reclamation {
         this.id_client = id_client;
     }
 
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
     public int getId() {
         return id;
     }

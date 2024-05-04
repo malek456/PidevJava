@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 module com.example.reclamation {
 =======
 module edu.esprit {
 >>>>>>> ba038a7 (metiers+api)
+=======
+module edu.esprit {
+>>>>>>> GestionReclamations
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -34,6 +38,7 @@ module edu.esprit {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     opens com.example.reclamation to javafx.fxml;
     exports com.example.reclamation;
     exports com.example.reclamation.controllers;
@@ -45,6 +50,8 @@ module edu.esprit {
     exports com.example.reclamation.chatbot;
     opens com.example.reclamation.chatbot to javafx.fxml;
 =======
+=======
+>>>>>>> GestionReclamations
     opens edu.esprit to javafx.fxml;
     exports edu.esprit;
     exports edu.esprit.controllers;
@@ -55,7 +62,10 @@ module edu.esprit {
     opens edu.esprit.entities to javafx.fxml;
     exports edu.esprit.chatbot;
     opens edu.esprit.chatbot to javafx.fxml;
+<<<<<<< HEAD
 >>>>>>> ba038a7 (metiers+api)
+=======
+>>>>>>> GestionReclamations
     exports opennlp.summarization.textrank;
     opens opennlp.summarization.textrank to javafx.fxml;
 
