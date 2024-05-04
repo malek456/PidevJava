@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="edu.esprit.Api.EmailSender">
+    <TextField fx:id="recipientField" promptText="Recipient" />
+    <TextField fx:id="subjectField" promptText="Subject" />
+    <TextArea fx:id="bodyArea" promptText="Body" prefHeight="200" />
+    <Button text="Send" onAction="#sendMail" />
+</VBox>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox prefHeight="40.0" prefWidth="291.0" spacing="5" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.Rating">
+    <ToggleButton fx:id="star1" onAction="#handleRating">
+        <graphic>
+            <ImageView fitHeight="32.0" fitWidth="27.0">
+                <Image url="@images/icons8_star_50px.png" />
+            </ImageView>
+        </graphic>
+    </ToggleButton>
+    <ToggleButton fx:id="star2" onAction="#handleRating">
+        <graphic>
+            <ImageView fitHeight="32.0" fitWidth="27.0">
+                <Image url="@images/icons8_star_50px.png" />
+            </ImageView>
+        </graphic>
+    </ToggleButton>
+    <ToggleButton fx:id="star3" onAction="#handleRating">
+        <graphic>
+            <ImageView fitHeight="32.0" fitWidth="27.0">
+                <Image url="@images/icons8_star_50px.png" />
+            </ImageView>
+        </graphic>
+    </ToggleButton>
+    <ToggleButton fx:id="star4" onAction="#handleRating">
+        <graphic>
+            <ImageView fitHeight="32.0" fitWidth="27.0">
+                <Image url="@images/icons8_star_50px.png" />
+            </ImageView>
+        </graphic>
+    </ToggleButton>
+    <ToggleButton fx:id="star5" onAction="#handleRating">
+        <graphic>
+            <ImageView fitHeight="32.0" fitWidth="27.0">
+                <Image url="@images/icons8_star_50px.png" />
+            </ImageView>
+        </graphic>
+    </ToggleButton>
+   <TextField fx:id="tfRating" prefHeight="40.0" prefWidth="49.0" />
+</HBox>

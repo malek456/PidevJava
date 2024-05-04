@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="542.0" prefWidth="1528.0" style="-fx-background-color: #fffaed;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.statistiques">
+    <children>
+        <PieChart fx:id="chart1" layoutX="198.0" layoutY="75.0" prefHeight="371.0" prefWidth="916.0" />
+        <Label layoutX="233.0" layoutY="36.0" text="Les Statistiques des events par semaine">
+            <font>
+                <Font name="System Bold" size="27.0" />
+            </font>
+        </Label>
+        <TextArea layoutX="196.0" layoutY="448.0" prefHeight="163.0" prefWidth="941.0" text="Des conseils pour Ameliorer les Statistiques.&#10;-Améliorez l'expérience utilisateur : Simplifiez le processus de réservation et assurez-vous que l'application est conviviale et intuitive.&#10;&#10;-Ajoutez des éléments de jeu : Introduisez des mécanismes de jeu pour rendre la réservation de séances plus amusante et engageante pour les utilisateurs." />
+        <AnchorPane layoutX="-2.0" prefHeight="855.0" prefWidth="200.0" style="-fx-background-color: #004369;">
+            <children>
+                <ImageView fx:id="logo1" fitHeight="98.0" fitWidth="155.0" layoutX="20.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imgs/logo.png" />
+                    </image>
+                </ImageView>
+                <Button fx:id="btntdb1" layoutX="9.0" layoutY="145.0" mnemonicParsing="false" onAction="#tableaudebord" prefHeight="43.0" prefWidth="174.0" style="-fx-background-color: transparant;" text="Tableau de bord" textFill="WHITE">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+               
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
