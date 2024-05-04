@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<<<<<<< HEAD
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+=======
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+>>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<<<<<<< HEAD
 
 <AnchorPane prefHeight="854.0" prefWidth="1535.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.HomeController">
     <children>
@@ -112,6 +128,15 @@
         <HBox prefHeight="51.0" prefWidth="1535.0" stylesheets="@frontStyle.css">
             <children>
             <HBox prefHeight="51.0" prefWidth="341.0">
+=======
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.indexController">
+    <children>
+        <HBox prefHeight="62.0" prefWidth="1907.0" stylesheets="@frontStyle.css">
+            <children>
+            <HBox prefHeight="62.0" prefWidth="299.0">
+>>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
                <children>
                       <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                           <image>
@@ -191,7 +216,11 @@
                         <Insets left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
                   </ImageView>
+<<<<<<< HEAD
                   <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="282.0" styleClass="sideBarButtons" text="flights">
+=======
+                  <Button mnemonicParsing="false" prefHeight="61.0" prefWidth="240.0" styleClass="sideBarButtons" text="flights">
+>>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
                      <font>
                         <Font name="Comic Sans MS Bold" size="15.0" />
                      </font>
@@ -199,12 +228,20 @@
                </children>
             </HBox>
             <Separator orientation="VERTICAL" prefHeight="200.0" />
+<<<<<<< HEAD
                 <Label alignment="CENTER" prefHeight="51.0" prefWidth="274.0" text="Username">
+=======
+                <Label fx:id="emailFrontSession" alignment="CENTER" prefHeight="51.0" prefWidth="267.0" text="Username">
+>>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
                     <font>
                         <Font name="Consolas Bold" size="16.0" />
                     </font>
                 </Label>
+<<<<<<< HEAD
                 <ImageView fitHeight="35.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+=======
+                <ImageView fx:id="ProfileFrontSession" fitHeight="35.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+>>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
                     <image>
                         <Image url="@images/user.png" />
                     </image>
@@ -218,7 +255,11 @@
             <String fx:value="white-background" />
          </styleClass>
         </HBox>
+<<<<<<< HEAD
       <VBox layoutY="51.0" prefHeight="778.0" prefWidth="202.0" styleClass="white-background" stylesheets="@frontStyle.css" AnchorPane.bottomAnchor="25.0">
+=======
+      <VBox layoutY="51.0" prefHeight="1020.0" prefWidth="202.0" styleClass="white-background" stylesheets="@frontStyle.css" AnchorPane.bottomAnchor="2.0">
+>>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
          <children>
             <VBox prefHeight="254.0" prefWidth="202.0">
                <children>
@@ -266,7 +307,28 @@
                               <Insets left="5.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
+<<<<<<< HEAD
                         <Button fx:id="reclamFXML" mnemonicParsing="false" onAction="#navigateToReclamation" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="contact us">
+=======
+                        <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="contact us">
+                           <font>
+                              <Font name="Comic Sans MS" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="131.0">
+                     <children>
+                        <ImageView fitHeight="53.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/contactIcon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="5.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Button fx:id="Community" mnemonicParsing="false" onAction="#OpenCommunity" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="Community">
+>>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
                            <font>
                               <Font name="Comic Sans MS" size="15.0" />
                            </font>
@@ -355,7 +417,11 @@
                               <Insets left="5.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
+<<<<<<< HEAD
                         <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="log out">
+=======
+                        <Button mnemonicParsing="false" onAction="#logout" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="log out">
+>>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
                            <font>
                               <Font name="Comic Sans MS" size="15.0" />
                            </font>
@@ -369,6 +435,347 @@
             </VBox>
          </children>
       </VBox>
+<<<<<<< HEAD
+=======
+      <AnchorPane layoutX="202.0" layoutY="62.0" prefHeight="1020.0" prefWidth="1719.0" style="-fx-background-color: #b0cfff; -fx-border-radius: 50px;">
+         <children>
+            <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="1020.0" prefWidth="431.0" style="-fx-background-color: #ffffff; -fx-border-color: #b0cfff; -fx-border-width: 10px;">
+               <children>
+                  <VBox prefHeight="147.0" prefWidth="150.0" style="-fx-border-color: #b0cfff; -fx-border-radius: 10px;">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-width: 10px; -fx-border-color: #b0cfff;">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@assets/wired-gradient-268-avatar-man.gif" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="68.0" prefWidth="265.0" style="-fx-background-color: #00000000; -fx-border-color: #b0cfff;">
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                     <children>
+                        <ImageView fitHeight="47.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/userEdit.png" />
+                           </image>
+                        </ImageView>
+                        <Button mnemonicParsing="false" onAction="#GotoEditProfile" prefHeight="56.0" prefWidth="195.0" style="-fx-background-color: #00000000;" text="Edit Profile" textFill="#b0cfff">
+                           <font>
+                              <Font name="Comic Sans MS" size="23.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="44.0" fitWidth="57.0" layoutX="10.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/right-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="93.0" layoutY="242.0" prefHeight="68.0" prefWidth="265.0" style="-fx-background-color: #00000000; -fx-border-color: #b0cfff;">
+                     <children>
+                        <ImageView fitHeight="47.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/userEdit.png" />
+                           </image>
+                        </ImageView>
+                        <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="195.0" style="-fx-background-color: #00000000;" text="Theme" textFill="#b0cfff">
+                           <font>
+                              <Font name="Comic Sans MS" size="23.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="44.0" fitWidth="57.0" layoutX="10.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/right-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="93.0" layoutY="350.0" prefHeight="68.0" prefWidth="265.0" style="-fx-background-color: #00000000; -fx-border-color: #b0cfff;">
+                     <children>
+                        <ImageView fitHeight="47.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/userEdit.png" />
+                           </image>
+                        </ImageView>
+                        <Button mnemonicParsing="false" onAction="#GotoChangePassword" prefHeight="56.0" prefWidth="195.0" style="-fx-background-color: #00000000;" text="Password" textFill="#b0cfff">
+                           <font>
+                              <Font name="Comic Sans MS" size="23.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="44.0" fitWidth="57.0" layoutX="10.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/right-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="93.0" layoutY="458.0" prefHeight="68.0" prefWidth="265.0" style="-fx-background-color: #00000000; -fx-border-color: #b0cfff;">
+                     <children>
+                        <ImageView fitHeight="47.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/userEdit.png" />
+                           </image>
+                        </ImageView>
+                        <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="195.0" style="-fx-background-color: #00000000;" />
+                        <ImageView fitHeight="44.0" fitWidth="57.0" layoutX="10.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/right-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <AnchorPane layoutX="440.0" layoutY="6.0" prefHeight="917.0" prefWidth="1263.0">
+               <children>
+                  <VBox fx:id="EditProfileSessionVbox" alignment="CENTER" fillWidth="false" layoutX="14.0" layoutY="67.0" prefHeight="783.0" prefWidth="1198.0" spacing="1.0">
+                     <children>
+                        <ImageView fx:id="imageSess" fitHeight="192.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/defaultProfile.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ImageView>
+                        <Button fx:id="SessionPhotoButton" mnemonicParsing="false" onAction="#handleOpenButtonAction" prefHeight="40.0" prefWidth="163.0" stylesheets="@buttons.css" text="change Photo" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Comic Sans MS" size="14.0" />
+                           </font>
+                        </Button>
+                        <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <HBox prefHeight="41.0" prefWidth="330.0" spacing="5.0" style="-fx-background-color: #ffffff20;">
+                                 <children>
+                                    <TextField fx:id="nom_modif_session" layoutX="45.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="414.0" promptText="First name" style="-fx-background-color: #ffffff; -fx-prompt-text-fill: #000000; -fx-text-fill: #000000;">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="13.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </HBox>
+                              <HBox prefHeight="21.0" prefWidth="254.0" spacing="5.0" style="-fx-background-color: #ffffff20; -fx-background-radius: 100px;">
+                                 <children>
+                                    <TextField fx:id="prenom_modif_session" layoutX="45.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="435.0" promptText="Last name" style="-fx-background-color: #ffffff; -fx-prompt-text-fill: #000000; -fx-text-fill: #000000;">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="13.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox fillHeight="false" layoutX="10.0" layoutY="155.0" prefHeight="38.0" prefWidth="862.0" spacing="10.0">
+                           <children>
+                              <HBox fillHeight="false" prefHeight="41.0" prefWidth="416.0" spacing="5.0">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <children>
+                                    <Text fx:id="nom_error_modifP" fill="#f80000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="395.0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="10.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="21.0" prefWidth="254.0" spacing="5.0">
+                                 <children>
+                                    <Text fx:id="prenom_error_modifP" fill="#f80000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="395.0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="10.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </HBox>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets top="-50.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox fillHeight="false" prefHeight="106.0" prefWidth="935.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="email_modif_session" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="412.0" promptText="Email" style="-fx-background-color: #ffffff; -fx-prompt-text-fill: #000000; -fx-text-fill: #000000;">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="phone_modif_session" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="447.0" promptText="Phone Number" style="-fx-background-color: #ffffff; -fx-prompt-text-fill: #000000; -fx-text-fill: #000000;">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <padding>
+                              <Insets left="-15.0" />
+                           </padding>
+                        </HBox>
+                        <HBox fillHeight="false" layoutX="31.0" layoutY="206.0" prefHeight="38.0" prefWidth="866.0" spacing="10.0">
+                           <children>
+                              <HBox fillHeight="false" prefHeight="38.0" prefWidth="403.0" spacing="5.0">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <children>
+                                    <Text fx:id="email_error_modifP" fill="#f80000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="395.0">
+                                       <HBox.margin>
+                                          <Insets left="14.0" top="12.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="38.0" prefWidth="447.0" spacing="5.0">
+                                 <children>
+                                    <Text fx:id="phone_number_error_modifP" fill="#f80000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="445.0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="12.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </HBox>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets top="-50.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="84.0" prefWidth="864.0">
+                           <children>
+                              <TextArea fx:id="description_modif_session" prefHeight="84.0" prefWidth="407.0" promptText="Description" style="-fx-background-color: #ffffff; -fx-prompt-text-fill: #000000; -fx-text-fill: #000000;">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="13.0" />
+                                 </font>
+                              </TextArea>
+                              <ComboBox fx:id="country_modif_session" prefHeight="70.0" prefWidth="443.0" promptText="Country" style="-fx-background-color: #ffffff;">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="65.0" prefWidth="476.0" spacing="10.0">
+                           <children>
+                              <JFXButton fx:id="SaveProfile" onAction="#ModifyProfileButton" prefHeight="58.0" prefWidth="267.0" style="-fx-background-color: #fb646b; -fx-background-radius: 100px;" styleClass="getstarted" text="Save" textFill="WHITE">
+                                 <font>
+                                    <Font name="Comic Sans MS Bold" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="changePasswordVbox" alignment="TOP_CENTER" fillWidth="false" layoutX="150.0" layoutY="148.0" prefHeight="589.0" prefWidth="996.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/protection.png" />
+                           </image>
+                        </ImageView>
+                        <PasswordField fx:id="oldPass" prefHeight="47.0" prefWidth="397.0" promptText="Old Password" style="-fx-prompt-text-fill: #000000;">
+                           <font>
+                              <Font name="Comic Sans MS" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="80.0" />
+                           </VBox.margin>
+                        </PasswordField>
+                        <PasswordField fx:id="NewPass" layoutX="350.0" layoutY="210.0" prefHeight="47.0" prefWidth="402.0" promptText="New Password" style="-fx-prompt-text-fill: #000000;">
+                           <font>
+                              <Font name="Comic Sans MS" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </PasswordField>
+                        <PasswordField fx:id="ComfirmPass" layoutX="350.0" layoutY="277.0" prefHeight="47.0" prefWidth="398.0" promptText="Comfirm New Password" style="-fx-prompt-text-fill: #000000;">
+                           <font>
+                              <Font name="Comic Sans MS" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </PasswordField>
+                        <JFXButton fx:id="SaveProfile1" onAction="#ChangePassButton" prefHeight="58.0" prefWidth="267.0" style="-fx-background-color: #fb646b; -fx-background-radius: 100px;" styleClass="getstarted" text="Save" textFill="WHITE">
+                           <font>
+                              <Font name="Comic Sans MS Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+>>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
     </children>
 
 </AnchorPane>

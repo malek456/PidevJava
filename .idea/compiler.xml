@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
         <module name="reclamation" />
       </profile>
     </annotationProcessing>
@@ -15,4 +16,10 @@
       <module name="reclamation" options="" />
     </option>
   </component>
+=======
+        <module name="ProjectHOpe" />
+      </profile>
+    </annotationProcessing>
+  </component>
+>>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
 </project>
