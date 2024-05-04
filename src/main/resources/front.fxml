@@ -2,14 +2,18 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> GestionReclamations
+=======
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <?import com.jfoenix.controls.JFXButton?>
@@ -27,6 +31,8 @@
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
 =======
 >>>>>>> GestionReclamations
+=======
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -35,108 +41,35 @@
 <?import javafx.scene.text.Font?>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> GestionReclamations
+=======
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
 
-<AnchorPane prefHeight="854.0" prefWidth="1535.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.HomeController">
+<AnchorPane prefHeight="854.0" prefWidth="1535.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.Front">
     <children>
-      <AnchorPane layoutX="217.0" layoutY="75.0" prefHeight="750.0" prefWidth="1309.0" stylesheets="@frontStyle.css">
+      <AnchorPane layoutX="202.0" layoutY="72.0" prefHeight="750.0" prefWidth="1309.0" stylesheets="@frontStyle.css">
          <styleClass>
             <String fx:value="blue-bg" />
             <String fx:value="shadow" />
          </styleClass>
          <children>
-            <AnchorPane layoutX="25.0" layoutY="69.0" prefHeight="266.0" prefWidth="1262.0" stylesheets="@dashboardDesign.css">
+            <AnchorPane layoutX="-30.0" layoutY="-12.0" prefHeight="778.0" prefWidth="1358.0" stylesheets="@dashboardDesign.css">
                <styleClass>
                   <String fx:value="white-bg1" />
                   <String fx:value="shadow" />
                </styleClass>
                <children>
-                  <Label alignment="CENTER" layoutY="-42.0" prefHeight="42.0" prefWidth="202.0" styleClass="hotels" stylesheets="@frontStyle.css" text="hotels">
-                     <font>
-                        <Font name="Comic Sans MS Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Separator layoutY="-1.0" prefHeight="3.0" prefWidth="1270.0" />
-                  <HBox layoutX="14.0" layoutY="27.0" prefHeight="211.0" prefWidth="1227.0">
-                     <children>
-                        <VBox prefHeight="200.0" prefWidth="207.0">
-                           <children>
-                              <ImageView fitHeight="180.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@images/hotel.jpg" />
-                                 </image>
-                                 <VBox.margin>
-                                    <Insets right="5.0" />
-                                 </VBox.margin>
-                              </ImageView>
-                              <Label prefHeight="69.0" prefWidth="207.0" text="Label" />
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="200.0" prefWidth="207.0">
-                           <children>
-                              <ImageView fitHeight="180.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@images/hotel.jpg" />
-                                 </image>
-                                 <VBox.margin>
-                                    <Insets right="5.0" />
-                                 </VBox.margin>
-                              </ImageView>
-                              <Label prefHeight="69.0" prefWidth="207.0" text="Label" />
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="200.0" prefWidth="207.0">
-                           <children>
-                              <ImageView fitHeight="180.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@images/hotel.jpg" />
-                                 </image>
-                                 <VBox.margin>
-                                    <Insets right="5.0" />
-                                 </VBox.margin>
-                              </ImageView>
-                              <Label prefHeight="69.0" prefWidth="207.0" text="Label" />
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="200.0" prefWidth="207.0">
-                           <children>
-                              <ImageView fitHeight="180.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@images/hotel.jpg" />
-                                 </image>
-                                 <VBox.margin>
-                                    <Insets right="5.0" />
-                                 </VBox.margin>
-                              </ImageView>
-                              <Label prefHeight="69.0" prefWidth="207.0" text="Label" />
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="200.0" prefWidth="207.0">
-                           <children>
-                              <ImageView fitHeight="169.0" fitWidth="264.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@images/hotel.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Label prefHeight="69.0" prefWidth="207.0" text="Label" />
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
+                  <HBox layoutX="1.0" layoutY="11.0" prefHeight="766.0" prefWidth="1350.0" />
                </children>
-            </AnchorPane>
-            <AnchorPane layoutX="23.0" layoutY="360.0" prefHeight="366.0" prefWidth="1270.0" stylesheets="@dashboardDesign.css">
-               <styleClass>
-                  <String fx:value="white-bg1" />
-                  <String fx:value="shadow" />
-               </styleClass>
             </AnchorPane>
          </children>
       </AnchorPane>
         <HBox prefHeight="51.0" prefWidth="1535.0" stylesheets="@frontStyle.css">
             <children>
             <HBox prefHeight="51.0" prefWidth="341.0">
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <?import javafx.scene.text.Text?>
@@ -149,6 +82,8 @@
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
 =======
 >>>>>>> GestionReclamations
+=======
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
                <children>
                       <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                           <image>
@@ -230,6 +165,7 @@
                   </ImageView>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="282.0" styleClass="sideBarButtons" text="flights">
 =======
                   <Button mnemonicParsing="false" prefHeight="61.0" prefWidth="240.0" styleClass="sideBarButtons" text="flights">
@@ -237,6 +173,9 @@
 =======
                   <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="282.0" styleClass="sideBarButtons" text="flights">
 >>>>>>> GestionReclamations
+=======
+                  <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="282.0" styleClass="sideBarButtons" text="flights">
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
                      <font>
                         <Font name="Comic Sans MS Bold" size="15.0" />
                      </font>
@@ -246,6 +185,7 @@
             <Separator orientation="VERTICAL" prefHeight="200.0" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <Label alignment="CENTER" prefHeight="51.0" prefWidth="274.0" text="Username">
 =======
                 <Label fx:id="emailFrontSession" alignment="CENTER" prefHeight="51.0" prefWidth="267.0" text="Username">
@@ -253,10 +193,14 @@
 =======
                 <Label alignment="CENTER" prefHeight="51.0" prefWidth="274.0" text="Username">
 >>>>>>> GestionReclamations
+=======
+                <Label alignment="CENTER" prefHeight="51.0" prefWidth="274.0" text="Username">
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
                     <font>
                         <Font name="Consolas Bold" size="16.0" />
                     </font>
                 </Label>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 <ImageView fitHeight="35.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
@@ -266,6 +210,9 @@
 =======
                 <ImageView fitHeight="35.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
 >>>>>>> GestionReclamations
+=======
+                <ImageView fitHeight="35.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
                     <image>
                         <Image url="@images/user.png" />
                     </image>
@@ -281,6 +228,7 @@
         </HBox>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <VBox layoutY="51.0" prefHeight="778.0" prefWidth="202.0" styleClass="white-background" stylesheets="@frontStyle.css" AnchorPane.bottomAnchor="25.0">
 =======
       <VBox layoutY="51.0" prefHeight="1020.0" prefWidth="202.0" styleClass="white-background" stylesheets="@frontStyle.css" AnchorPane.bottomAnchor="2.0">
@@ -288,6 +236,9 @@
 =======
       <VBox layoutY="51.0" prefHeight="778.0" prefWidth="202.0" styleClass="white-background" stylesheets="@frontStyle.css" AnchorPane.bottomAnchor="25.0">
 >>>>>>> GestionReclamations
+=======
+      <VBox layoutY="51.0" prefHeight="778.0" prefWidth="202.0" styleClass="white-background" stylesheets="@frontStyle.css" AnchorPane.bottomAnchor="25.0">
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
          <children>
             <VBox prefHeight="254.0" prefWidth="202.0">
                <children>
@@ -337,8 +288,11 @@
                         </ImageView>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <Button fx:id="reclamFXML" mnemonicParsing="false" onAction="#navigateToReclamation" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="contact us">
 =======
+=======
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
                         <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="contact us">
                            <font>
                               <Font name="Comic Sans MS" size="15.0" />
@@ -346,6 +300,7 @@
                         </Button>
                      </children>
                   </HBox>
+<<<<<<< HEAD
                   <HBox layoutX="10.0" layoutY="131.0">
                      <children>
                         <ImageView fitHeight="53.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
@@ -367,6 +322,8 @@
                         </Button>
                      </children>
                   </HBox>
+=======
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
                </children>
                <VBox.margin>
                   <Insets top="20.0" />
@@ -451,6 +408,7 @@
                         </ImageView>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="log out">
 =======
                         <Button mnemonicParsing="false" onAction="#logout" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="log out">
@@ -458,6 +416,9 @@
 =======
                         <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="log out">
 >>>>>>> GestionReclamations
+=======
+                        <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="log out">
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
                            <font>
                               <Font name="Comic Sans MS" size="15.0" />
                            </font>
@@ -471,6 +432,7 @@
             </VBox>
          </children>
       </VBox>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -815,6 +777,8 @@
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
 =======
 >>>>>>> GestionReclamations
+=======
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
     </children>
 
 </AnchorPane>

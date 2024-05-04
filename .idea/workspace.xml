@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="d940e7e0-d37c-4437-9fc0-cac8a7209d68" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
@@ -43,6 +44,9 @@
 =======
     </list>
 >>>>>>> GestionReclamations
+=======
+    <list default="true" id="71c5c3b3-bbcc-4eb8-ba59-58e6e6ef9d3b" name="Changes" comment="" />
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +55,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -65,10 +70,15 @@
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
 =======
 >>>>>>> GestionReclamations
+=======
+        <option value="Interface" />
+        <option value="FxmlFile" />
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
         <option value="Class" />
       </list>
     </option>
   </component>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   <component name="Git.Settings">
@@ -91,9 +101,12 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+=======
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
+  &quot;associatedIndex&quot;: 0
 }</component>
+<<<<<<< HEAD
   <component name="ProjectId" id="2e8kiiyjvIuYMEmGHiDX3MWmXVB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
 =======
@@ -123,6 +136,9 @@
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
 =======
 >>>>>>> GestionReclamations
+=======
+  <component name="ProjectId" id="2c5OVoMo3t0ZmsFH2PLkvLA7DJW" />
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -130,59 +146,34 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.AsyncTranscribeMediaUrl.executor": "Run",
-    "Application.ChatBMain.executor": "Run",
-    "Application.Chatbot.executor": "Run",
-    "Application.FxMain.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.MailSender.executor": "Run",
-    "Application.MainChat.executor": "Run",
-    "Application.MainClass.executor": "Run",
-    "Application.cameratest.executor": "Run",
-    "Application.navigatetest.executor": "Run",
-    "Application.testPdf.executor": "Run",
-    "Application.testchatMain.executor": "Run",
-    "Application.testexception.executor": "Run",
-    "Application.testjson.executor": "Run",
-    "Application.testpopupFXML.executor": "Run",
-    "Application.testresp.executor": "Run",
-    "Application.testsumz.executor": "Run",
-    "Application.testtranscriber.executor": "Run",
-    "Application.tradtest.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.LexChainTest.executor": "Run",
-    "JUnit.LexChainingKeywordExtractorTest.executor": "Run",
-    "JUnit.LexChainingKeywordExtractorTest.testGetKeywords.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "true",
+    "Application.Main.executor": "Run",
+    "Application.MainFX.executor": "Run",
+    "Maven.getionPersonne3A4 [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
+    "WebServerToolWindowFactoryState": "false",
+    "full.screen.before.presentation.mode": "false",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/gasso/IdeaProjects/reclamationgit",
+    "last_opened_file_path": "C:/Users/BOUZIDI MALEK/IdeaProjects/getionPersonneFP/getionPersonne3A4F",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.40064102",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JAVA"
-    ]
   }
 }]]></component>
+<<<<<<< HEAD
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\gasso\IdeaProjects\reclamation\src\main\resources" />
@@ -271,6 +262,15 @@
 >>>>>>> ba038a7 (metiers+api)
 =======
 >>>>>>> GestionReclamations
+=======
+  <component name="RunManager" selected="Application.MainFX">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.Main" />
+      <module name="getionPersonne3A4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.esprit.tests.*" />
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -278,6 +278,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     <configuration name="cameratest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -325,6 +326,14 @@
 >>>>>>> ba038a7 (metiers+api)
 =======
 >>>>>>> GestionReclamations
+=======
+    <configuration name="MainFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.MainFX" />
+      <module name="getionPersonne3A4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.esprit.tests.*" />
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -332,6 +341,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="tradtest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -355,12 +365,24 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+=======
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="getionPersonne3A4F" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="getionPersonne3A4F" />
+      <option name="filePath" />
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <item itemvalue="Application.FxMain" />
@@ -378,15 +400,20 @@
         <item itemvalue="Application.maintraduction" />
         <item itemvalue="Application.FxMain" />
 >>>>>>> GestionReclamations
+=======
+        <item itemvalue="Application.MainFX" />
+        <item itemvalue="Application.Main" />
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.9-jbr-17.0.9-4caba194b151-51f1b679" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
       </set>
     </attachedChunks>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
@@ -430,10 +457,13 @@
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
 =======
 >>>>>>> GestionReclamations
+=======
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -525,12 +555,44 @@
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
 =======
 >>>>>>> GestionReclamations
+=======
+      <changelist id="71c5c3b3-bbcc-4eb8-ba59-58e6e6ef9d3b" name="Changes" comment="" />
+      <created>1707398000602</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707398000602</updated>
+      <workItem from="1707398001659" duration="7404000" />
+      <workItem from="1708001300879" duration="5763000" />
+      <workItem from="1712107873935" duration="1602000" />
+      <workItem from="1712564683008" duration="12168000" />
+      <workItem from="1712578658933" duration="252000" />
+      <workItem from="1712578933294" duration="135000" />
+      <workItem from="1712579114243" duration="1984000" />
+      <workItem from="1712653856874" duration="979000" />
+      <workItem from="1712654935941" duration="209000" />
+      <workItem from="1712656386198" duration="417000" />
+      <workItem from="1712656838350" duration="916000" />
+      <workItem from="1712658715429" duration="26000" />
+      <workItem from="1712658775685" duration="247000" />
+      <workItem from="1712659048515" duration="537000" />
+      <workItem from="1712661024483" duration="62000" />
+      <workItem from="1712661100441" duration="383000" />
+      <workItem from="1712661520548" duration="22000" />
+      <workItem from="1712661608186" duration="459000" />
+      <workItem from="1712662111400" duration="173000" />
+      <workItem from="1712662345954" duration="11000" />
+      <workItem from="1712662368592" duration="86000" />
+      <workItem from="1712662471343" duration="925000" />
+      <workItem from="1712829140971" duration="6657000" />
+      <workItem from="1713632814396" duration="1282000" />
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -547,32 +609,26 @@
   </component>
 =======
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+=======
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.UnsupportedClassVersionError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
 <<<<<<< HEAD
-          <properties class="java.lang.reflect.InvocationTargetException" package="java.lang.reflect" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/reclamation/test/ChatBMain.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-=======
->>>>>>> ba038a7 (metiers+api)
-=======
-          <properties class="java.lang.ClassNotFoundException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
 >>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
 =======
 >>>>>>> GestionReclamations
+=======
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+>>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
 </project>
