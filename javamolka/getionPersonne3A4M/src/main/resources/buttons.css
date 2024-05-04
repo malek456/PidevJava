@@ -1,0 +1,114 @@
+.button {
+    -fx-background-color: linear-gradient(to bottom, #35e838, #35e838);
+    -fx-background-radius: 1em;
+    -fx-font-family: "Montserrat", "Poppins", sans-serif;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-font-style: italic; /* Make the text italic */
+    -fx-padding: 8px 16px;
+    -fx-border-color: rgba(232, 134, 53, 0);
+    -fx-border-width: 2px;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #357AE8, #4D90FE);
+}
+
+.button:pressed {
+    -fx-background-color: #357AE8;
+}
+
+.buttonA {
+    -fx-background-color: linear-gradient(to bottom, #4e90f8, #1e45ea);
+
+    -fx-background-radius: 1em;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px;
+    -fx-border-color: rgba(232, 134, 53, 0);
+    -fx-border-width: 2px;
+}
+
+.buttonA:hover {
+    -fx-background-color: linear-gradient(to bottom, #0e60e8, #0415ee);
+}
+
+.buttonA:pressed {
+    -fx-background-color: #0a158a;
+}
+
+.delete-btn {
+    -fx-background-color: linear-gradient(to bottom, #e86060, #cb2e2e);
+    -fx-background-radius: 1em;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px;
+    -fx-border-color: rgba(232, 134, 53, 0);
+    -fx-border-width: 2px;
+}
+
+.delete-btn:hover {
+    -fx-background-color: linear-gradient(to bottom, #da6363, #e02b2b);
+}
+
+.delete-btn:pressed {
+    -fx-background-color: #b70d0d;
+}
+
+.update-btn {
+    -fx-background-color: linear-gradient(to bottom, #35e838, #55b65d);
+    -fx-background-radius: 1em;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px;
+    -fx-border-color: rgba(232, 134, 53, 0);
+    -fx-border-width: 2px;
+}
+
+.update-btn:hover {
+    -fx-background-color: linear-gradient(to bottom, #12c015, #30d93e);
+}
+
+.update-btn:pressed {
+    -fx-background-color: #0c6e14;
+}
+
+.appBar-btn {
+    -fx-background-color: #00074f;
+    -fx-background-radius: 1px; /* Adjust the radius for a rounded appearance */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px;
+    -fx-border-color: rgba(232, 134, 53, 0);
+    -fx-border-width: 2px;
+    -fx-cursor: hand; /* Add a hand cursor on hover */
+    -fx-effect: dropshadow( gaussian , rgba(255, 255, 255, 0.3) , 0,0,0,1 ); /* Add a subtle shadow effect */
+}
+
+.appBar-btn:hover {
+    -fx-background-color: #00137f; /* Darken the background color on hover */
+}
+
+.appBar-btn:pressed {
+    -fx-background-color: #000030; /* Darken the background color when pressed */
+}
+
+.commentButton{
+    -fx-background-color: rgba(255, 255, 255, 0);
+    -fx-text-fill: black;
+    -fx-font-size: 13px;
+}
+.commentButton:hover{
+    -fx-background-color: rgba(255, 255, 255, 0);
+    -fx-text-fill: #0a158a;
+    -fx-font-size: 13px;
+}
+.commentButton:pressed{
+    -fx-background-color: rgba(255, 255, 255, 0);
+    -fx-text-fill: #1321cc;
+    -fx-font-size: 13px;
+}
+
+.CommentBackground{
+    -fx-border-color: #737373;
+}
