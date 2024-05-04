@@ -43,8 +43,8 @@
             </Label>
             <Label fx:id="labelAeroportDepart" layoutX="140.0" layoutY="71.0" prefHeight="18.0" prefWidth="88.0" text="label" />
             <Label fx:id="labelAeroportArrive" layoutX="148.0" layoutY="119.0" prefHeight="18.0" prefWidth="72.0" text="label" />
-            <Label fx:id="labelDateDepart" layoutX="346.0" layoutY="71.0" prefHeight="18.0" prefWidth="82.0" text="label" />
-            <Label fx:id="labelDateArrive" layoutX="346.0" layoutY="119.0" prefHeight="18.0" prefWidth="82.0" text="label" />
+            <Label fx:id="labelDateDepart" layoutX="346.0" layoutY="71.0" prefHeight="18.0" prefWidth="144.0" text="label" />
+            <Label fx:id="labelDateArrive" layoutX="346.0" layoutY="119.0" prefHeight="18.0" prefWidth="144.0" text="label" />
             <Label fx:id="labelPrix" layoutX="496.0" layoutY="96.0" prefHeight="18.0" prefWidth="72.0" text="label" />
             <ImageView fx:id="labelImage" fitHeight="44.0" fitWidth="88.0" layoutX="488.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
             <Label fx:id="labelCode" layoutX="319.0" layoutY="13.0" prefHeight="30.0" prefWidth="88.0" text="label" />

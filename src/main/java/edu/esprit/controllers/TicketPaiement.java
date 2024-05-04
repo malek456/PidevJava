@@ -1,16 +1,11 @@
 package edu.esprit.controllers;
 
 import edu.esprit.entities.Paiement;
-import edu.esprit.entities.Vol;
 import javafx.fxml.FXML;
-import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
 
-import java.awt.*;
-import java.io.File;
 
 public class TicketPaiement {
 

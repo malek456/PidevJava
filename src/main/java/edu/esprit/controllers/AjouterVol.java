@@ -1,9 +1,7 @@
 package edu.esprit.controllers;
 
 import edu.esprit.entities.Vol;
-import edu.esprit.entities.Vol;
-import edu.esprit.entities.Vol;
-import edu.esprit.entities.Vol;
+
 import edu.esprit.services.ServiceVol;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,9 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
@@ -24,6 +20,9 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.*;
 
 import static java.lang.String.valueOf;
@@ -98,6 +97,20 @@ public class AjouterVol {
 
 
     @FXML
+    private ComboBox<String> hourComboBoxD;
+    @FXML
+    private ComboBox<String> minuteComboBoxD;
+    @FXML
+    private ComboBox<String> secondComboBoxD;
+
+    @FXML
+    private ComboBox<String> hourComboBoxA;
+    @FXML
+    private ComboBox<String> minuteComboBoxA;
+    @FXML
+    private ComboBox<String> secondComboBoxA;
+
+    @FXML
     private VBox VolContainer = new VBox();
 
     @FXML
@@ -112,6 +125,21 @@ public class AjouterVol {
 
     @FXML
     private void initialize() throws IOException {
+        for (int i = 0; i < 24; i++) {
+            hourComboBoxA.getItems().add(String.format("%02d", i));
+        }
+        for (int i = 0; i < 60; i++) {
+            minuteComboBoxA.getItems().add(String.format("%02d", i));
+            secondComboBoxA.getItems().add(String.format("%02d", i));
+        }
+
+        for (int i = 0; i < 24; i++) {
+            hourComboBoxD.getItems().add(String.format("%02d", i));
+        }
+        for (int i = 0; i < 60; i++) {
+            minuteComboBoxD.getItems().add(String.format("%02d", i));
+            secondComboBoxD.getItems().add(String.format("%02d", i));
+        }
 
         // Call method to populate TableView when the scene is loaded
         populateScrollPane();
@@ -166,16 +194,30 @@ public class AjouterVol {
         System.out.println("Populating form with Vol: " + vol);
         tfAeroportDepart.setText(vol.getAeroport_depart());
         tfAeroportArrive.setText(vol.getGetAeroport_arrive());
-        tfDateDepart.setValue(vol.getDate_depart().toLocalDate());
-        tfDateArrive.setValue(vol.getGetDate_arrive().toLocalDate());
+        tfDateDepart.setValue(vol.getDate_depart().toLocalDateTime().toLocalDate());
+        tfDateArrive.setValue(vol.getGetDate_arrive().toLocalDateTime().toLocalDate());
+
+        LocalTime departTime = vol.getDate_depart().toLocalDateTime().toLocalTime();
+        LocalTime arriveTime = vol.getGetDate_arrive().toLocalDateTime().toLocalTime();
+
+        hourComboBoxD.setValue(String.format("%02d", departTime.getHour()));
+        minuteComboBoxD.setValue(String.format("%02d", departTime.getMinute()));
+        secondComboBoxD.setValue(String.format("%02d", departTime.getSecond()));
+
+        hourComboBoxA.setValue(String.format("%02d", arriveTime.getHour()));
+        minuteComboBoxA.setValue(String.format("%02d", arriveTime.getMinute()));
+        secondComboBoxA.setValue(String.format("%02d", arriveTime.getSecond()));
+
+
         tfPrix.setText(valueOf(vol.getPrix()));
+
         tfCode.setText(valueOf(vol.getCode()));
         tfNombrePersonne.setText(valueOf(vol.getNombre_personnes()));
         tfImage.setText(vol.getImage());
     }
 
 
-    public boolean checkErrors() {
+   /* public boolean checkErrors() {
         boolean isValid = true;
 
         String aeroportDepart = tfAeroportDepart.getText();
@@ -245,20 +287,44 @@ public class AjouterVol {
         }
 
         return isValid;
-    }
+    }*/
 
 
 
     public void ajouterVolAction(ActionEvent actionEvent) throws SQLException, IOException {
 
-        if (!checkErrors()) {
+        /*if (!checkErrors()) {
             return;
-        }
+        }*/
 
 
         String imagePath = tfImage.getText();
+
+        LocalDate dateDepart = tfDateDepart.getValue();
+        LocalDate dateArrive = tfDateArrive.getValue();
+
+        LocalTime timeDepart = LocalTime.of(
+                Integer.parseInt(hourComboBoxD.getValue()),
+                Integer.parseInt(minuteComboBoxD.getValue()),
+                Integer.parseInt(secondComboBoxD.getValue())
+        );
+
+        LocalTime timeArrive = LocalTime.of(
+                Integer.parseInt(hourComboBoxA.getValue()),
+                Integer.parseInt(minuteComboBoxA.getValue()),
+                Integer.parseInt(secondComboBoxA.getValue())
+        );
+
+        LocalDateTime dateTimeDepart = LocalDateTime.of(dateDepart, timeDepart);
+        LocalDateTime dateTimeArrive = LocalDateTime.of(dateArrive, timeArrive);
+
+// Convert LocalDateTime to Timestamp
+        Timestamp timestampDepart = Timestamp.valueOf(dateTimeDepart);
+        Timestamp timestampArrive = Timestamp.valueOf(dateTimeArrive);
+
         Vol newVol = new Vol(
-                tfAeroportDepart.getText(),tfAeroportArrive.getText(),valueOf( tfDateDepart.getValue()),valueOf(tfDateArrive.getValue()),Float.parseFloat(tfPrix.getText()),Integer.parseInt( tfCode.getText()),Integer.parseInt(tfNombrePersonne.getText()),tfImage.getText() ) ;
+                tfAeroportDepart.getText(),tfAeroportArrive.getText(),timestampDepart,
+                timestampArrive,Float.parseFloat(tfPrix.getText()),Integer.parseInt( tfCode.getText()),Integer.parseInt(tfNombrePersonne.getText()),tfImage.getText() ) ;
         sp.ajouter(newVol);
 
         System.out.println("New Vol: " + newVol);
@@ -313,8 +379,8 @@ public class AjouterVol {
                 currentVol.getId(),
                 tfAeroportDepart.getText(),
                 tfAeroportArrive.getText(),
-                java.sql.Date.valueOf(tfDateDepart.getValue()),
-                java.sql.Date.valueOf(tfDateArrive.getValue()),
+                java.sql.Timestamp.valueOf(tfDateDepart.getValue().toString()),
+                java.sql.Timestamp.valueOf(tfDateArrive.getValue().toString()),
                 Float.parseFloat(tfPrix.getText()),
                 Integer.parseInt(tfCode.getText()),
                 Integer.parseInt(tfNombrePersonne.getText()),

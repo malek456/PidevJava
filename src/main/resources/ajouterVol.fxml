@@ -34,15 +34,15 @@
                     </styleClass>
                     <children>
                         <Button fx:id="saveButton" layoutX="286.0" layoutY="491.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="42.0" prefWidth="104.0" styleClass="buttonA" stylesheets="@buttons.css" text="save" />
-                  <Pane layoutX="133.0" layoutY="70.0" prefHeight="398.0" prefWidth="361.0">
+                  <Pane layoutX="133.0" layoutY="70.0" prefHeight="410.0" prefWidth="362.0">
                      <children>
                                 <TextField fx:id="tfAeroportDepart" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
-                        <TextField fx:id="tfCode" layoutY="250.0" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
-                        <TextField fx:id="tfPrix" layoutY="200.0" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
+                        <TextField fx:id="tfCode" layoutY="268.0" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
+                        <TextField fx:id="tfPrix" layoutY="224.0" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
                         <TextField fx:id="tfAeroportArrive" layoutY="50.0" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
-                        <TextField fx:id="tfNombrePersonne" layoutY="300.0" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
-                        <TextField fx:id="tfImage" layoutY="350.0" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
-                         <Button layoutX="301.0" layoutY="346.0" onAction="#uploadImageAction" prefHeight="36.0" prefWidth="56.0" styleClass="button-upload" stylesheets="@Vol.css">
+                        <TextField fx:id="tfNombrePersonne" layoutY="310.0" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
+                        <TextField fx:id="tfImage" layoutY="360.0" prefHeight="36.0" prefWidth="362.0" stylesheets="@dashboardDesign.css" />
+                         <Button layoutX="303.0" layoutY="356.0" onAction="#uploadImageAction" prefHeight="36.0" prefWidth="56.0" styleClass="button-upload" stylesheets="@Vol.css">
                              <graphic>
                                  <StackPane prefHeight="36.0" prefWidth="56.0">
                                      <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -51,8 +51,8 @@
                                  </StackPane>
                              </graphic>
                          </Button>
-                        <DatePicker fx:id="tfDateDepart" layoutY="103.0" prefHeight="36.0" prefWidth="362.0" />
-                        <DatePicker fx:id="tfDateArrive" layoutY="148.0" prefHeight="36.0" prefWidth="362.0" />
+                        <DatePicker fx:id="tfDateDepart" layoutY="103.0" prefHeight="36.0" prefWidth="192.0" />
+                        <DatePicker fx:id="tfDateArrive" layoutY="169.0" prefHeight="36.0" prefWidth="192.0" />
                         <Label fx:id="errorLabelAereportD" layoutX="87.0" prefHeight="36.0" prefWidth="277.0" textFill="RED">
                            <font>
                               <Font name="Comic Sans MS Bold Italic" size="12.0" />
@@ -63,34 +63,70 @@
                               <Font name="Comic Sans MS Bold Italic" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="errorLabelDateD" layoutX="81.0" layoutY="103.0" prefHeight="36.0" prefWidth="255.0" textFill="RED">
+                        <Label fx:id="errorLabelDateD" layoutX="86.0" layoutY="103.0" prefHeight="36.0" prefWidth="80.0" textFill="RED">
                            <font>
                               <Font name="Comic Sans MS Bold Italic" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="errorLabelCode" layoutX="87.0" layoutY="250.0" prefHeight="36.0" prefWidth="277.0" textFill="RED">
+                        <Label fx:id="errorLabelCode" layoutX="87.0" layoutY="268.0" prefHeight="36.0" prefWidth="277.0" textFill="RED">
                            <font>
                               <Font name="Comic Sans MS Bold Italic" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="errorLabelPrix" layoutX="87.0" layoutY="200.0" prefHeight="36.0" prefWidth="277.0" textFill="RED">
+                        <Label fx:id="errorLabelPrix" layoutX="87.0" layoutY="224.0" prefHeight="36.0" prefWidth="277.0" textFill="RED">
                            <font>
                               <Font name="Comic Sans MS Bold Italic" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="errorLabelDateA" layoutX="81.0" layoutY="148.0" prefHeight="36.0" prefWidth="255.0" textFill="RED">
+                        <Label fx:id="errorLabelDateA" layoutX="69.0" layoutY="169.0" prefHeight="36.0" prefWidth="97.0" textFill="RED">
                            <font>
                               <Font name="Comic Sans MS Bold Italic" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="errorLabelImage" layoutX="91.0" layoutY="350.0" prefHeight="36.0" prefWidth="212.0" textFill="RED">
+                        <Label fx:id="errorLabelImage" layoutX="89.0" layoutY="360.0" prefHeight="36.0" prefWidth="212.0" textFill="RED">
                            <font>
                               <Font name="Comic Sans MS Bold Italic" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="errorLabelNbPersonne" layoutX="87.0" layoutY="300.0" prefHeight="36.0" prefWidth="277.0" textFill="RED">
+                        <Label fx:id="errorLabelNbPersonne" layoutX="90.0" layoutY="310.0" prefHeight="36.0" prefWidth="277.0" textFill="RED">
                            <font>
                               <Font name="Comic Sans MS Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="hourComboBoxD" layoutX="195.0" layoutY="95.0" prefHeight="27.0" prefWidth="74.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                        <ComboBox fx:id="secondComboBoxA" layoutX="273.0" layoutY="173.0" prefHeight="27.0" prefWidth="74.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                        <ComboBox fx:id="minuteComboBoxA" layoutX="195.0" layoutY="192.0" prefHeight="27.0" prefWidth="74.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                        <ComboBox fx:id="hourComboBoxA" layoutX="195.0" layoutY="160.0" prefHeight="27.0" prefWidth="74.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                        <ComboBox fx:id="secondComboBoxD" layoutX="273.0" layoutY="112.0" prefHeight="27.0" prefWidth="74.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                        <ComboBox fx:id="minuteComboBoxD" layoutX="195.0" layoutY="125.0" prefHeight="27.0" prefWidth="74.0" styleClass="label-info" stylesheets="@dashboardDesign.css" />
+                        <Label layoutX="198.0" layoutY="99.0" text="h" textFill="#1804c4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="198.0" layoutY="128.0" text="m" textFill="#1804c4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="278.0" layoutY="115.0" text="s" textFill="#1804c4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="199.0" layoutY="164.0" text="h" textFill="#1804c4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="198.0" layoutY="195.0" text="m" textFill="#1804c4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="278.0" layoutY="177.0" text="s" textFill="#1804c4">
+                           <font>
+                              <Font size="14.0" />
                            </font>
                         </Label>
                      </children>

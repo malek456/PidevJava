@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -41,10 +42,13 @@ public class AfficherVol {
     private Pane PanePanier;
 
     @FXML
-    private Pane selectedPane;
+    private Slider budgetSlider;
+
+    @FXML
+    private TextField tfSlider;
+
     private final ServiceVol sp = new ServiceVol();
 
-    Map<Pane, Vol> paneVolMap = new HashMap<>();
 
     private int visible=0;
 
@@ -75,6 +79,22 @@ public class AfficherVol {
 
         // Add the columns to the TableView
         TablePanier.getColumns().addAll(column1, column2, column3,column4);
+
+        budgetSlider.setMin(0);
+        budgetSlider.setMax(1000); // Set this to the maximum possible budget
+        budgetSlider.setValue(0);
+
+        budgetSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            // Update the TextField with the new slider value
+            tfSlider.setText(String.format("%.2f", newValue.doubleValue()));
+        });
+        budgetSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                BudgetSliderAction();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
 
 
     }
@@ -171,6 +191,40 @@ public class AfficherVol {
             alert.setContentText("Sorry");
             alert.setTitle("Error");
             alert.show();
+        }
+    }
+
+    public void BudgetSliderAction() throws IOException {
+        Float budget = (float) budgetSlider.getValue(); // Normalize search text to lower case
+        Set<Vol> allVols = sp.getAll();
+
+        // Clear the VolContainer to remove previous search results
+        VolContainer.getChildren().clear();
+
+        // Iterate over all Vols and add only those that match the search criteria
+        for (Vol vol : allVols) {
+            // Check if the departure airport contains the search text
+            if (vol.getPrix()<=budget) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/TicketVolFront.fxml"));
+                Pane pane = loader.load();
+
+                // Get the controller and update the ticket details
+                TicketVolFront controller = loader.getController();
+                controller.setVol(vol, pane, VolContainer);
+
+                // Optionally load and display the image
+                String imagePath = vol.getImage();
+                if (imagePath != null && !imagePath.isEmpty()) {
+                    File file = new File(imagePath);
+                    if (file.exists()) {
+                        Image image = new Image(file.toURI().toString());
+                        controller.setVolImage(image);
+                    }
+                }
+
+                // Add the matching pane to the container
+                VolContainer.getChildren().add(pane);
+            }
         }
     }
 }

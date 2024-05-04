@@ -65,7 +65,7 @@ public class ServicePaiement {
         if (rs.next()) {
             // Create and return Vol object based on ResultSet values
             // You need to adjust this part based on your Vol class structure
-            return new Vol(rs.getInt("id"), rs.getString("aeroport_depart"), rs.getString("aeroport_arrive"), rs.getDate("date_depart"), rs.getDate("date_arrive"), rs.getFloat("prix"), rs.getInt("code"), rs.getInt("nombre_personnes"), rs.getString("image"));
+            return new Vol(rs.getInt("id"), rs.getString("aeroport_depart"), rs.getString("aeroport_arrive"), rs.getTimestamp("date_depart"), rs.getTimestamp("date_arrive"), rs.getFloat("prix"), rs.getInt("code"), rs.getInt("nombre_personnes"), rs.getString("image"));
         }
         return null;
     }
@@ -121,7 +121,7 @@ public class ServicePaiement {
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
             // Create and return Vol object based on ResultSet values
-            return new Vol(rs.getInt("id"), rs.getString("aeroport_depart"), rs.getString("aeroport_arrive"), rs.getDate("date_depart"), rs.getDate("date_arrive"), rs.getFloat("prix"), rs.getInt("code"), rs.getInt("nombre_personnes"), rs.getString("image"));
+            return new Vol(rs.getInt("id"), rs.getString("aeroport_depart"), rs.getString("aeroport_arrive"), rs.getTimestamp("date_depart"), rs.getTimestamp("date_arrive"), rs.getFloat("prix"), rs.getInt("code"), rs.getInt("nombre_personnes"), rs.getString("image"));
         }
         return null;
     }

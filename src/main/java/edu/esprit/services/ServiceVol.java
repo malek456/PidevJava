@@ -32,8 +32,8 @@ public class ServiceVol implements IService<Vol> {
         PreparedStatement ps = cnx.prepareStatement(req, Statement.RETURN_GENERATED_KEYS);
         ps.setString(1,vol.getAeroport_depart());
         ps.setString(2,vol.getGetAeroport_arrive());
-        ps.setDate(3,vol.getDate_depart());
-        ps.setDate(4,vol.getGetDate_arrive());
+        ps.setTimestamp(3,vol.getDate_depart());
+        ps.setTimestamp(4,vol.getGetDate_arrive());
         ps.setFloat(5,vol.getPrix());
         ps.setInt(6,vol.getCode());
         ps.setInt(7,vol.getNombre_personnes());
@@ -70,8 +70,8 @@ public class ServiceVol implements IService<Vol> {
                 int id = res.getInt(1);
                 String aeroport_depart = res.getString(2);
                 String aeroport_arrive = res.getString(3);
-                Date date_depart = res.getDate(4);
-                Date date_arrive = res.getDate(5);
+                Timestamp date_depart = res.getTimestamp(4);
+                Timestamp date_arrive = res.getTimestamp(5);
                 Float prix = res.getFloat(6);
                 int code = res.getInt(7);
                 int nombre_personnes = res.getInt(8);
@@ -95,8 +95,8 @@ public class ServiceVol implements IService<Vol> {
 
             pmnt.setString(1,vol.getAeroport_depart());
             pmnt.setString(2,vol.getGetAeroport_arrive());
-            pmnt.setDate(3,vol.getDate_depart());
-            pmnt.setDate(4, vol.getGetDate_arrive());
+            pmnt.setTimestamp(3,vol.getDate_depart());
+            pmnt.setTimestamp(4, vol.getGetDate_arrive());
             pmnt.setFloat(5,vol.getPrix());
             pmnt.setInt(6,vol.getCode());
             pmnt.setInt(7,vol.getNombre_personnes());

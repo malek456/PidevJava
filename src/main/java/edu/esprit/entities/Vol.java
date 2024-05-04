@@ -2,6 +2,8 @@ package edu.esprit.entities;
 
 import java.util.Date;
 import java.util.Objects;
+import java.sql.Timestamp;
+
 
 public class Vol {
 
@@ -11,9 +13,9 @@ public class Vol {
 
     private String getAeroport_arrive;
 
-    private Date date_depart;
+    private Timestamp date_depart;
 
-    private Date getDate_arrive;
+    private Timestamp getDate_arrive;
 
     private  Float prix;
 
@@ -23,7 +25,7 @@ public class Vol {
 
     private String image;
 
-    public Vol(int id, String aeroport_depart, String getAeroport_arrive, Date date_depart, Date getDate_arrive, Float prix, int code, int nombre_personnes, String image) {
+    public Vol(int id, String aeroport_depart, String getAeroport_arrive, Timestamp date_depart, Timestamp getDate_arrive, Float prix, int code, int nombre_personnes, String image) {
         this.id = id;
         this.aeroport_depart = aeroport_depart;
         this.getAeroport_arrive = getAeroport_arrive;
@@ -35,7 +37,7 @@ public class Vol {
         this.image = image;
     }
 
-    public Vol( String aeroport_depart, String getAeroport_arrive, Date date_depart, Date getDate_arrive, Float prix, int code, int nombre_personnes, String image) {
+    public Vol( String aeroport_depart, String getAeroport_arrive, Timestamp date_depart, Timestamp getDate_arrive, Float prix, int code, int nombre_personnes, String image) {
         this.aeroport_depart = aeroport_depart;
         this.getAeroport_arrive = getAeroport_arrive;
         this.date_depart = date_depart;
@@ -70,19 +72,19 @@ public class Vol {
         this.getAeroport_arrive = getAeroport_arrive;
     }
 
-    public java.sql.Date getDate_depart() {
-        return (java.sql.Date) date_depart;
+    public java.sql.Timestamp getDate_depart() {
+        return (java.sql.Timestamp) date_depart;
     }
 
-    public void setDate_depart(Date date_depart) {
+    public void setDate_depart(Timestamp date_depart) {
         this.date_depart = date_depart;
     }
 
-    public java.sql.Date getGetDate_arrive() {
-        return (java.sql.Date) getDate_arrive;
+    public Timestamp getGetDate_arrive() {
+        return getDate_arrive;
     }
 
-    public void setGetDate_arrive(Date getDate_arrive) {
+    public void setGetDate_arrive(Timestamp getDate_arrive) {
         this.getDate_arrive = getDate_arrive;
     }
 

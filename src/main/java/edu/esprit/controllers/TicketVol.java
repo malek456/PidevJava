@@ -1,14 +1,12 @@
 package edu.esprit.controllers;
 
 import edu.esprit.entities.Vol;
-import edu.esprit.entities.Vol;
-import edu.esprit.entities.Vol;
+
 import edu.esprit.services.ServiceVol;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;

@@ -6,6 +6,7 @@ import edu.esprit.entities.Vol;
 import edu.esprit.services.ServicePaiement;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,10 +15,23 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 ;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.xhtmlrenderer.pdf.ITextRenderer;
 
+import java.awt.*;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -30,6 +44,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 import java.util.stream.Stream;
+import org.xhtmlrenderer.pdf.ITextRenderer;
 
 public class AjouterPaiement {
 
@@ -62,6 +77,12 @@ public class AjouterPaiement {
 
     @FXML
     private Pane paneProgressor;
+    
+    @FXML
+    private Button buttonPdf;
+
+    @FXML
+    private ProgressBar progressBarPdf;
 
 
 
@@ -78,6 +99,9 @@ public class AjouterPaiement {
         paneProgressor.setVisible(false);
         progressIndicator.setProgress(-1);
         progressIndicator.setVisible(false);
+        buttonPdf.setDisable(true);
+        progressBarPdf.setVisible(false);
+        
     }
 
 
@@ -170,6 +194,8 @@ public class AjouterPaiement {
 
         // Clear the form fields
         sendEmail(progressIndicator,paneProgressor,selectedUserEmail,numCarte);
+        
+        buttonPdf.setDisable(false);
 
     }
 
@@ -264,6 +290,81 @@ public class AjouterPaiement {
             alert.show();
         }
     }
+
+
+
+    @FXML
+    private void DownloadPdfAction() {
+        progressBarPdf.setVisible(true);
+
+        // Set up the FileChooser
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save PDF");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
+        fileChooser.setInitialFileName("payment_details.pdf");  // Suggested name
+
+        // Prompt user to select a file
+        Stage stage = (Stage) progressBarPdf.getScene().getWindow();  // You need a reference to the Stage
+        File file = fileChooser.showSaveDialog(stage);
+
+        if (file != null) {
+            Task<Void> task = new Task<>() {
+                @Override
+                protected Void call() throws Exception {
+                    try {
+                        String htmlContent = generatePdfContent();
+
+                        // Use Flying Saucer to render HTML to PDF
+                        ITextRenderer renderer = new ITextRenderer();
+                        renderer.setDocumentFromString(htmlContent);
+                        renderer.layout();
+
+                        OutputStream outputStream = new FileOutputStream(file);
+                        renderer.createPDF(outputStream);
+                        updateProgress(1, 1);
+                        outputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    return null;
+                }
+            };
+
+            // Bind progress bar to the task and add a listener to hide it on completion
+            progressBarPdf.progressProperty().bind(task.progressProperty());
+            task.progressProperty().addListener((obs, oldProgress, newProgress) -> {
+                if (newProgress.doubleValue() >= 1.0) {
+                    progressBarPdf.setVisible(false);
+                }
+            });
+
+            new Thread(task).start();
+        } else {
+            progressBarPdf.setVisible(false); // Hide the progress bar if the user cancels the save dialog
+        }
+    }
+
+
+    private String generatePdfContent() {
+        return "<html>" +
+                "<head>" +
+                "<style>" +
+                "body { font-family: Arial, sans-serif; }" +
+                "h1 { color: blue; }" +
+                "p { font-size: 14px; color: grey; }" +
+                "</style>" +
+                "</head>" +
+                "<body>" +
+                "<h1>Payment Details</h1>" +
+                "<p>Amount: $100</p>" +
+                "<p>Card Number: ****-****-****-1234</p>" +
+                "<p>Date: 2024-04-30</p>" +
+                "</body>" +
+                "</html>";
+    }
+
+
+
 }
 
 

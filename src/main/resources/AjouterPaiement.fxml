@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
@@ -360,6 +361,13 @@
             </Pane>
          </children>
           </AnchorPane>
+      <Button fx:id="buttonPdf" layoutX="1362.0" layoutY="73.0" mnemonicParsing="false" onAction="#DownloadPdfAction" prefHeight="51.0" prefWidth="158.0" styleClass="white-background" stylesheets="@frontStyle.css" text="Download PDF">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </Button>
+      <ProgressBar fx:id="progressBarPdf" layoutX="1362.0" layoutY="145.0" prefHeight="18.0" prefWidth="158.0" progress="0.0" />
+      <Label fx:id="labelPdf" layoutX="1362.0" layoutY="187.0" prefHeight="18.0" prefWidth="158.0" />
     </children>
 
 </AnchorPane>
