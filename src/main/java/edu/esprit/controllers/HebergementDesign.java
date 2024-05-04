@@ -15,8 +15,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -167,34 +165,20 @@ public class HebergementDesign {
 
 
     public void return_V(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherVoyage.fxml"));
-        Parent root = loader.getRoot();
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherVoyage.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Error loading FXML file: " + e.getMessage());
+        }
 
 
     }
-    public void googlemap(ActionEvent actionEvent) {
-        double latitude = currentHebergement.getLatitude();
-        double longitude = currentHebergement.getLongitude();
-
-        WebView webView = new WebView();
-        WebEngine webEngine = webView.getEngine();
-
-        // Construction de l'URL avec les coordonnées de latitude et de longitude
-        String url = "file:///C:/Users/user/IdeaProjects/getionPersonneFP22/getionPersonneFP2/getionPersonne3A4F/src/main/java/edu/esprit/controllers/map.html?latitude=" + latitude + "&longitude=" + longitude;
-        webView.getEngine().load(url);
-
-        // Création d'une nouvelle scène pour afficher la WebView
-        Scene scene = new Scene(webView, 800, 600);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-    }
-
-
 }
 
 

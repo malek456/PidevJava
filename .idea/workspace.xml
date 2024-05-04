@@ -4,38 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <list default="true" id="d940e7e0-d37c-4437-9fc0-cac8a7209d68" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/reclamation/AfficherReclamation.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/reclamation/AjouterReclamationFXML.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/reclamation/hello-view.fxml" afterDir="false" />
-=======
-    <list default="true" id="c71f41e7-1028-4ef2-910f-34b512721878" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
->>>>>>> ba038a7 (metiers+api)
-    </list>
-=======
-    <list default="true" id="485b3cd8-922b-4e26-a88d-44df013abbea" name="Changes" comment="" />
->>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+    <list default="true" id="71c5c3b3-bbcc-4eb8-ba59-58e6e6ef9d3b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,202 +13,51 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <option value="Enum" />
-        <option value="JUnit5 Test Class" />
-        <option value="JavaFXApplication" />
-        <option value="FxmlFile" />
-=======
->>>>>>> ba038a7 (metiers+api)
-=======
         <option value="Interface" />
->>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
   </component>
-<<<<<<< HEAD
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-<<<<<<< HEAD
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
+  &quot;associatedIndex&quot;: 0
 }</component>
-  <component name="ProjectId" id="2e8kiiyjvIuYMEmGHiDX3MWmXVB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-=======
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
-}</component>
-  <component name="ProjectId" id="2fwuJZ8Xuc9zfQe7qh4xFrbCnsL" />
->>>>>>> ba038a7 (metiers+api)
-=======
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
-}</component>
-  <component name="ProjectId" id="2fYjUYinWtrN2C0LPqAsecsA0T3" />
->>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+  <component name="ProjectId" id="2c5OVoMo3t0ZmsFH2PLkvLA7DJW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
-<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.AsyncTranscribeMediaUrl.executor": "Run",
-    "Application.ChatBMain.executor": "Run",
-    "Application.Chatbot.executor": "Run",
-    "Application.FxMain.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.MailSender.executor": "Run",
-    "Application.MainChat.executor": "Run",
-    "Application.MainClass.executor": "Run",
-    "Application.cameratest.executor": "Run",
-    "Application.navigatetest.executor": "Run",
-    "Application.testPdf.executor": "Run",
-    "Application.testchatMain.executor": "Run",
-    "Application.testexception.executor": "Run",
-    "Application.testjson.executor": "Run",
-    "Application.testpopupFXML.executor": "Run",
-    "Application.testresp.executor": "Run",
-    "Application.testsumz.executor": "Run",
-    "Application.testtranscriber.executor": "Run",
-    "Application.tradtest.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.LexChainTest.executor": "Run",
-    "JUnit.LexChainingKeywordExtractorTest.executor": "Run",
-    "JUnit.LexChainingKeywordExtractorTest.testGetKeywords.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "true",
+    "Application.Main.executor": "Run",
+    "Application.MainFX.executor": "Run",
+    "Maven.getionPersonne3A4 [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
+    "WebServerToolWindowFactoryState": "false",
+    "full.screen.before.presentation.mode": "false",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/gasso/IdeaProjects/reclamationgit",
+    "last_opened_file_path": "C:/Users/BOUZIDI MALEK/IdeaProjects/getionPersonneFP/getionPersonne3A4F",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.40064102",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JAVA"
-    ]
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\gasso\IdeaProjects\reclamation\src\main\resources" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\gasso\IdeaProjects\reclamation\src\main\java" />
-      <recent name="C:\Users\gasso\IdeaProjects\reclamation\src\main\resources\com\example\reclamation\images" />
-      <recent name="C:\Users\gasso\IdeaProjects\reclamation\src\main\resources\com\example\reclamation" />
-      <recent name="C:\Users\gasso\IdeaProjects\reclamation\src\main\java\com\example\reclamation" />
-      <recent name="C:\Users\gasso\IdeaProjects\reclamation\src\main\java\com\example\reclamation\test" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.example.reclamation" />
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.example.reclamation.test" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.reclamation.utils" />
-      <recent name="com.example.reclamation" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.FxMain">
-    <configuration name="FxMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.reclamation.test.FxMain" />
-      <module name="reclamation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.reclamation.test.*" />
-=======
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.FxMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.maintraduction.executor&quot;: &quot;Run&quot;,
-    &quot;Application.testchatMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.testjson.executor&quot;: &quot;Run&quot;,
-    &quot;Application.tradtest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-=======
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User&quot;,
->>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-<<<<<<< HEAD
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RunManager" selected="Application.tradtest">
-    <configuration name="FxMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.FxMain" />
-      <module name="reclamation" />
+  <component name="RunManager" selected="Application.MainFX">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.Main" />
+      <module name="getionPersonne3A4" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="edu.esprit.tests.*" />
->>>>>>> ba038a7 (metiers+api)
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -247,47 +65,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
-    <configuration name="cameratest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.reclamation.test.cameratest" />
-      <module name="reclamation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.reclamation.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="navigatetest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.reclamation.test.navigatetest" />
-      <module name="reclamation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.reclamation.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testresp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.reclamation.test.testresp" />
-      <module name="reclamation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.reclamation.test.*" />
-=======
-    <configuration name="maintraduction" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.maintraduction" />
-      <module name="reclamation" />
+    <configuration name="MainFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.MainFX" />
+      <module name="getionPersonne3A4" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="edu.esprit.tests.*" />
->>>>>>> ba038a7 (metiers+api)
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -295,223 +78,83 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tradtest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-<<<<<<< HEAD
-      <option name="MAIN_CLASS_NAME" value="com.example.reclamation.test.tradtest" />
-      <module name="reclamation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.reclamation.test.*" />
-=======
-      <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.tradtest" />
-      <module name="reclamation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.esprit.tests.*" />
->>>>>>> ba038a7 (metiers+api)
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="getionPersonne3A4F" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="getionPersonne3A4F" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-<<<<<<< HEAD
-        <item itemvalue="Application.FxMain" />
-        <item itemvalue="Application.testresp" />
-        <item itemvalue="Application.cameratest" />
-        <item itemvalue="Application.tradtest" />
-        <item itemvalue="Application.navigatetest" />
-=======
-        <item itemvalue="Application.tradtest" />
-        <item itemvalue="Application.maintraduction" />
-        <item itemvalue="Application.FxMain" />
->>>>>>> ba038a7 (metiers+api)
+        <item itemvalue="Application.MainFX" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.9-jbr-17.0.9-4caba194b151-51f1b679" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
       </set>
     </attachedChunks>
-=======
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\src\main\resources\assets" />
-      <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\src\main\java\edu\esprit\entities" />
-      <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\src\main\java\edu\esprit\projecthope\controllers" />
-      <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\src\main\resources\edu\esprit\projecthope" />
-      <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\lib" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="edu.esprit.projecthope.controllers" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.HelloApplication">
-    <configuration name="ChatServer" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="edu.esprit.controllers.ChatServer" />
-      <module name="ProjectHOpe" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HelloApplication" type="Application" factoryName="Application" singleton="false">
-      <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.HelloApplication" />
-      <module name="ProjectHOpe" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\User\Downloads\openjfx-21.0.2_windows-x64_bin-sdk\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml --add-exports=javafx.graphics/com.sun.javafx.scene=ALL-UNNAMED --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.util=ALL-UNNAMED --add-exports=javafx.base/com.sun.javafx.logging=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.prism=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.glass.ui=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.geom.transform=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.tk=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.glass.utils=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.font=ALL-UNNAMED --add-exports=javafx.controls/com.sun.javafx.scene.control=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.scene.input=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.geom=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.text=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.scene.text=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.prism.paint=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.scenario.effect=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.application=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.scenario.effect.impl.prism=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.iio=ALL-UNNAMED" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.HelloApplication" />
-      <item itemvalue="Application.ChatServer" />
-    </list>
->>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <changelist id="d940e7e0-d37c-4437-9fc0-cac8a7209d68" name="Changes" comment="" />
-      <created>1711293725178</created>
+      <changelist id="71c5c3b3-bbcc-4eb8-ba59-58e6e6ef9d3b" name="Changes" comment="" />
+      <created>1707398000602</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1711293725178</updated>
-      <workItem from="1711293726290" duration="987000" />
-      <workItem from="1711294782886" duration="35688000" />
-      <workItem from="1711448266416" duration="21388000" />
-      <workItem from="1711535023597" duration="36861000" />
-      <workItem from="1711616973227" duration="9327000" />
-      <workItem from="1711632077039" duration="6141000" />
-      <workItem from="1711640418870" duration="10467000" />
-      <workItem from="1711704927453" duration="18991000" />
-      <workItem from="1711724993844" duration="2433000" />
-      <workItem from="1711729233578" duration="57000" />
-      <workItem from="1711729315721" duration="10338000" />
-      <workItem from="1711799596651" duration="9945000" />
-      <workItem from="1711819025856" duration="112000" />
-      <workItem from="1711819151018" duration="1507000" />
-      <workItem from="1711823408684" duration="12088000" />
-      <workItem from="1711890602027" duration="1205000" />
-      <workItem from="1712271388216" duration="778000" />
-      <workItem from="1712491640218" duration="31728000" />
-      <workItem from="1712604170804" duration="4840000" />
-      <workItem from="1712662352246" duration="32894000" />
-      <workItem from="1712739680870" duration="27542000" />
-      <workItem from="1712943747167" duration="17203000" />
-      <workItem from="1712966815988" duration="1265000" />
-      <workItem from="1713093069317" duration="3533000" />
-      <workItem from="1713096631275" duration="190000" />
-      <workItem from="1713097353284" duration="682000" />
-      <workItem from="1713099296667" duration="3211000" />
-      <workItem from="1713102640035" duration="1074000" />
-      <workItem from="1713104100243" duration="670000" />
-      <workItem from="1713105046214" duration="27000" />
-      <workItem from="1713105178278" duration="7376000" />
-      <workItem from="1713114693231" duration="296000" />
-      <workItem from="1713115039379" duration="28000" />
-      <workItem from="1713115082641" duration="14363000" />
-      <workItem from="1713136044039" duration="420000" />
-      <workItem from="1713136483243" duration="2580000" />
-      <workItem from="1713139090493" duration="926000" />
-      <workItem from="1713606219932" duration="25382000" />
-      <workItem from="1713690707341" duration="28260000" />
-      <workItem from="1713730009445" duration="130000" />
-      <workItem from="1713902386562" duration="316000" />
-=======
-      <changelist id="c71f41e7-1028-4ef2-910f-34b512721878" name="Changes" comment="" />
-      <created>1714724391166</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1714724391166</updated>
-      <workItem from="1714724394124" duration="10219000" />
-      <workItem from="1714741609591" duration="6351000" />
-      <workItem from="1714820717850" duration="193000" />
->>>>>>> ba038a7 (metiers+api)
-=======
-      <changelist id="485b3cd8-922b-4e26-a88d-44df013abbea" name="Changes" comment="" />
-      <created>1713984924445</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1713984924445</updated>
-      <workItem from="1713984925495" duration="3319000" />
-      <workItem from="1714033972375" duration="9484000" />
-      <workItem from="1714049146951" duration="268000" />
-      <workItem from="1714049472966" duration="611000" />
-      <workItem from="1714053050170" duration="544000" />
-      <workItem from="1714053851909" duration="4188000" />
-      <workItem from="1714063366610" duration="10138000" />
-      <workItem from="1714117864116" duration="9144000" />
-      <workItem from="1714381075481" duration="6668000" />
-      <workItem from="1714394762037" duration="11687000" />
-      <workItem from="1714408823260" duration="3863000" />
-      <workItem from="1714465164801" duration="160000" />
-      <workItem from="1714465377978" duration="749000" />
-      <workItem from="1714498062377" duration="292000" />
-      <workItem from="1714498369129" duration="204000" />
-      <workItem from="1714572338237" duration="4918000" />
-      <workItem from="1714674635741" duration="3187000" />
-      <workItem from="1714724640973" duration="6490000" />
-      <workItem from="1714756128702" duration="10391000" />
-      <workItem from="1714811118250" duration="299000" />
->>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+      <updated>1707398000602</updated>
+      <workItem from="1707398001659" duration="7404000" />
+      <workItem from="1708001300879" duration="5763000" />
+      <workItem from="1712107873935" duration="1602000" />
+      <workItem from="1712564683008" duration="12168000" />
+      <workItem from="1712578658933" duration="252000" />
+      <workItem from="1712578933294" duration="135000" />
+      <workItem from="1712579114243" duration="1984000" />
+      <workItem from="1712653856874" duration="979000" />
+      <workItem from="1712654935941" duration="209000" />
+      <workItem from="1712656386198" duration="417000" />
+      <workItem from="1712656838350" duration="916000" />
+      <workItem from="1712658715429" duration="26000" />
+      <workItem from="1712658775685" duration="247000" />
+      <workItem from="1712659048515" duration="537000" />
+      <workItem from="1712661024483" duration="62000" />
+      <workItem from="1712661100441" duration="383000" />
+      <workItem from="1712661520548" duration="22000" />
+      <workItem from="1712661608186" duration="459000" />
+      <workItem from="1712662111400" duration="173000" />
+      <workItem from="1712662345954" duration="11000" />
+      <workItem from="1712662368592" duration="86000" />
+      <workItem from="1712662471343" duration="925000" />
+      <workItem from="1712829140971" duration="6657000" />
+      <workItem from="1713632814396" duration="1282000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-=======
->>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <breakpoint enabled="true" type="java-exception">
-<<<<<<< HEAD
-          <properties class="java.lang.reflect.InvocationTargetException" package="java.lang.reflect" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/reclamation/test/ChatBMain.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-=======
->>>>>>> ba038a7 (metiers+api)
-=======
-          <properties class="java.lang.ClassNotFoundException" package="java.lang" />
+          <properties class="java.lang.UnsupportedClassVersionError" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
->>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
 </project>

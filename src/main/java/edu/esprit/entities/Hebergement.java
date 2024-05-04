@@ -17,8 +17,6 @@ public class Hebergement {
     private Float Price;
 
     private Voyage voyage;
-    private double latitude;
-    private double longitude;
 
     public Hebergement(String name, String picture, String location, String description, String selectedType , String activities, Float price, Voyage voyage) {
         Name = name;
@@ -119,22 +117,6 @@ public class Hebergement {
 
     public void setVoyage(Voyage voyage) {
         this.voyage = voyage;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
     }
 
     @Override

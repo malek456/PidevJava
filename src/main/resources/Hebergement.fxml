@@ -29,7 +29,6 @@
                 </Label>
                 <Button layoutX="32.0" layoutY="198.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="26.0" prefWidth="104.0" text="update" />
                 <Button layoutX="179.0" layoutY="198.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="26.0" prefWidth="104.0" text="delete" />
-                <Button layoutX="300.0" layoutY="198.0" mnemonicParsing="false" onAction="#googlemap" prefHeight="26.0" prefWidth="104.0" text="Show Location" />
                 <Label fx:id="labelLocation" layoutX="72.0" layoutY="150.0" prefHeight="18.0" prefWidth="126.0" text="Label" />
                 <Label fx:id="labelPrice" layoutX="54.0" layoutY="169.0" prefHeight="18.0" prefWidth="126.0" text="Label" />
 

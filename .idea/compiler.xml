@@ -6,20 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-<<<<<<< HEAD
-        <module name="reclamation" />
+        <module name="getionPersonne3A4" />
+        <module name="getionPersonneFP" />
       </profile>
     </annotationProcessing>
   </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="reclamation" options="" />
-    </option>
-  </component>
-=======
-        <module name="ProjectHOpe" />
-      </profile>
-    </annotationProcessing>
-  </component>
->>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
 </project>
