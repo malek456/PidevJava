@@ -1,0 +1,68 @@
+/* Style de fond pour la page */
+.background {
+    -fx-background-color: #beecff; /* Couleur de fond */
+    -fx-border-radius: 4px; /* Bordures arrondies */
+    -fx-background-radius: 4px; /* Coins arrondis pour le fond */
+    -fx-border-color: black; /* Couleur de la bordure */
+}
+
+/* Style pour les grands titres */
+.title {
+    -fx-font-size: 24px; /* Taille de police */
+    -fx-font-weight: bold; /* Police en gras */
+    -fx-padding: 10px 0; /* Espacement entre le titre et le contenu */
+}
+
+/* Style pour les petites descriptions */
+.description {
+    -fx-font-size: 18px; /* Taille de police */
+    -fx-padding: 5px 0; /* Espacement entre les descriptions */
+}
+
+/* Style pour les sections contenant les détails de l'hôtel */
+.section {
+    -fx-padding: 10px 0; /* Espacement entre les sections */
+}
+
+/* Style pour le conteneur de la photo de l'hôtel */
+.photo-container {
+    -fx-padding: 20px 0; /* Espacement autour de la photo */
+    -fx-border-color: black; /* Couleur de la bordure */
+    -fx-border-width: 2px; /* Largeur de la bordure */
+    -fx-border-radius: 4px; /* Coins arrondis pour la bordure */
+}
+
+/* Style pour la description de l'hôtel */
+.description-box {
+    -fx-background-color: #fff; /* Couleur de fond */
+    -fx-border-color: #000000; /* Couleur de la bordure */
+    -fx-background-radius: 4px; /* Coins arrondis pour le fond */
+    -fx-border-radius: 4px; /* Coins arrondis pour la bordure */
+    -fx-padding: 10px; /* Espacement à l'intérieur de la boîte */
+}
+
+/* Style pour les détails de l'hôtel */
+.details {
+    -fx-padding: 10px 0; /* Espacement entre les détails */
+}
+
+/* Style pour les boutons */
+.button {
+    -fx-background-color: #151e93; /* Couleur de fond */
+    -fx-background-radius: 6px; /* Coins arrondis */
+    -fx-text-fill: white; /* Couleur du texte */
+    -fx-font-weight: bold; /* Police en gras */
+    -fx-font-size: 15px; /* Taille de police */
+}
+
+/* Style pour le titre de la section des détails */
+.section-title {
+    -fx-font-size: 20px; /* Taille de police */
+    -fx-font-weight: bold; /* Police en gras */
+    -fx-padding: 5px 0; /* Espacement autour du titre */
+}
+
+/* Style pour les éléments de liste */
+.list-item {
+    -fx-padding: 3px 0; /* Espacement entre les éléments de la liste */
+}
