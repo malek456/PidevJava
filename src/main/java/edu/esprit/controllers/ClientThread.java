@@ -6,12 +6,9 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
 public class ClientThread extends Thread {
-
     public static DatagramSocket socket = null;
     private final byte[] incoming = new byte[256];
-
     private final TextArea textArea;
-
     public ClientThread(DatagramSocket socket, TextArea textArea) {
         this.socket = socket;
         this.textArea = textArea;

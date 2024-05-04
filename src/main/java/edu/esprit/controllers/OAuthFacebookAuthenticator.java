@@ -68,6 +68,12 @@ public class OAuthFacebookAuthenticator extends OAuthAuthenticator{
                     SessionUtilisateur.demarrerSession(user);
                     SessionManager.createSession();
                     SessionManager.setUserEmail(SessionUtilisateur.getUtilisateurActuel().getEmail());
+                    SessionManager.setUserImage("defaultProfile.png");
+                    SessionManager.setUserRole(SessionUtilisateur.getUtilisateurActuel().getRoles());
+                    SessionManager.setUserPhone("");
+                    SessionManager.setUserNom("");
+                    SessionManager.setUserPrenom("");
+                    SessionManager.setUserDes("");
                     System.out.println(SessionManager.getUserEmail());
                     System.out.println("User from facebook signed up successfully!");
                     UserController.redirectToFrontend();

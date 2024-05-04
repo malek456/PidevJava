@@ -29,6 +29,8 @@ import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.Base64;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 
@@ -228,13 +230,13 @@ public class UserController {
             isAboutUsVisible = false;
         }
     }
-    private void slideOut(VBox vbox)
+    public static void slideOut(VBox vbox)
     {
         TranslateTransition slideOutTransition = new TranslateTransition(Duration.millis(300), vbox);
         slideOutTransition.setToY(-1000);
         slideOutTransition.play();
     }
-    private void slideIn(VBox vbox) {
+    public static void slideIn(VBox vbox) {
         TranslateTransition slideInTransition = new TranslateTransition(Duration.millis(300), vbox);
         slideInTransition.setToY(0);
         slideInTransition.play();
@@ -312,14 +314,17 @@ public class UserController {
                     SessionManager.setUserRole(SessionUtilisateur.getUtilisateurActuel().getRoles());
                     SessionManager.setUserImage(SessionUtilisateur.getUtilisateurActuel().getImageName());
                     SessionManager.setUserId(SessionUtilisateur.getUtilisateurActuel().getId());
-                    SessionManager.setUserNom(user.getNom());
+                    SessionManager.setUserNom(SessionUtilisateur.getUtilisateurActuel().getNom());
+                    SessionManager.setUserPrenom(SessionUtilisateur.getUtilisateurActuel().getPrenom());
+                    SessionManager.setUserDes(SessionUtilisateur.getUtilisateurActuel().getDescriptionUser());
+                    //SessionManager.setUserNom(user.getNom());
                 }
                 else {
                     System.out.println("Failed to sign up user.");
                 }
             }
             } catch(SQLException e){
-                e.printStackTrace();
+                Logger.getLogger(getClass().getName()).log(Level.SEVERE, "An exception occurred", e);
                 System.out.println("An error occurred while signing up.");
             } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
@@ -380,13 +385,93 @@ public class UserController {
             message.setSubject(header);
 
             // Set the email content
-            message.setText("Your verification code is: " + verificationCode);
-
+            message.setContent("<!DOCTYPE html>\n" +
+                    "<html>\n" +
+                    "<head>\n" +
+                    "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\n" +
+                    "</head>\n" +
+                    "<style type=\"text/css\">\n" +
+                    "body{background-color:blue;margin: 0px;}\n" +
+                    "</style>\n" +
+                    "<body>\n" +
+                    "<table border=\"0\" width=\"100%\" style=\"margin:auto;padding:30px;background-color: #F3F3F3;border:1px solid #FF7A5A;\">\n" +
+                    "<tr>\n" +
+                    "<td>\n" +
+                    "<table border=\"0\" width=\"100%\">\n" +
+                    "<tr>\n" +
+                    "<td>\n" +
+                    "<a href=\"https://imgbb.com/\"><img src=\"https://i.ibb.co/Sm0vL9V/logo.png\" alt=\"logo\" border=\"0\"></a>\n" +
+                    "</td>\n" +
+                    "<td>\n" +
+                    "</td>\n" +
+                    "</tr>\n" +
+                    "</table>\n" +
+                    "</td>\n" +
+                    "</tr>\n" +
+                    "<tr>\n" +
+                    "<td>\n" +
+                    "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"text-align:center;width:100%;background-color: #fff;\">\n" +
+                    "<tr>\n" +
+                    "<td style=\"background-color:rgba(51,48,221,255);height:100px;font-size:50px;color:#fff;\"><i class=\"fa fa-envelope-o\" aria-hidden=\"true\"></i></td>\n" +
+                    "</tr>\n" +
+                    "<tr>\n" +
+                    "<td>\n" +
+                    "<h1 style=\"padding-top:25px;\">Code Verification</h1>\n" +
+                    "</td>\n" +
+                    "</tr>\n" +
+                    "<tr>\n" +
+                    "<td>\n" +
+                    "<p style=\"padding:0px 100px;\">\n" +
+                    "To ensure the security of your account, we require a verification code for access.\n" +
+                    "Please use the following code: [insert verification code]. Kindly enter this code within the designated\n" +
+                    "field to proceed with your login.\n" +
+                    "</p>\n" +
+                    "</td>\n" +
+                    "</tr>\n" +
+                    "<tr>\n" +
+                    "<td>\n" +
+                    "<strong style=\"margin:10px 0px 30px 0px;padding:10px 20px;color:black;font-size:50px \">"+verificationCode+"</strong>\n" +
+                    "</td>\n" +
+                    "</tr>\n" +
+                    "</table>\n" +
+                    "</td>\n" +
+                    "</tr>\n" +
+                    "<tr>\n" +
+                    "<td>\n" +
+                    "<table border=\"0\" width=\"100%\" style=\"border-radius: 5px;text-align: center;\">\n" +
+                    "<tr>\n" +
+                    "<td>\n" +
+                    "<h3 style=\"margin-top:30px;\">Stay in touch</h3>\n" +
+                    "</td>\n" +
+                    "</tr>\n" +
+                    "<tr>\n" +
+                    "<td>\n" +
+                    "<div style=\"margin-top:20px;\">\n" +
+                    "<a href=\"#\" style=\"text-decoration: none;\"><span class=\"twit\" style=\"padding:10px 9px;background-color:#4099FF;color:#fff;border-radius:50%;\"><i class=\"fa fa-twitter\" aria-hidden=\"true\" style=\"height:20px;width:20px;\"></i></span></a>\n" +
+                    "<a href=\"#\" style=\"text-decoration: none;\"><span class=\"fb\" style=\"padding:10px 9px;background-color: #3B5998;color:#fff;border-radius:50%;\"><i class=\"fa fa-facebook\" aria-hidden=\"true\" style=\"height:20px;width:20px;\"></i></span></a>\n" +
+                    "<a href=\"#\" style=\"text-decoration: none;\"><span class=\"msg\" style=\"padding:10px 9px;background-color: #FFC400;color:#fff;border-radius:50%;\"\"><i class=\"fa fa-envelope-o\" aria-hidden=\"true\" style=\"height:20px;width:20px;\"></i></span></a>\n" +
+                    "</div>\n" +
+                    "</td>\n" +
+                    "</tr>\n" +
+                    "<tr>\n" +
+                    "<td>\n" +
+                    "<div style=\"margin-top: 20px;\">\n" +
+                    "<span style=\"font-size:12px;\">Lorem ipsum</span><br>\n" +
+                    "<span style=\"font-size:12px;\">Copyright &copy; 2024 Wetravel</span>\n" +
+                    "</div>\n" +
+                    "</td>\n" +
+                    "</tr>\n" +
+                    "</table>\n" +
+                    "</td>\n" +
+                    "</tr>\n" +
+                    "</table>\n" +
+                    "</body>\n" +
+                    "</html>", "text/html");
             // Send message
             Transport.send(message);
             System.out.println("Verification email sent successfully to: " + recipientEmail);
         } catch (MessagingException e) {
-            e.printStackTrace();
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "An exception occurred", e);
         }
     }
     @FXML
@@ -617,7 +702,9 @@ public class UserController {
                 SessionManager.setUserRole(SessionUtilisateur.getUtilisateurActuel().getRoles());
                 SessionManager.setUserImage(SessionUtilisateur.getUtilisateurActuel().getImageName());
                 SessionManager.setUserId(SessionUtilisateur.getUtilisateurActuel().getId());
-                SessionManager.setUserNom(user.getNom());
+                SessionManager.setUserDes(SessionUtilisateur.getUtilisateurActuel().getDescriptionUser());
+                SessionManager.setUserPhone(SessionUtilisateur.getUtilisateurActuel().getPhoneNumber());
+                SessionManager.setUserNom(SessionUtilisateur.getUtilisateurActuel().getNom());
                 System.out.println(SessionManager.getUserEmail()+SessionManager.getUserImage());
                 if (user.getRoles().contains("ROLE_ADMIN")) {
 

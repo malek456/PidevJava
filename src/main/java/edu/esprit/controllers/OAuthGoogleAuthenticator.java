@@ -12,7 +12,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-
 public class OAuthGoogleAuthenticator extends OAuthAuthenticator{
 
     private String GOOGLE_apiScope = "https://www.googleapis.com/auth/userinfo.profile";
@@ -72,6 +71,13 @@ public class OAuthGoogleAuthenticator extends OAuthAuthenticator{
                     SessionUtilisateur.demarrerSession(user);
                     SessionManager.createSession();
                     SessionManager.setUserEmail(SessionUtilisateur.getUtilisateurActuel().getEmail());
+                    SessionManager.setUserEmail(SessionUtilisateur.getUtilisateurActuel().getEmail());
+                    SessionManager.setUserImage("defaultProfile.png");
+                    SessionManager.setUserRole(SessionUtilisateur.getUtilisateurActuel().getRoles());
+                    SessionManager.setUserPhone("");
+                    SessionManager.setUserNom(SessionUtilisateur.getUtilisateurActuel().getNom());
+                    SessionManager.setUserPrenom(SessionUtilisateur.getUtilisateurActuel().getPrenom());
+                    SessionManager.setUserDes("");
                     System.out.println(SessionManager.getUserEmail());
                     System.out.println("User from google signed up successfully!");
                     UserController.redirectToFrontend();

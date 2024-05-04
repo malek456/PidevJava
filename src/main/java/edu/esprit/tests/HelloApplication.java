@@ -14,6 +14,7 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        //SessionManager.endSession();
         if (SessionManager.hasSession())
         {
             if (SessionManager.getUserRole().contains("ROLE_ADMIN")) {

@@ -1,5 +1,6 @@
 package edu.esprit.services;
 
+import edu.esprit.controllers.UserController;
 import edu.esprit.entities.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -36,6 +37,23 @@ public class ServiceUser implements IService<User> {
             System.out.println(ex.getMessage());
         }
         return UserList;
+    }
+    public  User getUserByEmail(String email) {
+
+        User user = null;
+        try {
+            String query2 = "SELECT * FROM  user where email=? ";
+            PreparedStatement smt = connection.prepareStatement(query2);
+            smt.setString(1, email);
+            ResultSet resultSet = smt.executeQuery();
+            while (resultSet.next()) {
+                user = new User(resultSet.getInt("id"), resultSet.getString("email"), resultSet.getString("nom"), resultSet.getString("prenom"),
+                        resultSet.getString("password"), resultSet.getString("phone_number"), resultSet.getString("roles"), resultSet.getBoolean("is_verified"), resultSet.getTimestamp("created_at").toLocalDateTime(), resultSet.getString("pays"), resultSet.getString("description_user"), resultSet.getString("image_name"));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return user;
     }
     public  ObservableList<User> SearchByNomOrPrenom(String nomOrPrenom) {
         ObservableList<User> UserList = FXCollections.observableArrayList();
@@ -127,6 +145,13 @@ public class ServiceUser implements IService<User> {
         statement.setString(6,user.getDescriptionUser());
         statement.setString(7, user.getImageName());
         statement.setString(8, userModify.getEmail());
+        return statement.executeUpdate();
+    }
+    public int modiferPass(String password,String email) throws SQLException, NoSuchAlgorithmException {
+        String query = "UPDATE user SET password=? WHERE email =?";
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setString(1, UserController.hashPassword(password));
+        statement.setString(2, email);
         return statement.executeUpdate();
     }
     public ResultSet StateNbrPays() throws SQLException {

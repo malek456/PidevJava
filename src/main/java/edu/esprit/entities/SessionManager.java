@@ -7,13 +7,31 @@ public class SessionManager {
     private static final String SESSION_KEY = "user_session";
     private static final String ROLE_KEY = "user_role";
     private static final String ID_KEY = "user_id";
+    private static final String PHONE_KEY = "user_phone";
     private static final String NOM_KEY = "user_nom";
-    private static Preferences prefs = Preferences.userRoot().node(SessionManager.class.getName());
+    private static final String PRENOM_KEY = "user_prenom";
+    private static final String DES_KEY = "user_des";
+
+    private static final Preferences prefs = Preferences.userRoot().node(SessionManager.class.getName());
 
     public static int getUserId() {
         return prefs.getInt(ID_KEY, 0); // Return 0 if no id is stored
     }
 
+    public static void setUserPhone(String phone) {
+        prefs.put(PHONE_KEY, phone);
+    }
+    public static String getUserDes()
+    {
+        return prefs.get(DES_KEY,null);
+    }
+    public static void setUserDes(String des) {
+        prefs.put(DES_KEY, des);
+    }
+    public static String getUserPhone()
+    {
+        return prefs.get(PHONE_KEY,null);
+    }
     public static void setUserId(int id) {
         prefs.putInt(ID_KEY, id);
     }
@@ -24,6 +42,14 @@ public class SessionManager {
     public static void setUserNom(String image)
     {
         prefs.put(NOM_KEY,image);
+    }
+    public static String getUserPrenom()
+    {
+        return prefs.get(PRENOM_KEY,null);
+    }
+    public static void setUserPrenom(String prenom)
+    {
+        prefs.put(PRENOM_KEY,prenom);
     }
 
     public static String getUserImage()

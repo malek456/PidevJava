@@ -33,33 +33,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/User/IdeaProjects/ProjectHOpe/src/main/java/edu/esprit/entities",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\src\main\resources\assets" />
       <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\src\main\java\edu\esprit\entities" />
       <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\src\main\java\edu\esprit\projecthope\controllers" />
       <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\src\main\resources\edu\esprit\projecthope" />
       <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\lib" />
-      <recent name="C:\Users\User\IdeaProjects\ProjectHOpe" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="edu.esprit.projecthope.controllers" />
@@ -104,7 +104,16 @@
       <workItem from="1714117864116" duration="9144000" />
       <workItem from="1714381075481" duration="6668000" />
       <workItem from="1714394762037" duration="11687000" />
-      <workItem from="1714408823260" duration="2592000" />
+      <workItem from="1714408823260" duration="3863000" />
+      <workItem from="1714465164801" duration="160000" />
+      <workItem from="1714465377978" duration="749000" />
+      <workItem from="1714498062377" duration="292000" />
+      <workItem from="1714498369129" duration="204000" />
+      <workItem from="1714572338237" duration="4918000" />
+      <workItem from="1714674635741" duration="3187000" />
+      <workItem from="1714724640973" duration="6490000" />
+      <workItem from="1714756128702" duration="10391000" />
+      <workItem from="1714811118250" duration="299000" />
     </task>
     <servers />
   </component>
