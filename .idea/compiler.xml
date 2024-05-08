@@ -6,8 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="getionPersonne3A4" />
-        <module name="getionPersonneFP" />
+        <module name="ProjectHOpe" />
       </profile>
     </annotationProcessing>
   </component>

@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<?xml version="1.0" encoding="UTF-8"?>
-=======
->>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
-=======
-<?xml version="1.0" encoding="UTF-8"?>
->>>>>>> GestionReclamations
-=======
->>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
@@ -18,28 +7,7 @@
       </list>
     </option>
   </component>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <component name="PWA">
-    <option name="enabled" value="true" />
-    <option name="wasEnabledAtLeastOnce" value="true" />
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="jbr-17 (2)" project-jdk-type="JavaSDK">
-=======
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
->>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
-  <component name="ProjectType">
-    <option name="id" value="jpab" />
-  </component>
-<<<<<<< HEAD
->>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
-=======
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK" />
->>>>>>> GestionReclamations
-=======
->>>>>>> d3a74de2d4a93289ac87785a21aa74d52331a8ff
 </project>

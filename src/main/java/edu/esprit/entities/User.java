@@ -1,39 +1,5 @@
 package edu.esprit.entities;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> GestionReclamations
-import java.util.Objects;
-
-public class User {
-
-    private int id;
-    private String roles;
-    private String nom,prenom;
-    private String image_name;
-
-    public User() {
-    }
-
-    public User(int id, String roles,String nom,String prenom, String image_name) {
-        this.id = id;
-        this.roles = roles;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.image_name = image_name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-<<<<<<< HEAD
-=======
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -171,9 +137,6 @@ public class User {
         this.email = email;
     }
 
->>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
-=======
->>>>>>> GestionReclamations
     public String getRoles() {
         return roles;
     }
@@ -182,9 +145,6 @@ public class User {
         this.roles = roles;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     public String getPassword() {
         return password;
     }
@@ -193,9 +153,6 @@ public class User {
         this.password = password;
     }
 
->>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
-=======
->>>>>>> GestionReclamations
     public String getNom() {
         return nom;
     }
@@ -212,41 +169,6 @@ public class User {
         this.prenom = prenom;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> GestionReclamations
-    public String getImage_name() {
-        return image_name;
-    }
-
-    public void setImage_name(String image_name) {
-        this.image_name = image_name;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", roles='" + roles + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return id == user.id && Objects.equals(roles, user.roles);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, roles);
-    }
-}
-<<<<<<< HEAD
-=======
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -309,6 +231,3 @@ public class User {
     }
 }
 
->>>>>>> 98c6bd46f80b2b737013558c61c66b4bec3d581b
-=======
->>>>>>> GestionReclamations
