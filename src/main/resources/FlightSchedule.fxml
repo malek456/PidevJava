@@ -11,11 +11,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="854.0" prefWidth="1535.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.FlightSchedule">
+<AnchorPane prefHeight="854.0" prefWidth="1535.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.AfficherVoyage">
     <children>
         <HBox prefHeight="51.0" prefWidth="1535.0" stylesheets="@frontStyle.css">
             <children>
@@ -50,6 +49,9 @@
                                     </viewport>
                                 </ImageView>
                                 <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="254.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="hotels">
+                                    <!-- Ajoutez ce bouton à votre fichier FXML AfficherVoyage.fxml -->
+                                    <Button layoutX="100" layoutY="100" onAction="#openWeatherInterface" text="Weather Interface" />
+
                                     <HBox.margin>
                                         <Insets right="10.0" />
                                     </HBox.margin>
@@ -277,23 +279,22 @@
                 </VBox>
             </children>
         </VBox>
-          <AnchorPane layoutX="253.0" layoutY="95.0" prefHeight="728.0" prefWidth="1234.0" stylesheets="@dashboardDesign.css">
+          <AnchorPane layoutX="237.0" layoutY="158.0" prefHeight="515.0" prefWidth="1262.0" stylesheets="@dashboardDesign.css">
               <styleClass>
                   <String fx:value="white-bg1" />
                   <String fx:value="shadow" />
               </styleClass>
          <children>
-            <ScrollPane layoutX="36.0" layoutY="43.0" prefHeight="645.0" prefWidth="1158.0">
-               <content>
-                  <VBox prefHeight="634.0" prefWidth="1144.0">
-                     <children>
-                        <Pane prefHeight="70.0" prefWidth="1144.0" />
-                     </children>
-                  </VBox>
-               </content>
-            </ScrollPane>
+            <ScrollPane fx:id="scrollPane" layoutX="36.0" layoutY="69.0" prefHeight="394.0" prefWidth="1203.0" />
          </children>
           </AnchorPane>
+      <Label alignment="CENTER" layoutX="657.0" layoutY="125.0" prefHeight="66.0" prefWidth="419.0" styleClass="destinations" stylesheets="@voyage.css" text="les destinations">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <Button layoutX="259.0" layoutY="72.0" mnemonicParsing="false" onAction="#openWeatherInterface" prefHeight="26.0" prefWidth="127.0" text="Weather Interface" />
+      <Button fx:id="statistiquesButton" layoutX="260.0" layoutY="100.0" mnemonicParsing="false" onAction="#afficherStatistiques" prefHeight="26.0" prefWidth="127.0" text="Statistiques" />
     </children>
 
 </AnchorPane>

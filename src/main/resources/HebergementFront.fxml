@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="671.0" prefWidth="574.0" styleClass="background" stylesheets="@Hebergement.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.HebergementDesign">
+    <children>
+        <ImageView fx:id="labelImage" fitHeight="229.0" fitWidth="467.0" layoutX="57.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true" />
+        <Label contentDisplay="CENTER" layoutX="54.0" layoutY="353.0" prefHeight="30.0" prefWidth="102.0" styleClass="TransparentBack" text="Location">
+            <font>
+                <Font name="Comic Sans MS Bold Italic" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="54.0" layoutY="563.0" prefHeight="30.0" prefWidth="102.0" styleClass="TransparentBack" stylesheets="@Hebergement.css" text="Price">
+            <font>
+                <Font name="Comic Sans MS Bold Italic" size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelName" alignment="CENTER" layoutX="178.0" layoutY="7.0" prefHeight="53.0" prefWidth="218.0" styleClass="labelA" stylesheets="@Hebergement.css" text="label">
+            <font>
+                <Font name="Comic Sans MS Italic" size="36.0" />
+            </font>
+        </Label>
+        <Button layoutX="50.0" layoutY="613.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="227.0" text="Button" />
+      <Label fx:id="labelLocation" alignment="CENTER" layoutX="183.0" layoutY="349.0" prefHeight="38.0" prefWidth="113.0" styleClass="labelA" stylesheets="@Hebergement.css" text="label">
+         <font>
+            <Font name="Comic Sans MS Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" layoutX="318.0" layoutY="353.0" prefHeight="30.0" prefWidth="66.0" styleClass="TransparentBack" text="Type">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelType" alignment="CENTER" layoutX="385.0" layoutY="349.0" prefHeight="38.0" prefWidth="129.0" styleClass="labelA" stylesheets="@Hebergement.css" text="label">
+         <font>
+            <Font name="Comic Sans MS Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" layoutX="54.0" layoutY="408.0" prefHeight="30.0" prefWidth="102.0" styleClass="TransparentBack" text="Description">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" layoutX="54.0" layoutY="504.0" prefHeight="30.0" prefWidth="102.0" styleClass="TransparentBack" text="Activities">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelDescription" alignment="CENTER" layoutX="183.0" layoutY="408.0" prefHeight="82.0" prefWidth="334.0" styleClass="labelA" stylesheets="@Hebergement.css" text="label">
+         <font>
+            <Font name="Comic Sans MS Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelActivities" alignment="CENTER" layoutX="184.0" layoutY="496.0" prefHeight="46.0" prefWidth="334.0" styleClass="labelA" stylesheets="@Hebergement.css" text="label">
+         <font>
+            <Font name="Comic Sans MS Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelPrice" alignment="CENTER" layoutX="182.0" layoutY="559.0" prefHeight="38.0" prefWidth="178.0" styleClass="labelA" stylesheets="@Hebergement.css" text="label">
+         <font>
+            <Font name="Comic Sans MS Italic" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="return_V" layoutX="297.0" layoutY="613.0" mnemonicParsing="false" onAction="#return_V" prefHeight="38.0" prefWidth="227.0" text="Return" />
+        <Button layoutX="287.0" layoutY="613.0" mnemonicParsing="false" onAction="#googlemap" prefHeight="38.0" prefWidth="227.0" text="Show Location" />
+
+    </children>
+</AnchorPane>
