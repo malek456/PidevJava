@@ -2,6 +2,11 @@ package edu.esprit.entities;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
 import java.util.Objects;
 
 public class User {
@@ -30,6 +35,10 @@ public class User {
         this.id = id;
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> GestionReclamations
 =======
 <<<<<<< HEAD
 =======
@@ -174,7 +183,11 @@ public class User {
 <<<<<<< HEAD
 >>>>>>> main
 =======
+<<<<<<< HEAD
 >>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
     public String getRoles() {
         return roles;
     }
@@ -225,7 +238,11 @@ public class User {
 <<<<<<< HEAD
 >>>>>>> main
 =======
+<<<<<<< HEAD
 >>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
     public String getNom() {
         return nom;
     }
@@ -244,12 +261,21 @@ public class User {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
     public String getImage_name() {
         return image_name;
     }
 
     public void setImage_name(String image_name) {
         this.image_name = image_name;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> GestionReclamations
 =======
 <<<<<<< HEAD
 =======
@@ -330,7 +356,11 @@ public class User {
 <<<<<<< HEAD
 >>>>>>> main
 =======
+<<<<<<< HEAD
 >>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
     }
 
     @Override
@@ -346,10 +376,15 @@ public class User {
                 ", prenom='" + prenom + '\'' +
 >>>>>>> main
 =======
+<<<<<<< HEAD
                 ", email='" + email + '\'' +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
 >>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
+=======
+                ", roles='" + roles + '\'' +
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
                 '}';
     }
 
@@ -365,8 +400,13 @@ public class User {
         return id == user.id && Objects.equals(email, user.email) && Objects.equals(nom, user.nom) && Objects.equals(prenom, user.prenom);
 >>>>>>> main
 =======
+<<<<<<< HEAD
         return id == user.id && Objects.equals(email, user.email) && Objects.equals(nom, user.nom) && Objects.equals(prenom, user.prenom);
 >>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
+=======
+        return id == user.id && Objects.equals(roles, user.roles);
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
     }
 
     @Override
@@ -386,4 +426,11 @@ public class User {
 <<<<<<< HEAD
 >>>>>>> main
 =======
+<<<<<<< HEAD
 >>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
+=======
+        return Objects.hash(id, roles);
+    }
+}
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations

@@ -4,7 +4,12 @@
 =======
 >>>>>>> main
 =======
+<<<<<<< HEAD
 >>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
@@ -17,6 +22,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
   <component name="PWA">
     <option name="enabled" value="true" />
     <option name="wasEnabledAtLeastOnce" value="true" />
@@ -27,6 +37,10 @@
 =======
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK" />
 >>>>>>> ba038a7 (metiers+api)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> GestionReclamations
 =======
 =======
 >>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
@@ -39,5 +53,9 @@
 <<<<<<< HEAD
 >>>>>>> main
 =======
+<<<<<<< HEAD
 >>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
 </project>

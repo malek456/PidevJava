@@ -6,6 +6,11 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
   <groupId>com.example</groupId>
   <artifactId>reclamation</artifactId>
   <version>1.0-SNAPSHOT</version>
@@ -29,6 +34,10 @@
       <version>8.0.33</version>
     </dependency>
     <dependency>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> GestionReclamations
 =======
 =======
 >>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
@@ -47,7 +56,11 @@
 <<<<<<< HEAD
 >>>>>>> main
 =======
+<<<<<<< HEAD
 >>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
       <version>17.0.6</version>
@@ -59,6 +72,11 @@
     </dependency>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
 <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-web</artifactId>
@@ -230,6 +248,10 @@
 
   </dependencies>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> GestionReclamations
 =======
 =======
 >>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
@@ -280,7 +302,11 @@
 <<<<<<< HEAD
 >>>>>>> main
 =======
+<<<<<<< HEAD
 >>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
   <build>
     <plugins>
       <plugin>
@@ -304,16 +330,29 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
               <mainClass>com.example.reclamation/com.example.reclamation.HelloApplication</mainClass>
 =======
               <mainClass>edu.esprit/edu.esprit.HelloApplication</mainClass>
 >>>>>>> ba038a7 (metiers+api)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> GestionReclamations
 =======
               <mainClass>edu.esprit.projecthope/edu.esprit.projecthope.tests.HelloApplication</mainClass>
 >>>>>>> main
 =======
+<<<<<<< HEAD
               <mainClass>edu.esprit.projecthope/edu.esprit.projecthope.tests.HelloApplication</mainClass>
 >>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>
@@ -418,5 +457,9 @@
 <<<<<<< HEAD
 >>>>>>> main
 =======
+<<<<<<< HEAD
 >>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
+>>>>>>> GestionReclamations
 </project>
