@@ -1,6 +1,7 @@
 package edu.esprit.services;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import edu.esprit.entities.Reclamation;
 import edu.esprit.entities.User;
 import edu.esprit.utils.DBConnection;
@@ -57,6 +58,8 @@ public class ServiceUser implements CRUD<User>{
 //
         return u;
 =======
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
 import edu.esprit.controllers.UserController;
 import edu.esprit.entities.User;
 import javafx.collections.FXCollections;
@@ -226,6 +229,9 @@ public class ServiceUser implements IService<User> {
                 userStats.put(month, count);
             }
         return userStats;
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
     }
 }

@@ -5,6 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   <groupId>com.example</groupId>
   <artifactId>reclamation</artifactId>
   <version>1.0-SNAPSHOT</version>
@@ -29,6 +30,8 @@
     </dependency>
     <dependency>
 =======
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
   <groupId>edu.esprit</groupId>
   <artifactId>ProjectHOpe</artifactId>
   <version>1.0-SNAPSHOT</version>
@@ -41,7 +44,10 @@
 <<<<<<< HEAD
   <dependencies>
     <dependency>
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
       <version>17.0.6</version>
@@ -51,6 +57,7 @@
       <artifactId>javafx-fxml</artifactId>
       <version>17.0.6</version>
     </dependency>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <dependency>
       <groupId>org.openjfx</groupId>
@@ -224,6 +231,8 @@
   </dependencies>
 
 =======
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-crypto</artifactId>
@@ -268,7 +277,10 @@
   </dependencies>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
   <build>
     <plugins>
       <plugin>
@@ -291,6 +303,7 @@
             <configuration>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               <mainClass>com.example.reclamation/com.example.reclamation.HelloApplication</mainClass>
 =======
               <mainClass>edu.esprit/edu.esprit.HelloApplication</mainClass>
@@ -298,6 +311,9 @@
 =======
               <mainClass>edu.esprit.projecthope/edu.esprit.projecthope.tests.HelloApplication</mainClass>
 >>>>>>> main
+=======
+              <mainClass>edu.esprit.projecthope/edu.esprit.projecthope.tests.HelloApplication</mainClass>
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>
@@ -311,7 +327,10 @@
     </plugins>
   </build>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
 =======
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -396,5 +415,8 @@
     </plugins>
 </build>
 >>>>>>> daf1b4baae6ebf60433e287beadfdc6a98f3144f
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
 </project>

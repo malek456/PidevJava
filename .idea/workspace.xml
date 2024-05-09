@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="485b3cd8-922b-4e26-a88d-44df013abbea" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/edu/esprit/controllers/indexController.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+    <option name="showPreview" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2fYjUYinWtrN2C0LPqAsecsA0T3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/IdeaProjects/PidevJava10&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\src\main\resources\assets" />
+      <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\src\main\java\edu\esprit\entities" />
+      <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\src\main\java\edu\esprit\projecthope\controllers" />
+      <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\src\main\resources\edu\esprit\projecthope" />
+      <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\ProjectHOpe\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.esprit.projecthope.controllers" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.HelloApplication">
+    <configuration name="ChatServer" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="edu.esprit.controllers.ChatServer" />
+      <module name="ProjectHOpe" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HelloApplication" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="edu.esprit.tests.HelloApplication" />
+      <module name="ProjectHOpe" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\User\Downloads\openjfx-21.0.2_windows-x64_bin-sdk\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml --add-exports=javafx.graphics/com.sun.javafx.scene=ALL-UNNAMED --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.util=ALL-UNNAMED --add-exports=javafx.base/com.sun.javafx.logging=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.prism=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.glass.ui=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.geom.transform=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.tk=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.glass.utils=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.font=ALL-UNNAMED --add-exports=javafx.controls/com.sun.javafx.scene.control=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.scene.input=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.geom=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.text=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.scene.text=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.prism.paint=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.scenario.effect=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.application=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.scenario.effect.impl.prism=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.iio=ALL-UNNAMED" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.HelloApplication" />
+      <item itemvalue="Application.ChatServer" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="485b3cd8-922b-4e26-a88d-44df013abbea" name="Changes" comment="" />
+      <created>1713984924445</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713984924445</updated>
+      <workItem from="1713984925495" duration="3319000" />
+      <workItem from="1714033972375" duration="9484000" />
+      <workItem from="1714049146951" duration="268000" />
+      <workItem from="1714049472966" duration="611000" />
+      <workItem from="1714053050170" duration="544000" />
+      <workItem from="1714053851909" duration="4188000" />
+      <workItem from="1714063366610" duration="10138000" />
+      <workItem from="1714117864116" duration="9144000" />
+      <workItem from="1714381075481" duration="6668000" />
+      <workItem from="1714394762037" duration="11687000" />
+      <workItem from="1714408823260" duration="3863000" />
+      <workItem from="1714465164801" duration="160000" />
+      <workItem from="1714465377978" duration="749000" />
+      <workItem from="1714498062377" duration="292000" />
+      <workItem from="1714498369129" duration="204000" />
+      <workItem from="1714572338237" duration="4918000" />
+      <workItem from="1714674635741" duration="3187000" />
+      <workItem from="1714724640973" duration="6490000" />
+      <workItem from="1714756128702" duration="10391000" />
+      <workItem from="1714811118250" duration="299000" />
+      <workItem from="1714819313504" duration="812000" />
+      <workItem from="1714824391551" duration="524000" />
+      <workItem from="1714829896914" duration="4315000" />
+      <workItem from="1714851452763" duration="808000" />
+      <workItem from="1714917048573" duration="11609000" />
+      <workItem from="1714932366294" duration="1571000" />
+      <workItem from="1714967511847" duration="1864000" />
+      <workItem from="1714983041466" duration="2287000" />
+      <workItem from="1714989064066" duration="4199000" />
+      <workItem from="1715003750148" duration="1937000" />
+      <workItem from="1715007227875" duration="279000" />
+      <workItem from="1715007595385" duration="1808000" />
+      <workItem from="1715020523313" duration="4235000" />
+      <workItem from="1715091441030" duration="209000" />
+      <workItem from="1715109130582" duration="285000" />
+      <workItem from="1715110749042" duration="544000" />
+      <workItem from="1715111787333" duration="2457000" />
+      <workItem from="1715133872558" duration="2861000" />
+      <workItem from="1715156796986" duration="1034000" />
+      <workItem from="1715170766922" duration="891000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.py" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassNotFoundException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

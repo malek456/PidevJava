@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 =======
 >>>>>>> main
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
@@ -11,6 +14,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   <component name="PWA">
@@ -24,11 +28,16 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK" />
 >>>>>>> ba038a7 (metiers+api)
 =======
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectType">
     <option name="id" value="jpab" />
   </component>
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
 </project>

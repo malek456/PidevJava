@@ -1,6 +1,7 @@
 package edu.esprit.entities;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import java.util.Objects;
 
 public class User {
@@ -31,6 +32,8 @@ public class User {
 
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -168,7 +171,10 @@ public class User {
         this.email = email;
     }
 
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
     public String getRoles() {
         return roles;
     }
@@ -178,7 +184,10 @@ public class User {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
     public String getPassword() {
         return password;
     }
@@ -213,7 +222,10 @@ public class User {
 >>>>>>> daf1b4baae6ebf60433e287beadfdc6a98f3144f
     }
 
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
     public String getNom() {
         return nom;
     }
@@ -231,6 +243,7 @@ public class User {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public String getImage_name() {
         return image_name;
     }
@@ -239,6 +252,8 @@ public class User {
         this.image_name = image_name;
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -312,7 +327,10 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
     }
 
     @Override
@@ -320,12 +338,18 @@ public class User {
         return "User{" +
                 "id=" + id +
 <<<<<<< HEAD
+<<<<<<< HEAD
                 ", roles='" + roles + '\'' +
 =======
                 ", email='" + email + '\'' +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
 >>>>>>> main
+=======
+                ", email='" + email + '\'' +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
                 '}';
     }
 
@@ -335,21 +359,31 @@ public class User {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
 <<<<<<< HEAD
+<<<<<<< HEAD
         return id == user.id && Objects.equals(roles, user.roles);
 =======
         return id == user.id && Objects.equals(email, user.email) && Objects.equals(nom, user.nom) && Objects.equals(prenom, user.prenom);
 >>>>>>> main
+=======
+        return id == user.id && Objects.equals(email, user.email) && Objects.equals(nom, user.nom) && Objects.equals(prenom, user.prenom);
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
     }
 
     @Override
     public int hashCode() {
 <<<<<<< HEAD
+<<<<<<< HEAD
         return Objects.hash(id, roles);
     }
 }
 =======
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
         return Objects.hash(id, email, nom, prenom);
     }
 }
 >>>>>>> daf1b4baae6ebf60433e287beadfdc6a98f3144f
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 63ad2e38ef884dc8eb7bcb09afe72c2fb43e4b25
