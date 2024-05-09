@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ServiceVol implements IService<Vol> {
+public class ServiceVol implements IServiceVol<Vol> {
 
     private Vol currentVol;
    private int i =0;

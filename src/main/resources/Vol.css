@@ -168,5 +168,42 @@
     -fx-background-color: #d8d8d9;
 }
 
+.list-view {
+    -fx-background-color: #ce1313;
+    -fx-padding: 5px;
+}
+
+.list-cell {
+    -fx-background-color: white, #ececec;
+    -fx-background-insets: 0, 1;
+    -fx-padding: 10px;
+    -fx-border-color: lightgray;
+    -fx-border-width: 0 0 1 0;
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #b0e0e6;
+}
+
+.image-view {
+    -fx-padding: 10;
+    -fx-margin: 10;
+}
+.image-view {
+    -fx-fit-to-width: true;
+    -fx-preserve-ratio: true;
+    -fx-max-width: 150px;
+    -fx-max-height: 100px;
+}
+
+.label {
+    -fx-text-alignment: center;
+}
+
+
+
 
 

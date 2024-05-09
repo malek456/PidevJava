@@ -7,9 +7,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.Slider?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="854.0" prefWidth="1535.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.AfficherVol">
+<AnchorPane prefHeight="854.0" prefWidth="1535.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.FlightSchedule">
     <children>
         <HBox prefHeight="51.0" prefWidth="1535.0" stylesheets="@frontStyle.css">
             <children>
@@ -216,7 +213,7 @@
                                         <Insets top="10.0" />
                                     </HBox.margin>
                                 </ImageView>
-                                <Button mnemonicParsing="false" onAction="#FRecomendationAction" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="flights">
+                                <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="flights">
                                     <font>
                                         <Font name="Comic Sans MS" size="15.0" />
                                     </font>
@@ -248,7 +245,7 @@
                         <Insets top="20.0" />
                     </VBox.margin>
                 </VBox>
-                <VBox prefHeight="138.0" prefWidth="202.0">
+                <VBox prefHeight="126.0" prefWidth="174.0">
                     <children>
                         <Separator prefWidth="200.0" />
                         <Label alignment="CENTER" prefHeight="46.0" prefWidth="177.0" text="Exit Account" textFill="#3610df">
@@ -278,66 +275,25 @@
                         </HBox>
                     </children>
                 </VBox>
-            <Button mnemonicParsing="false" onAction="#NavigateDashboardAction" prefHeight="54.0" prefWidth="231.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="Dashborad">
-               <font>
-                  <Font name="Comic Sans MS" size="15.0" />
-               </font>
-            </Button>
             </children>
         </VBox>
-          <AnchorPane layoutX="413.0" layoutY="108.0" prefHeight="731.0" prefWidth="952.0" stylesheets="@dashboardDesign.css">
+          <AnchorPane layoutX="253.0" layoutY="95.0" prefHeight="728.0" prefWidth="1234.0" stylesheets="@dashboardDesign.css">
               <styleClass>
                   <String fx:value="white-bg1" />
                   <String fx:value="shadow" />
               </styleClass>
          <children>
-            <ScrollPane fx:id="scrollPane" layoutX="62.0" layoutY="127.0" prefHeight="589.0" prefWidth="826.0" />
-            <Pane layoutX="78.0" layoutY="39.0" prefHeight="74.0" prefWidth="798.0" styleClass="text-field" stylesheets="@dashboardDesign.css">
-               <children>
-                  <TextField layoutX="16.0" layoutY="22.0" prefHeight="39.0" prefWidth="185.0" style="-fx-background-color: white;" styleClass="SearchBar" stylesheets="@Vol.css" />
-                  <TextField layoutX="596.0" layoutY="22.0" prefHeight="39.0" prefWidth="178.0" style="-fx-background-color: white;" styleClass="SearchBar" stylesheets="@Vol.css" />
-                  <TextField layoutX="394.0" layoutY="22.0" prefHeight="39.0" prefWidth="191.0" style="-fx-background-color: white;" styleClass="SearchBar" stylesheets="@Vol.css" />
-                  <TextField layoutX="209.0" layoutY="22.0" prefHeight="39.0" prefWidth="178.0" style="-fx-background-color: white;" styleClass="SearchBar" stylesheets="@Vol.css" />
-               </children>
-            </Pane>
+            <ScrollPane layoutX="36.0" layoutY="43.0" prefHeight="645.0" prefWidth="1158.0">
+               <content>
+                  <VBox prefHeight="634.0" prefWidth="1144.0">
+                     <children>
+                        <Pane prefHeight="70.0" prefWidth="1144.0" />
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
          </children>
           </AnchorPane>
-      <HBox layoutX="1414.0" layoutY="63.0" prefHeight="36.0" prefWidth="106.0">
-         <children>
-            <Button fx:id="ButtonPanier" mnemonicParsing="false" onAction="#ShowPanierAction" prefHeight="36.0" prefWidth="57.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="panier">
-               <font>
-                  <Font name="Comic Sans MS Bold Italic" size="13.0" />
-               </font>
-            </Button>
-            <ImageView fitHeight="37.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/panier.png" />
-               </image>
-            </ImageView>
-         </children>
-      </HBox>
-      <Pane fx:id="PanePanier" layoutX="1269.0" layoutY="99.0" prefHeight="254.0" prefWidth="250.0">
-         <children>
-            <Button layoutX="169.0" layoutY="215.0" mnemonicParsing="false" onAction="#PayerPanierAction" prefHeight="25.0" prefWidth="81.0" text="payer" />
-            <TableView fx:id="TablePanier" prefHeight="200.0" prefWidth="250.0" />
-         </children>
-      </Pane>
-      <Button layoutX="1258.0" layoutY="64.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="135.0" styleClass="round-layout" stylesheets="@frontStyle.css" text="details des vols">
-         <font>
-            <Font name="Comic Sans MS Bold" size="15.0" />
-         </font>
-      </Button>
-      <Pane layoutX="221.0" layoutY="135.0" prefHeight="513.0" prefWidth="178.0" styleClass="column-header-background" stylesheets="@dashboardDesign.css">
-         <children>
-            <Slider fx:id="budgetSlider" layoutX="19.0" layoutY="67.0" onDragDetected="#BudgetSliderAction" />
-            <TextField fx:id="tfSlider" layoutX="49.0" layoutY="89.0" prefHeight="36.0" prefWidth="81.0" style="-fx-background-color: white;" />
-         </children>
-      </Pane>
-      <Button layoutX="246.0" layoutY="119.0" mnemonicParsing="false" onAction="#FlightRadarAction" prefHeight="31.0" prefWidth="126.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="plus d'info">
-         <font>
-            <Font name="Comic Sans MS Italic" size="14.0" />
-         </font>
-      </Button>
     </children>
 
 </AnchorPane>
