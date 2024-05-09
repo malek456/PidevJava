@@ -5,6 +5,9 @@
   <modelVersion>4.0.0</modelVersion>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
   <groupId>com.example</groupId>
   <artifactId>reclamation</artifactId>
   <version>1.0-SNAPSHOT</version>
@@ -28,6 +31,7 @@
       <version>8.0.33</version>
     </dependency>
     <dependency>
+<<<<<<< HEAD
 =======
   <groupId>edu.esprit</groupId>
   <artifactId>ProjectHOpe</artifactId>
@@ -42,6 +46,8 @@
   <dependencies>
     <dependency>
 >>>>>>> main
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
       <version>17.0.6</version>
@@ -52,6 +58,9 @@
       <version>17.0.6</version>
     </dependency>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
 <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-web</artifactId>
@@ -223,6 +232,7 @@
 
   </dependencies>
 
+<<<<<<< HEAD
 =======
     <dependency>
       <groupId>org.springframework.security</groupId>
@@ -269,6 +279,8 @@
 
 <<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
   <build>
     <plugins>
       <plugin>
@@ -291,13 +303,19 @@
             <configuration>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
               <mainClass>com.example.reclamation/com.example.reclamation.HelloApplication</mainClass>
 =======
               <mainClass>edu.esprit/edu.esprit.HelloApplication</mainClass>
 >>>>>>> ba038a7 (metiers+api)
+<<<<<<< HEAD
 =======
               <mainClass>edu.esprit.projecthope/edu.esprit.projecthope.tests.HelloApplication</mainClass>
 >>>>>>> main
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>
@@ -310,6 +328,7 @@
       </plugin>
     </plugins>
   </build>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -397,4 +416,6 @@
 </build>
 >>>>>>> daf1b4baae6ebf60433e287beadfdc6a98f3144f
 >>>>>>> main
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
 </project>

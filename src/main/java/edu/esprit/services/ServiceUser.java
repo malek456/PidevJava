@@ -1,6 +1,9 @@
 package edu.esprit.services;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
 import edu.esprit.entities.Reclamation;
 import edu.esprit.entities.User;
 import edu.esprit.utils.DBConnection;
@@ -56,6 +59,7 @@ public class ServiceUser implements CRUD<User>{
         }
 //
         return u;
+<<<<<<< HEAD
 =======
 import edu.esprit.controllers.UserController;
 import edu.esprit.entities.User;
@@ -227,5 +231,7 @@ public class ServiceUser implements IService<User> {
             }
         return userStats;
 >>>>>>> main
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
     }
 }

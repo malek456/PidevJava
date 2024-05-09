@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <?import com.jfoenix.controls.JFXButton?>
@@ -17,6 +18,8 @@
 <?import javafx.scene.control.TextField?>
 =======
 >>>>>>> main
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
@@ -24,15 +27,19 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> daf1b4baae6ebf60433e287beadfdc6a98f3144f
 >>>>>>> main
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <AnchorPane prefHeight="854.0" prefWidth="1535.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.HomeController">
@@ -49,6 +56,10 @@
 
 <AnchorPane prefHeight="854.0" prefWidth="1535.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.Front">
 >>>>>>> main
+=======
+
+<AnchorPane prefHeight="854.0" prefWidth="1535.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.HomeController">
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
     <children>
       <AnchorPane layoutX="217.0" layoutY="75.0" prefHeight="750.0" prefWidth="1309.0" stylesheets="@frontStyle.css">
          <styleClass>
@@ -148,9 +159,12 @@
             <children>
             <HBox prefHeight="51.0" prefWidth="341.0">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> daf1b4baae6ebf60433e287beadfdc6a98f3144f
 >>>>>>> main
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
                <children>
                       <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                           <image>
@@ -231,6 +245,7 @@
                      </HBox.margin>
                   </ImageView>
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="282.0" styleClass="sideBarButtons" text="flights">
 =======
 <<<<<<< HEAD
@@ -239,6 +254,9 @@
                   <Button mnemonicParsing="false" onAction="#NavigateFlightsAction" prefHeight="51.0" prefWidth="282.0" styleClass="sideBarButtons" text="flights">
 >>>>>>> daf1b4baae6ebf60433e287beadfdc6a98f3144f
 >>>>>>> main
+=======
+                  <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="282.0" styleClass="sideBarButtons" text="flights">
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
                      <font>
                         <Font name="Comic Sans MS Bold" size="15.0" />
                      </font>
@@ -246,6 +264,7 @@
                </children>
             </HBox>
             <Separator orientation="VERTICAL" prefHeight="200.0" />
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <Label alignment="CENTER" prefHeight="51.0" prefWidth="274.0" text="Username">
 =======
@@ -255,10 +274,14 @@
                 <Label alignment="CENTER" prefHeight="51.0" prefWidth="274.0" text="Username">
 >>>>>>> daf1b4baae6ebf60433e287beadfdc6a98f3144f
 >>>>>>> main
+=======
+                <Label alignment="CENTER" prefHeight="51.0" prefWidth="274.0" text="Username">
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
                     <font>
                         <Font name="Consolas Bold" size="16.0" />
                     </font>
                 </Label>
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <ImageView fitHeight="35.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
 =======
@@ -268,6 +291,9 @@
                 <ImageView fitHeight="35.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
 >>>>>>> daf1b4baae6ebf60433e287beadfdc6a98f3144f
 >>>>>>> main
+=======
+                <ImageView fitHeight="35.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
                     <image>
                         <Image url="@images/user.png" />
                     </image>
@@ -281,6 +307,7 @@
             <String fx:value="white-background" />
          </styleClass>
         </HBox>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <VBox layoutY="51.0" prefHeight="778.0" prefWidth="202.0" styleClass="white-background" stylesheets="@frontStyle.css" AnchorPane.bottomAnchor="25.0">
 =======
@@ -652,6 +679,9 @@
       <VBox layoutY="51.0" prefHeight="778.0" prefWidth="202.0" styleClass="white-background" stylesheets="@frontStyle.css" AnchorPane.bottomAnchor="25.0">
 >>>>>>> daf1b4baae6ebf60433e287beadfdc6a98f3144f
 >>>>>>> main
+=======
+      <VBox layoutY="51.0" prefHeight="778.0" prefWidth="202.0" styleClass="white-background" stylesheets="@frontStyle.css" AnchorPane.bottomAnchor="25.0">
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
          <children>
             <VBox prefHeight="254.0" prefWidth="202.0">
                <children>
@@ -700,16 +730,21 @@
                            </HBox.margin>
                         </ImageView>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <Button fx:id="reclamFXML" mnemonicParsing="false" onAction="#navigateToReclamation" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="contact us">
 =======
                         <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="contact us">
 >>>>>>> main
+=======
+                        <Button fx:id="reclamFXML" mnemonicParsing="false" onAction="#navigateToReclamation" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="contact us">
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
                            <font>
                               <Font name="Comic Sans MS" size="15.0" />
                            </font>
                         </Button>
                      </children>
                   </HBox>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -733,6 +768,8 @@
 =======
 >>>>>>> daf1b4baae6ebf60433e287beadfdc6a98f3144f
 >>>>>>> main
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
                </children>
                <VBox.margin>
                   <Insets top="20.0" />
@@ -816,6 +853,7 @@
                            </HBox.margin>
                         </ImageView>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="log out">
 =======
 <<<<<<< HEAD
@@ -824,6 +862,9 @@
                         <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="log out">
 >>>>>>> daf1b4baae6ebf60433e287beadfdc6a98f3144f
 >>>>>>> main
+=======
+                        <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="log out">
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
                            <font>
                               <Font name="Comic Sans MS" size="15.0" />
                            </font>

@@ -1,6 +1,9 @@
 package edu.esprit.entities;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
 import java.util.Objects;
 
 public class User {
@@ -29,6 +32,7 @@ public class User {
         this.id = id;
     }
 
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 import java.time.LocalDateTime;
@@ -169,6 +173,8 @@ public class User {
     }
 
 >>>>>>> main
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
     public String getRoles() {
         return roles;
     }
@@ -177,6 +183,7 @@ public class User {
         this.roles = roles;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     public String getPassword() {
@@ -214,6 +221,8 @@ public class User {
     }
 
 >>>>>>> main
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
     public String getNom() {
         return nom;
     }
@@ -231,12 +240,16 @@ public class User {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
     public String getImage_name() {
         return image_name;
     }
 
     public void setImage_name(String image_name) {
         this.image_name = image_name;
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
     public LocalDateTime getCreatedAt() {
@@ -313,6 +326,8 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
 >>>>>>> main
+=======
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
     }
 
     @Override
@@ -320,12 +335,16 @@ public class User {
         return "User{" +
                 "id=" + id +
 <<<<<<< HEAD
+<<<<<<< HEAD
                 ", roles='" + roles + '\'' +
 =======
                 ", email='" + email + '\'' +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
 >>>>>>> main
+=======
+                ", roles='" + roles + '\'' +
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
                 '}';
     }
 
@@ -335,14 +354,19 @@ public class User {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
 <<<<<<< HEAD
+<<<<<<< HEAD
         return id == user.id && Objects.equals(roles, user.roles);
 =======
         return id == user.id && Objects.equals(email, user.email) && Objects.equals(nom, user.nom) && Objects.equals(prenom, user.prenom);
 >>>>>>> main
+=======
+        return id == user.id && Objects.equals(roles, user.roles);
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
     }
 
     @Override
     public int hashCode() {
+<<<<<<< HEAD
 <<<<<<< HEAD
         return Objects.hash(id, roles);
     }
@@ -353,3 +377,8 @@ public class User {
 }
 >>>>>>> daf1b4baae6ebf60433e287beadfdc6a98f3144f
 >>>>>>> main
+=======
+        return Objects.hash(id, roles);
+    }
+}
+>>>>>>> f463f8cf478b51a942471e0ee691a3f1ff8fe75d
