@@ -49,6 +49,9 @@
                                     </viewport>
                                 </ImageView>
                                 <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="254.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="hotels">
+                                    <!-- Ajoutez ce bouton à votre fichier FXML AfficherVoyage.fxml -->
+                                    <Button layoutX="100" layoutY="100" onAction="#openWeatherInterface" text="Weather Interface" />
+
                                     <HBox.margin>
                                         <Insets right="10.0" />
                                     </HBox.margin>
@@ -290,6 +293,8 @@
             <Font name="Comic Sans MS Bold Italic" size="36.0" />
          </font>
       </Label>
+      <Button layoutX="259.0" layoutY="72.0" mnemonicParsing="false" onAction="#openWeatherInterface" prefHeight="26.0" prefWidth="127.0" text="Weather Interface" />
+      <Button fx:id="statistiquesButton" layoutX="260.0" layoutY="100.0" mnemonicParsing="false" onAction="#afficherStatistiques" prefHeight="26.0" prefWidth="127.0" text="Statistiques" />
     </children>
 
 </AnchorPane>

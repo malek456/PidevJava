@@ -16,6 +16,8 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.control.Label;
+
 
 
 import  edu.esprit.controllers.HebergementDesign;
@@ -35,6 +37,7 @@ import javax.print.attribute.standard.Destination;
 public class AjouterHebergement {
     @FXML
     private TextField TFName;
+
     @FXML
     private TextField TFPicture;
 
@@ -59,6 +62,12 @@ public class AjouterHebergement {
     private TextField TFPrice;
 
     @FXML
+    private TextField TFLatitude;
+
+    @FXML
+    private TextField TFLongitude;
+
+    @FXML
     private VBox HebergementContainer = new VBox();
 
     @FXML
@@ -66,6 +75,12 @@ public class AjouterHebergement {
 
     @FXML
     private ComboBox<String> ComboBoxType;
+
+    @FXML
+    private Label labelLatitude;
+
+    @FXML
+    private Label labelLongitude;
 
 
     @FXML
@@ -130,13 +145,27 @@ public class AjouterHebergement {
         String selectedVoyageDestination = ComboBoxDestination.getValue().toString();
 
 
+            // Vérifiez si les champs de texte contiennent des valeurs valides
+            try {
+                Float.parseFloat(TFPrice.getText());
+                Double.parseDouble(TFLatitude.getText());
+                Double.parseDouble(TFLongitude.getText());
+            } catch (NumberFormatException e) {
+                showAlert("Veuillez saisir des valeurs numériques valides pour le prix, la latitude et la longitude.");
+                return; // Sortez de la méthode si l'une des valeurs n'est pas valide
+            }
 
         // Création du nouvel objet Hebergement
         Voyage selectedDestination = sp.getVoyageByDestination(selectedVoyageDestination);
         Hebergement newHebergement = new Hebergement(
-                TFName.getText(),TFPicture.getText(),TFLocation.getText() ,  TFDescription.getText(),  selectedType, TFActivities.getText(),  Float.parseFloat( TFPrice.getText()),selectedDestination ) ;
+                TFName.getText(),TFPicture.getText(),TFLocation.getText() ,  TFDescription.getText(),  selectedType, TFActivities.getText(),  Float.parseFloat( TFPrice.getText()),  Double.parseDouble(TFLatitude.getText()),
+                Double.parseDouble(TFLongitude.getText()),selectedDestination ) ;
         System.out.println(TFPrice.getText());
-        sp.ajouter(newHebergement);
+            System.out.println(TFLatitude.getText());
+
+            System.out.println(TFLongitude.getText());
+
+            sp.ajouter(newHebergement);
 
 
 
@@ -146,10 +175,18 @@ public class AjouterHebergement {
         Pane pane = loader.load();
 
 
+            // Trouver les balises Label correspondantes dans le fichier FXML
+            labelLatitude = (Label) pane.lookup("#labelLatitude");
+            labelLongitude = (Label) pane.lookup("#labelLongitude");
+
+            // Afficher les valeurs de latitude et de longitude dans les labels
+            labelLatitude.setText(String.valueOf(newHebergement.getLatitude()));
+            labelLongitude.setText(String.valueOf(newHebergement.getLongitude()));
 
 
 
-        // Get the controller and update the ticket details
+
+            // Get the controller and update the ticket details
         HebergementDesign controller = loader.getController();
         controller.setHebergement(newHebergement,pane,HebergementContainer);
         controller.setAjouterHebergementController(this);
@@ -230,7 +267,7 @@ public class AjouterHebergement {
     private boolean validateForm() {
         if (TFName.getText().isEmpty() || TFPicture.getText().isEmpty() || TFLocation.getText().isEmpty() ||
                 TFDescription.getText().isEmpty() || ComboBoxType.getValue() == null || TFActivities.getText().isEmpty() ||
-                TFPrice.getText().isEmpty() || ComboBoxDestination.getValue() == null) {
+                TFPrice.getText().isEmpty() ||  TFLatitude.getText().isEmpty() ||  TFLongitude.getText().isEmpty() || ComboBoxDestination.getValue() == null) {
             showAlert("Veuillez remplir tous les champs.");
             return false;
         }
@@ -299,6 +336,8 @@ public class AjouterHebergement {
 
         TFActivities.setText(hebergement.getActivities());
         TFPrice.setText(String.valueOf(hebergement.getPrice()));
+        TFLatitude.setText(Double.toString(hebergement.getLatitude()));
+        TFLongitude.setText(Double.toString(hebergement.getLongitude()));
         TFPicture.setText(hebergement.getPicture());
         ComboBoxDestination.setValue(hebergement.getVoyage().getDestination());
     }
@@ -327,6 +366,10 @@ public class AjouterHebergement {
                 ComboBoxType.getValue().toString(), // Utilisez la valeur sélectionnée du ComboBoxType
                 TFActivities.getText(),
                 Float.parseFloat(TFPrice.getText()),
+                Double.parseDouble(TFLatitude.getText()), // Convertir la latitude en double
+                Double.parseDouble(TFLongitude.getText()), // Convertir la longitude en double
+
+
                 selectedDestination
 
 
@@ -344,6 +387,8 @@ public class AjouterHebergement {
         ComboBoxType.setValue(ComboBoxType.getValue());
         TFActivities.setText(TFActivities.getText());
         TFPrice.setText(TFPrice.getText());
+        TFLatitude.setText(TFLatitude.getText());
+        TFLongitude.setText(TFLongitude.getText());
         TFPicture.setText(TFPicture.getText());
 
 
@@ -366,6 +411,8 @@ public class AjouterHebergement {
         ComboBoxType.setValue(null); // Clear the selection of ComboBoxType
         TFActivities.clear();
         TFPrice.clear();
+        TFLatitude.clear();
+        TFLongitude.clear();
     }
-
 }
+

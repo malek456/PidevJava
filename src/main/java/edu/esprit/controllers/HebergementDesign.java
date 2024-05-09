@@ -24,6 +24,8 @@ import java.io.IOException;
 
 public class HebergementDesign {
 
+
+
     @FXML
     private Label labelName;
 
@@ -44,6 +46,13 @@ public class HebergementDesign {
 
     @FXML
     private Label labelPrice;
+
+    @FXML
+    private Label labelLatitude;
+
+    @FXML
+    private Label labelLongitude;
+
 
     @FXML
     private final ServiceHebergement sp = new ServiceHebergement();
@@ -68,14 +77,17 @@ public class HebergementDesign {
     }
 
     public void setHebergement(Hebergement Hebergement, Pane pane, VBox vbox) throws FileNotFoundException {
+        if (Hebergement != null) {
 
-        labelPrice.setText(String.valueOf(Hebergement.getPrice()));
-        labelActivities.setText(Hebergement.getActivities());
-        labelType.setText(Hebergement.getSelectedType());
-        labelDescription.setText(Hebergement.getDescription());
-        labelLocation.setText(Hebergement.getLocation());
-        labelName.setText(Hebergement.getName());
-
+           // labelLongitude.setText(Double.toString(Hebergement.getLongitude()));
+           // labelLatitude.setText(Double.toString(Hebergement.getLatitude()));
+            labelPrice.setText(String.valueOf(Hebergement.getPrice()));
+            labelActivities.setText(Hebergement.getActivities());
+            labelType.setText(Hebergement.getSelectedType());
+            labelDescription.setText(Hebergement.getDescription());
+            labelLocation.setText(Hebergement.getLocation());
+            labelName.setText(Hebergement.getName());
+        }
         // Load and set the image
         String imagePath = Hebergement.getPicture();
         if (imagePath != null && !imagePath.isEmpty()) {
@@ -167,15 +179,28 @@ public class HebergementDesign {
 
 
     public void return_V(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherVoyage.fxml"));
-        Parent root = loader.getRoot();
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        try {
+            // Charger la racine à partir du fichier FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherVoyage.fxml"));
+            Parent root = loader.load();
 
+            // Obtenir la scène actuelle
+            Scene currentScene = ((Node) actionEvent.getSource()).getScene();
 
+            // Remplacer la racine de la scène actuelle par la nouvelle racine chargée à partir du FXML
+            currentScene.setRoot(root);
+
+            // Obtenir la fenêtre actuelle à partir de la scène
+            Stage stage = (Stage) currentScene.getWindow();
+
+            // Mettre à jour la scène sur la fenêtre
+            stage.setScene(currentScene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
     public void googlemap(ActionEvent actionEvent) {
         double latitude = currentHebergement.getLatitude();
         double longitude = currentHebergement.getLongitude();
@@ -193,6 +218,7 @@ public class HebergementDesign {
         stage.setScene(scene);
         stage.show();
     }
+
 
 
 }

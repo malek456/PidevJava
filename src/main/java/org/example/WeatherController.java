@@ -39,13 +39,22 @@ public class WeatherController {
         System.out.println(todaysWeather);
         JSONObject mainData = (JSONObject) todaysWeather.get("main");
 
+        // Conversion des températures de kelvins en Celsius
+        double minTempK = Double.parseDouble(mainData.get("temp_min").toString());
+        double currentTempK = Double.parseDouble(mainData.get("temp").toString());
+        double maxTempK = Double.parseDouble(mainData.get("temp_max").toString());
+
+        double minTempC = minTempK - 273.15;
+        double currentTempC = currentTempK - 273.15;
+        double maxTempC = maxTempK - 273.15;
 
         weatherText.setText(
-                "Min temperature: " + mainData.get("temp_min") +
-                        "\nCurrent temperature: " + mainData.get("temp") +
-                        "\nMax temperature: " + mainData.get("temp_max")
+                "Min temperature: " + minTempC + "°C" +
+                        "\nCurrent temperature: " + currentTempC + "°C" +
+                        "\nMax temperature: " + maxTempC + "°C"
         );
     }
+
 
 
     public String getWoeid() throws MalformedURLException {

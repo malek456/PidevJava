@@ -5,28 +5,17 @@ import edu.esprit.entities.Voyage;
 import edu.esprit.entities.Voyage;
 import edu.esprit.utils.DataSource;
 
-import java.sql.*;
-import java.util.HashSet;
 import java.util.Set;
+import java.sql.*;
+import java.util.*;
 
 public class ServiceVoyage implements IService<Voyage> {
+    private Map<String, Integer> destinationCounter = new HashMap<>(); // Pour stocker le compteur pour chaque destination
+
 
     Connection cnx = DataSource.getInstance().getCnx();
     @Override
     public void ajouter(Voyage voyage) throws SQLException {
-        /*String req = "INSERT INTO `voyage`(`nom`, `prenom`) VALUES ('"+voyage.getNom()+"','"+voyage.getPrenom()+"')";
-        try {
-            Statement st = cnx.createStatement();
-            st.executeUpdate(req);
-            System.out.println("Voyage added !");
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }*/
-
-
-
-
-
 
 
         String req = "INSERT INTO `voyage`(`destination`, `Picture`,`Offer`) VALUES (?,?,?)";
@@ -44,17 +33,22 @@ public class ServiceVoyage implements IService<Voyage> {
 
         System.out.println("Voyage added with ID: " + voyage.getId());
     }
-
-
-
-
-
    
 
     @Override
     public Voyage getOneById(int id) {
         return null;
     }
+
+    public void registerDestinationVisit(String destination) {
+        destinationCounter.put(destination, destinationCounter.getOrDefault(destination, 0) + 1);
+    }
+
+    // Méthode pour obtenir la destination la plus consultée
+    public String getMostVisitedDestination() {
+        return Collections.max(destinationCounter.entrySet(), Map.Entry.comparingByValue()).getKey();
+    }
+
 
     @Override
     public Set<Voyage> getAll() {
@@ -70,6 +64,8 @@ public class ServiceVoyage implements IService<Voyage> {
                 String Picture = res.getString("Picture");
                 String Offer = res.getString("Offer");
 
+                // Enregistrez la consultation de destination pour chaque voyage
+                registerDestinationVisit(Destination);
                 Voyage p = new Voyage(id,Destination,Picture,Offer);
                 voyages.add(p);
             }

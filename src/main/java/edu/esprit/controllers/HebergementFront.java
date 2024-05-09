@@ -43,6 +43,12 @@ public class HebergementFront {
     private Label labelPrice;
 
     @FXML
+    private Label labelLatitude;
+
+    @FXML
+    private Label labelLongitude;
+
+    @FXML
     private ImageView labelImage;
 
     @FXML
@@ -63,6 +69,14 @@ public class HebergementFront {
         labelType.setText(Hebergement.getSelectedType());
         labelActivities.setText(Hebergement.getActivities());
         labelPrice.setText(String.valueOf(Hebergement.getPrice()));
+        labelLatitude.setText(Double.toString(Hebergement.getLatitude())); // Initialize latitude label
+        labelLongitude.setText(Double.toString(Hebergement.getLongitude())); // Initialize longitude label
+
+        // Hide latitude and longitude labels
+        labelLatitude.setVisible(false);
+        labelLongitude.setVisible(false);
+
+
 
 
 

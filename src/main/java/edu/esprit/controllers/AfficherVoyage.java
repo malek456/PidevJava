@@ -69,6 +69,9 @@ public class AfficherVoyage {
                     controller.setVoyageImage(image);
                 }
             }
+            // Enregistrez la consultation de destination pour chaque voyage
+            sp.registerDestinationVisit(Voyage.getDestination());
+
 
             controller.setAfficherVoyageController(this);
 
@@ -78,6 +81,54 @@ public class AfficherVoyage {
 
 // Définit la HBox comme contenu du ScrollPane
         scrollPane.setContent(VoyageContainer);
+    }
+
+
+    @FXML
+    void openWeatherInterface(ActionEvent event) {
+        try {
+            // Chargez le fichier FXML de l'interface utilisateur de WeatherController
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Weather.fxml"));
+            Parent root = loader.load();
+
+            // Créez une nouvelle scène
+            Scene scene = new Scene(root);
+
+            // Obtenez la scène actuelle à partir de l'événement
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            // Créez une nouvelle fenêtre pour afficher l'interface utilisateur WeatherController
+            Stage weatherStage = new Stage();
+            weatherStage.setScene(scene);
+
+            // Affichez la nouvelle fenêtre
+            weatherStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void afficherStatistiques(ActionEvent event) {
+        // Afficher les statistiques ici
+        // Par exemple, vous pouvez ouvrir une nouvelle fenêtre pour afficher les statistiques
+        try {
+            // Chargez le fichier FXML de l'interface utilisateur des statistiques
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Stat.fxml"));
+            Parent root = loader.load();
+
+            // Créez une nouvelle scène
+            Scene scene = new Scene(root);
+
+            // Créez une nouvelle fenêtre pour afficher l'interface utilisateur des statistiques
+            Stage stage = new Stage();
+            stage.setScene(scene);
+
+            // Affichez la nouvelle fenêtre
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

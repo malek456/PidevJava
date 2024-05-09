@@ -16,11 +16,13 @@ public class Hebergement {
 
     private Float Price;
 
-    private Voyage voyage;
-    private double latitude;
-    private double longitude;
+    private double Latitude;
+    private double Longitude;
 
-    public Hebergement(String name, String picture, String location, String description, String selectedType , String activities, Float price, Voyage voyage) {
+    private Voyage voyage;
+
+
+    public Hebergement(String name, String picture, String location, String description, String selectedType , String activities, Float price, Double latitude , Double longitude , Voyage voyage) {
         Name = name;
         this.picture = picture;
         Location = location;
@@ -28,10 +30,12 @@ public class Hebergement {
         SelectedType = selectedType;
         Activities = activities;
         Price = price;
+        this.Latitude = latitude ;
+        this.Longitude = longitude ;
         this.voyage = voyage;
     }
 
-    public Hebergement(int id, String name, String picture, String location, String description, String selectedType , String activities, Float price, Voyage voyage) {
+    public Hebergement(int id, String name, String picture, String location, String description, String selectedType , String activities, Float price , Double latitude , Double longitude, Voyage voyage) {
         this.id = id;
         Name = name;
         this.picture = picture;
@@ -40,6 +44,8 @@ public class Hebergement {
         SelectedType = selectedType;
         Activities = activities;
         Price = price;
+        this.Latitude = latitude ;
+        this.Longitude = longitude ;
         this.voyage = voyage;
 
 
@@ -113,6 +119,22 @@ public class Hebergement {
         Price = price;
     }
 
+    public double getLatitude() {
+        return Latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.Latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return Longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.Longitude = longitude;
+    }
+
     public Voyage getVoyage() {
         return voyage;
     }
@@ -121,21 +143,7 @@ public class Hebergement {
         this.voyage = voyage;
     }
 
-    public double getLatitude() {
-        return latitude;
-    }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
 
     @Override
     public String toString() {
@@ -147,7 +155,10 @@ public class Hebergement {
                 ", Description='" + Description + '\'' +
                 ", SelectedType='" + SelectedType + '\'' +                ", Activities='" + Activities + '\'' +
                 ", Price=" + Price +
+                ", latitude=" + Latitude +
+                ", longitude=" + Longitude +
                 ", voyage=" + voyage +
+
                 '}';
     }
 
@@ -156,11 +167,11 @@ public class Hebergement {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Hebergement that = (Hebergement) o;
-        return id == that.id && Objects.equals(Name, that.Name) && Objects.equals(picture, that.picture) && Objects.equals(Location, that.Location) && Objects.equals(Description, that.Description) && Objects.equals(SelectedType, that.SelectedType) && Objects.equals(Activities, that.Activities) && Objects.equals(Price, that.Price) && Objects.equals(voyage, that.voyage);
+        return id == that.id && Objects.equals(Name, that.Name) && Objects.equals(picture, that.picture) && Objects.equals(Location, that.Location) && Objects.equals(Description, that.Description) && Objects.equals(SelectedType, that.SelectedType) && Objects.equals(Activities, that.Activities) && Objects.equals(Price, that.Price) && Objects.equals(Latitude, that.Latitude) && Objects.equals(Longitude, that.Longitude);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, Name, picture, Location, Description, SelectedType, Activities, Price, voyage);
+        return Objects.hash(id, Name, picture, Location, Description, SelectedType, Activities, Price , Latitude , Longitude, voyage);
     }
 }

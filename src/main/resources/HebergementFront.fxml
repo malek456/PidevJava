@@ -66,5 +66,7 @@
          </font>
       </Label>
       <Button fx:id="return_V" layoutX="297.0" layoutY="613.0" mnemonicParsing="false" onAction="#return_V" prefHeight="38.0" prefWidth="227.0" text="Return" />
+        <Button layoutX="287.0" layoutY="613.0" mnemonicParsing="false" onAction="#googlemap" prefHeight="38.0" prefWidth="227.0" text="Show Location" />
+
     </children>
 </AnchorPane>

@@ -27,11 +27,22 @@
                         <Font name="Comic Sans MS Bold" size="13.0" />
                     </font>
                 </Label>
-                <Button layoutX="32.0" layoutY="198.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="26.0" prefWidth="104.0" text="update" />
-                <Button layoutX="179.0" layoutY="198.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="26.0" prefWidth="104.0" text="delete" />
-                <Button layoutX="300.0" layoutY="198.0" mnemonicParsing="false" onAction="#googlemap" prefHeight="26.0" prefWidth="104.0" text="Show Location" />
+                <Button layoutX="20.0" layoutY="207.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="26.0" prefWidth="104.0" text="update" />
+                <Button layoutX="179.0" layoutY="207.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="26.0" prefWidth="104.0" text="delete" />
                 <Label fx:id="labelLocation" layoutX="72.0" layoutY="150.0" prefHeight="18.0" prefWidth="126.0" text="Label" />
                 <Label fx:id="labelPrice" layoutX="54.0" layoutY="169.0" prefHeight="18.0" prefWidth="126.0" text="Label" />
+                <Label layoutX="14.0" layoutY="189.0" text="Latitude">
+                    <font>
+                        <Font name="Comic Sans MS Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label fx:id="labelLatitude" layoutX="72.0" layoutY="190.0" prefHeight="18.0" prefWidth="126.0"  />
+                <Label layoutX="140.0" layoutY="189.0" text="Longitude">
+                    <font>
+                        <Font name="Comic Sans MS Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label fx:id="labelLongitude" layoutX="220.0" layoutY="189.0" prefHeight="18.0" prefWidth="126.0" />
 
                             <Label fx:id="labelName" layoutX="54.0" layoutY="134.0" prefHeight="18.0" prefWidth="126.0" text="Label" />
                 <Label layoutX="154.0" layoutY="133.0" text="Type">
@@ -52,6 +63,8 @@
                     </font>
                 </Label>
                 <Label fx:id="labelActivities" layoutX="220.0" layoutY="169.0" prefHeight="18.0" prefWidth="126.0" text="Label" />
+
+
             </children>
         </Pane>
     </children>

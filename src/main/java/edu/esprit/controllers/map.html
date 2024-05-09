@@ -19,9 +19,10 @@
 <script>
     // Fonction initMap pour initialiser la carte Google Maps
     function initMap() {
-        // Coordonnées de départ (vous les définirez depuis JavaFX)
-        var latitude = 0; // Latitude initiale
-        var longitude = 0; // Longitude initiale
+        // Obtenir les paramètres de latitude et de longitude de l'URL
+        var urlParams = new URLSearchParams(window.location.search);
+        var latitude = parseFloat(urlParams.get('latitude'));
+        var longitude = parseFloat(urlParams.get('longitude'));
 
         // Création de la carte
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -39,7 +40,7 @@
 
 <!-- Chargement de l'API Google Maps -->
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=VOTRE_CLE_API&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAz77U5XQuEME6TpftaMdX0bBelQxXRlM&callback=initMap">
 </script>
 </body>
 </html>

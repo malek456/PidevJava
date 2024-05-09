@@ -16,7 +16,7 @@ public class ServiceHebergement implements IService<Hebergement> {
     Connection cnx = DataSource.getInstance().getCnx();
     @Override
     public void ajouter(Hebergement hebergement) throws SQLException {
-        String req = "INSERT INTO `Hebergement`(`Name`, `Picture`,`Location`,`Description`, `Type`,`Activities`, `voyage_id_id`, `Price`) VALUES (?,?,?,?,?,?,?,?)";
+        String req = "INSERT INTO `Hebergement`(`Name`, `Picture`,`Location`,`Description`, `Type`,`Activities`, `voyage_id_id`, `Price`, `Latitude`, `Longitude`) VALUES (?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement ps = cnx.prepareStatement(req, Statement.RETURN_GENERATED_KEYS);
         ps.setString(1,hebergement.getName());
         ps.setString(2,hebergement.getPicture());
@@ -26,6 +26,8 @@ public class ServiceHebergement implements IService<Hebergement> {
         ps.setString(6,hebergement.getActivities());
         ps.setInt(7,hebergement.getVoyage().getId());
         ps.setFloat(8,hebergement.getPrice());
+        ps.setDouble(9,hebergement.getLatitude());
+        ps.setDouble(10,hebergement.getLongitude());
 
         ps.executeUpdate();
         ResultSet rs = ps.getGeneratedKeys();
@@ -60,12 +62,15 @@ public class ServiceHebergement implements IService<Hebergement> {
                 String Activities = res.getString("Activities");
                 int voyage_id_id = res.getInt(8);
                 Float Price = res.getFloat("Price");
+                Double Latitude = res.getDouble("Latitude");
+                Double Longitude = res.getDouble("Longitude");
+
 
                 // Fetch the corresponding Hebergement object based on Hebergement_id_id
                 Voyage voyage = getVoyageById(voyage_id_id);
 
 
-                Hebergement p = new Hebergement(id,Name,Picture,Location,Description,Type,Activities,Price,voyage);
+                Hebergement p = new Hebergement(id,Name,Picture,Location,Description,Type,Activities,Price,Latitude,Longitude,voyage);
                 hebergements.add(p);
             }
         } catch (SQLException e) {
@@ -91,7 +96,7 @@ public class ServiceHebergement implements IService<Hebergement> {
 
     @Override
     public void modifier(Hebergement hebergement) {
-        String req = "UPDATE hebergement SET Name = ?,`Picture` = ?, `Location` = ?, `Description` = ?, Type = ?, `Activities` = ?, `voyage_id_id`= ?, `Price` = ? WHERE id = ?";
+        String req = "UPDATE hebergement SET Name = ?,`Picture` = ?, `Location` = ?, `Description` = ?, Type = ?, `Activities` = ?, `voyage_id_id`= ?, `Price` = ? , `Latitude` = ? , `Longitude` = ? WHERE id = ?";
         try {
             PreparedStatement pmnt = cnx.prepareStatement(req);
 
@@ -103,8 +108,11 @@ public class ServiceHebergement implements IService<Hebergement> {
             pmnt.setString(6,hebergement.getActivities());
             pmnt.setInt(7, hebergement.getVoyage().getId());
             pmnt.setFloat(8,hebergement.getPrice());
-             // Ajouter le champ SelectedType
-            pmnt.setInt(9, hebergement.getId()); // Assuming you have an ID field in your Hebergement class
+            pmnt.setDouble(9,hebergement.getLatitude());
+            pmnt.setDouble(10,hebergement.getLongitude());
+
+            // Ajouter le champ SelectedType
+            pmnt.setInt(11, hebergement.getId()); // Assuming you have an ID field in your Hebergement class
             pmnt.executeUpdate();
             System.out.println("Hebergement modified!");
         } catch (SQLException e) {
@@ -149,6 +157,8 @@ public class ServiceHebergement implements IService<Hebergement> {
         }
         return null;
     }
+
+
 
 
 }
