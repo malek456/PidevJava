@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="70.0" prefWidth="1140.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.FlightRow">
+   <children>
+      <Label fx:id="labelNumVol" layoutX="22.0" layoutY="14.0" prefHeight="42.0" prefWidth="131.0" text="Label" />
+      <Label fx:id="labelDateDepart" layoutX="232.0" layoutY="14.0" prefHeight="42.0" prefWidth="131.0" text="Label" />
+      <Label fx:id="labelDateArrive" layoutX="504.0" layoutY="13.0" prefHeight="42.0" prefWidth="131.0" text="Label" />
+      <Label layoutX="761.0" layoutY="14.0" prefHeight="42.0" prefWidth="131.0" text="Label" />
+      <Label layoutX="981.0" layoutY="14.0" prefHeight="42.0" prefWidth="131.0" text="Label" />
+   </children>
+</AnchorPane>

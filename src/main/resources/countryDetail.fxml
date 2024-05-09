@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="63.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.CountryDetail">
+   <children>
+      <Label fx:id="labelCountry" layoutX="25.0" layoutY="10.0" prefHeight="42.0" prefWidth="173.0" text="Label" textFill="#ff7700">
+         <font>
+            <Font name="Comic Sans MS Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelCurrencySymbol" layoutX="923.0" layoutY="11.0" prefHeight="42.0" prefWidth="74.0" text="Label">
+         <font>
+            <Font name="Comic Sans MS Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelCurrency" layoutX="813.0" layoutY="10.0" prefHeight="42.0" prefWidth="74.0" text="Label">
+         <font>
+            <Font name="Comic Sans MS Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelCurrencyTitle" layoutX="426.0" layoutY="11.0" prefHeight="42.0" prefWidth="370.0" text="Label">
+         <font>
+            <Font name="Comic Sans MS Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelLocale" layoutX="303.0" layoutY="10.0" prefHeight="42.0" prefWidth="74.0" text="Label">
+         <font>
+            <Font name="Comic Sans MS Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelMarket" layoutX="212.0" layoutY="10.0" prefHeight="42.0" prefWidth="74.0" text="Label">
+         <font>
+            <Font name="Comic Sans MS Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelSite" layoutX="1085.0" layoutY="10.0" prefHeight="42.0" prefWidth="130.0" text="Label">
+         <font>
+            <Font name="Comic Sans MS Italic" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

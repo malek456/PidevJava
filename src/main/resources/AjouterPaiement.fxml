@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="854.0" prefWidth="1535.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.AjouterPaiement">
+    <children>
+        <HBox prefHeight="51.0" prefWidth="1535.0" stylesheets="@frontStyle.css">
+            <children>
+                <HBox prefHeight="51.0" prefWidth="341.0">
+                    <children>
+                        <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/logo.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="51.0" prefWidth="127.0" text="WeTravel" textFill="#3030df">
+                            <font>
+                                <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox prefHeight="51.0" prefWidth="1286.0">
+                    <children>
+                        <HBox>
+                            <children>
+                                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                <ImageView fitHeight="47.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/hotelIcon.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets top="5.0" />
+                                    </HBox.margin>
+                                    <viewport>
+                                        <Rectangle2D />
+                                    </viewport>
+                                </ImageView>
+                                <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="254.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="hotels">
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font name="Comic Sans MS Bold" size="15.0" />
+                                    </font>
+                                </Button>
+                                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                <ImageView fitHeight="47.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/destination.png" />
+                                    </image>
+                                    <viewport>
+                                        <Rectangle2D />
+                                    </viewport>
+                                    <HBox.margin>
+                                        <Insets top="5.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="266.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="destinations">
+                                    <font>
+                                        <Font name="Comic Sans MS Bold" size="15.0" />
+                                    </font>
+                                </Button>
+                                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                            </children>
+                        </HBox>
+                        <ImageView fitHeight="49.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/eventIcon.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets right="5.0" top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="274.0" styleClass="sideBarButtons" text="events">
+                            <font>
+                                <Font name="Comic Sans MS Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/flightIcon.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="282.0" styleClass="sideBarButtons" text="flights">
+                            <font>
+                                <Font name="Comic Sans MS Bold" size="15.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                <Label alignment="CENTER" prefHeight="51.0" prefWidth="274.0" text="Username">
+                    <font>
+                        <Font name="Consolas Bold" size="16.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="35.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/user.png" />
+                    </image>
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </HBox.margin>
+                </ImageView>
+            </children>
+            <styleClass>
+                <String fx:value="white-bg" />
+                <String fx:value="white-background" />
+            </styleClass>
+        </HBox>
+        <VBox layoutY="51.0" prefHeight="778.0" prefWidth="202.0" styleClass="white-background" stylesheets="@frontStyle.css" AnchorPane.bottomAnchor="25.0">
+            <children>
+                <VBox prefHeight="254.0" prefWidth="202.0">
+                    <children>
+                        <HBox prefHeight="38.0" prefWidth="174.0">
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                            <children>
+                                <Label prefHeight="47.0" prefWidth="126.0" text="  User Services" textFill="#3610df">
+                                    <font>
+                                        <Font name="Comic Sans MS Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="47.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/services.jfif" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </HBox>
+                        <HBox>
+                            <children>
+                                <ImageView fitHeight="43.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/icons8_Person_32px.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets right="5.0" top="10.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="your account">
+                                    <font>
+                                        <Font name="Comic Sans MS" size="15.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox>
+                            <children>
+                                <ImageView fitHeight="53.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/contactIcon.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets left="5.0" top="10.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="contact us">
+                                    <font>
+                                        <Font name="Comic Sans MS" size="15.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin>
+                </VBox>
+                <Separator prefWidth="200.0" />
+                <VBox prefHeight="265.0" prefWidth="202.0">
+                    <children>
+                        <HBox>
+                            <children>
+                                <Label alignment="CENTER" prefHeight="50.0" prefWidth="118.0" text="Most Booked" textFill="#3610df">
+                                    <font>
+                                        <Font name="Comic Sans MS Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="47.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/popular.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="54.0" prefWidth="157.0">
+                            <children>
+                                <ImageView fitHeight="40.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/hotelIcon.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets top="10.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="flights">
+                                    <font>
+                                        <Font name="Comic Sans MS" size="15.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="54.0" prefWidth="157.0">
+                            <children>
+                                <ImageView fitHeight="50.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/eventIcon.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets left="5.0" top="10.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="146.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="destinations">
+                                    <font>
+                                        <Font name="Comic Sans MS" size="15.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                        </HBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin>
+                </VBox>
+                <VBox prefHeight="133.0" prefWidth="202.0">
+                    <children>
+                        <Separator prefWidth="200.0" />
+                        <Label alignment="CENTER" prefHeight="46.0" prefWidth="177.0" text="Exit Account" textFill="#3610df">
+                            <font>
+                                <Font name="Comic Sans MS Bold" size="15.0" />
+                            </font>
+                        </Label>
+                        <HBox>
+                            <children>
+                                <ImageView fitHeight="42.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/logOutIcon.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets left="5.0" top="10.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="157.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="log out">
+                                    <font>
+                                        <Font name="Comic Sans MS" size="15.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            <Button mnemonicParsing="false" onAction="#NavigateDashboardAction" prefHeight="54.0" prefWidth="231.0" styleClass="sideBarButtons" stylesheets="@frontStyle.css" text="Dashborad">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Button>
+            </children>
+        </VBox>
+          <AnchorPane layoutX="669.0" layoutY="125.0" prefHeight="635.0" prefWidth="442.0" stylesheets="@dashboardDesign.css">
+              <styleClass>
+                  <String fx:value="white-bg1" />
+                  <String fx:value="shadow" />
+              </styleClass>
+         <children>
+             <ComboBox fx:id="comboBoxVol" layoutX="53.0" layoutY="136.0" opacity="0.59" prefHeight="46.0" prefWidth="335.0" promptText="Numéro de vol" styleClass="text-field" stylesheets="@Vol.css" />
+            <Label layoutX="55.0" layoutY="109.0" prefHeight="26.0" prefWidth="94.0" text="Numéro de vol" textFill="#1f201f">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfNumCarte" layoutX="53.0" layoutY="456.0" prefHeight="46.0" prefWidth="335.0" promptText="numéro de carte" styleClass="text-field" stylesheets="@Vol.css" />
+             <ComboBox fx:id="comboBoxEmail" layoutX="53.0" layoutY="237.0" opacity="0.59" prefHeight="46.0" prefWidth="335.0" promptText="email" styleClass="text-field" stylesheets="@Vol.css" />
+            <ComboBox fx:id="comboBoxMode" layoutX="54.0" layoutY="349.0" opacity="0.59" prefHeight="26.0" prefWidth="202.0" promptText="mode de paiment" styleClass="text-field" stylesheets="@Vol.css" />
+            <Label layoutX="55.0" layoutY="429.0" prefHeight="26.0" prefWidth="135.0" text="numéro de carte" textFill="#1f201f">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="53.0" layoutY="322.0" prefHeight="26.0" prefWidth="158.0" text="moyen de paiement" textFill="#1f201f">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="53.0" layoutY="210.0" prefHeight="26.0" prefWidth="70.0" text="email" textFill="#1f201f">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="53.0" layoutY="541.0" mnemonicParsing="false" onAction="#ajouterPaiementAction" prefHeight="50.0" prefWidth="335.0" styleClass="confirmerP" stylesheets="@Vol.css" text="confirmer" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="14.0" />
+               </font>
+            </Button>
+            <HBox layoutX="272.0" layoutY="349.0" prefHeight="46.0" prefWidth="118.0">
+               <children>
+                  <ImageView fitHeight="43.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/creditCards.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Label alignment="CENTER" layoutX="44.0" layoutY="23.0" prefHeight="54.0" prefWidth="335.0" text="Remplir votre paiement" textFill="#0600a6">
+               <font>
+                  <Font name="Arial Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelErrorNumC" layoutX="55.0" layoutY="502.0" prefHeight="26.0" prefWidth="335.0" textFill="RED">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelErrorMode" layoutX="53.0" layoutY="395.0" prefHeight="26.0" prefWidth="335.0" textFill="RED">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelErrorEmail" layoutX="55.0" layoutY="283.0" prefHeight="26.0" prefWidth="335.0" textFill="RED">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelErrorVol" layoutX="55.0" layoutY="182.0" prefHeight="26.0" prefWidth="335.0" textFill="RED">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Pane fx:id="paneProgressor" layoutX="155.0" layoutY="248.0" prefHeight="95.0" prefWidth="135.0" styleClass="filter" stylesheets="@dashboardDesign.css">
+               <children>
+                  <ProgressIndicator fx:id="progressIndicator" layoutX="41.0" layoutY="27.0" progress="0.0" />
+               </children>
+            </Pane>
+         </children>
+          </AnchorPane>
+      <Button fx:id="buttonPdf" layoutX="1362.0" layoutY="73.0" mnemonicParsing="false" onAction="#DownloadPdfAction" prefHeight="51.0" prefWidth="158.0" styleClass="white-background" stylesheets="@frontStyle.css" text="Download PDF">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </Button>
+      <ProgressBar fx:id="progressBarPdf" layoutX="1362.0" layoutY="145.0" prefHeight="18.0" prefWidth="158.0" progress="0.0" />
+      <Label fx:id="labelPdf" layoutX="1362.0" layoutY="187.0" prefHeight="18.0" prefWidth="158.0" />
+    </children>
+
+</AnchorPane>
