@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controllers.TravelInfo">
+   <children>
+      <ComboBox fx:id="countryComboBox" layoutX="224.0" layoutY="48.0" onAction="#onCountrySelected" prefWidth="150.0">
+       <items>
+           <FXCollections fx:factory="observableArrayList">
+               <String fx:value="United States" />
+               <String fx:value="Canada" />
+               <String fx:value="France" />
+               <String fx:value="Japan" />
+           </FXCollections>
+       </items>
+       </ComboBox>
+      <TextArea fx:id="advisoryTextArea" layoutX="69.0" layoutY="112.0" prefHeight="244.0" prefWidth="472.0" />
+   </children>
+</AnchorPane>
